@@ -1,0 +1,409 @@
+% Useful reference shorthand for including figures and for
+% cross-referencing to figures, sections, and tables.
+% 
+% CPBL, 1997-2008
+
+% This first one shouldn't really be here. Need to reorganize the cpbl style files
+% Doesn't work yet.
+\newcommand{\grlheader}[4]{\markright{GEOPHYSICAL RESEARCH LETTERS, VOL. #1, NO. #2, PAGES #3, #4}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define figure style for one-line entry (shorthand):
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sample usage:
+% \usepackage[dvips]{graphicx}
+% \fig{\textwidth}{epsFileName}{Figure title}{This is the figure caption.}
+% bug: It works, but for some reason I cannot get the default param option 
+%  to work (i can in other cases!)
+%
+% 1999 November: cPbL@alum.mit.edu
+% 2000 February: cPbL@alum.mit.edu: Added bold figure title.
+% 2000 July: cPbL: See page 150 of ``LaTeX Companion''. Used the
+%      packages ``float'' and ``afterpage'' similarly to method
+%      described.
+%      I'm not convinced yet that it's working well..
+% 2000 August 1: Made a new command, \wfig, (w means `where') which 
+%      lets me specify ``p'' for location of large (1-page} figures, 
+%      thereby eliminating the need for weird \clearpage stuff.
+%      Example usage:
+%
+%%             \wfig{width=\textwidth}{location}{epsFileName}
+%                   {Figure title}{This is the figure caption.}
+%              \cpblagufig}{widthcommand}{name}{title}{caption}
+
+\newcommand{\cpblagufig}[4]{
+{  \begin{center}
+       \centering\includegraphics[#1]{figures/#2.eps}
+%       \centering\includegraphics[#1]{figures/pdfCopies/#2.pdf}
+\end{center}
+}       \caption{\label{fig:#2} #3. #4 
+%{\bf \sc \small [#2]}
+ }
+}
+
+\newcommand{\posterfig}[3]{
+{%  \begin{center}
+       \centering\includegraphics{figures/#1.eps}
+%       \centering\includegraphics{figures/pdfCopies/#1.pdf}
+%\end{center}
+} %%%      \caption{\label{fig:#1} #2. #3 
+ %%% %{\bf \sc \small [#2]}
+ %%% }% End of caption
+#2. #3
+}
+
+
+%%             \figw{width=\textwidth}{location}{epsFileName}
+%                   {Figure title}{This is the figure caption.}
+                    
+\newcommand{\fig}[4]{
+\figw{#1}{tbh}{#2}{#3}{#4}
+}
+\newcommand{\figw}[5]{
+%\afterpage{\clearpage
+\begin{figure}[#2] % This could be [H] with afterpage\clearpage method...
+      \centering
+       \includegraphics[#1]{figures/#3.eps}
+%       \includegraphics[#1]{figures/pdfCopies/#3.pdf}
+%       \includegraphics[width=5 cm]{figures/#3.eps}
+       \caption[#4]{{\bf #4.} #5 
+%{\bf \sc \small [#3]}
+} 
+       \label{fig:#3}
+ \end{figure}
+%}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define shorthand for referencing a figure or section number
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sample usage:
+% \figref{epsFileName}
+% Used in conjunction with the naming convention above, in \fig.
+%
+% 2000 May: cPbL@alum.mit.edu
+\newcommand{\figref}[1]{Figure~\ref{fig:#1}}
+\newcommand{\Figref}[1]{Figure~\ref{fig:#1}}
+\newcommand{\figrefp}[1]{Figure~\ref{fig:#1} on page~\pageref{fig:#1}}
+\newcommand{\Figrefp}[1]{Figure~\ref{fig:#1} on page~\pageref{fig:#1}}
+% Umran doesn't want the ``on page'' thing:
+%\newcommand{\figrefp}[1]{\figref{#1}}
+%\newcommand{\Figrefp}[1]{\Figref{#1}}
+
+\newcommand{\secref}[1]{Section~\ref{sec:#1}}
+\newcommand{\Secref}[1]{Section~\ref{sec:#1}}
+\newcommand{\secrefp}[1]{Section~\ref{sec:#1} on page~\pageref{sec:#1}}
+\newcommand{\Secrefp}[1]{Section~\ref{sec:#1} on page~\pageref{sec:#1}}
+% Umran doesn't want the ``on page'' thing:
+%\newcommand{\secrefp}[1]{\secref{#1}}
+%\newcommand{\Secrefp}[1]{\Secref{#1}}
+
+\newcommand{\equref}[1]{equation~\eqref{eq:#1}} % NOTE! builtin \eqref
+                                              % is usually better.
+\newcommand{\Equref}[1]{Equation~\eqref{eq:#1}} % NOTE! builtin \eqref
+                                              % is usually better.
+\newcommand{\equrefp}[1]{Equation~\eqref{eq:#1}  on page~\pageref{eq:#1}} 
+\newcommand{\Equrefp}[1]{Equation~\eqref{eq:#1}  on  page~\pageref{eq:#1}} 
+% Umran doesn't want the ``on page'' thing:
+%\newcommand{\equrefp}[1]{\equref{#1}}
+%\newcommand{\Equrefp}[1]{\Equref{#1}}
+
+\newcommand{\prefsec}[1]{page~\pageref{sec:#1} (Section~\ref{sec:#1})}
+
+% Tables
+\newcommand{\tabref}[1]{Table~\ref{tab:#1}}
+\newcommand{\Tabref}[1]{Table~\ref{tab:#1}}
+\newcommand{\tabrefp}[1]{Table~\ref{tab:#1} on page~\pageref{tab:#1}}
+\newcommand{\Tabrefp}[1]{Table~\ref{tab:#1} on page~\pageref{tab:#1}}
+
+% Chapters.   All levels of sections simply have the "sec:" prefix.
+\newcommand{\Chapref}[1]{Chapter~\ref{sec:#1}}
+
+\newcommand{\Lemrefp}[1]{Lemma~\ref{lem:#1} on page~\pageref{lem:#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Define Section labelling command which also displays the name in
+% draft versions
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sample usage:
+% \seclabel{sectionName}
+% Used in conjunction with the naming convention above, in \secref.
+%
+% 2000 July: cPbL@alum.mit.edu
+\newcommand{\seclabel}[1]{
+%{\bf \sc [sec:#1]} % This should of course be removed for non-draft
+\label{sec:#1}}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% If using the report style, use - instead of . in the figure number.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\@ifundefined{thechapter}{}{\def\thefigure{\thechapter-\arabic{figure}}}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Some more indexing, referencing, and commenting tools
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\newcommand{\cpblcomment}[1]{}
+
+% DEFINITIONS NEEDED THROUGHOUT THE DOCUMENT:
+
+% Oh dear.. in 2008 I'm removing the following line. This seems like a
+% bad name for a macro! And LyX doesn't like it. I assume this is
+% needed in my Stanford thesis, but it already has a copy of the
+% definition... Not sure where the oroginal \newcommand is?
+%%\renewcommand{\text}[1]{{{\rm #1}}}
+
+\newcommand{\todo}{\par\ensuremath{\Longrightarrow} }
+
+% BELOW ARE INDEXING SHORTCUTS AND TEXT SHORTHAND
+\newcommand{\Sections}{Sections\xspace}
+\newcommand{\sections}{Sections\xspace}
+\newcommand{\figures}{Figures\xspace}
+\newcommand{\Index}[1]{#1\index{#1}} % Shorthand. See Companion, p352
+\newcommand{\Sindex}[2]{#1\index{#1#2}} % Shorthand. See Companion, p352
+\newcommand{\nn}[1]{#1n} % Used to denote that a index ref is in a footnote.
+\newcommand{\ULF}{\index{ultra low frequency (ULF)}ULF}
+
+
+%%%%%%%%%%%%%%%%%%% Added 2008 for UBC thesis!
+
+
+\newcommand{\centrefigureeps}[3]{\begin{figure}\centerline{\includegraphics{#1.eps}}
+\caption{
+%{\scriptsize  \em [#1.eps]:}
+ {#2}\label{fig:#3}}\end{figure}}
+% Should replace the above:
+
+\newcommand{\cpblcentrefigure}[3]{\begin{figure}\centerline{\includegraphics{#1.\epspdf}}
+\caption{
+%{\scriptsize  \em [#1.eps]:}
+ {#2}\label{fig:#3}}\end{figure}}
+
+% Replace above with this. It fixes caption to be same in TOF and fig, though.
+\newcommand{\cpblcentrefig}[4]{\begin{figure}\centerline{\includegraphics{#1.\epspdf}}
+\simplefigcap{#2}{#3}{fig:#4}
+\end{figure}}
+% {#2}\label{fig:#3}}
+%{\scriptsize  \em [#1.eps]:}
+
+\newcommand{\cpblwfig}[5]{\begin{figure}\centerline{\includegraphics[width=#5]{#1.\epspdf}}
+\simplefigcap{#2}{#3}{fig:#4}
+\end{figure}}
+
+
+\newcommand{\cpblOldComment}[1]{}
+%%\newcommand{\cpblSwallow}[1]{}
+
+
+
+% I actually just want this for beamer: It's used to make one slide
+% with no margins.
+\newenvironment{changemargin}[2]{%
+\begin{list}{}{%
+\setlength{\topsep}{0pt}%
+\setlength{\leftmargin}{#1}%
+\setlength{\rightmargin}{#2}%
+\setlength{\listparindent}{\parindent}%
+\setlength{\itemindent}{\parindent}%
+\setlength{\parsep}{\parskip}%
+}%
+\item[]}{\end{list}}
+
+
+%%%%%% Some shorthand for beamer slides:
+
+%(Obselete?)
+% Make a figure (taller than wide) fit on a titled slide:
+\newcommand{\tallFigSlide}[2]{
+\begin{frame}{#1}
+\begin{center}
+\includegraphics[height=0.75\textheight,keepaspectratio]{#2.\epspdf}
+\end{center}
+\end{frame}
+}
+
+%(Obselete?)
+% Make a figure (wider than tal) fit on a titled slide:
+\newcommand{\wideFigSlide}[2]{
+\begin{frame}{#2}
+\begin{center}
+\includegraphics[width=0.75\textwidth,keepaspectratio]{#2}
+\end{center}
+\end{frame}
+}
+
+
+%(Obselete?)
+% Make a figure (wide OR  tall) fit on a titled slide:
+\newcommand{\bigFigSlide}[2]{
+\begin{frame}{#1}
+\begin{center}
+\includegraphics[width=0.75\textwidth,height=0.75\textheight,keepaspectratio]{#2}
+\end{center}
+\end{frame}
+}
+
+% This one used to compare/test the various image scaling option shorthands.
+\newcommand{\testImageFrame}[2]{
+\titledImageFrame{titledImageFrame: #1}{#2}
+\titledPlainImageFrame{titledImageFrame: #1}{#2}
+\plainImageFrame{#2}
+\maxImageFrame{#2}
+}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% BEAMER SHORCUTS FOR INCLUDING A LARGE FIGURE AS ALL OR MOST OF THE
+% SCREEN. DIFFERENT CASES ACCOMODATE KEEPING THE BORDERS, TITLE, ETC
+% FOR RELATIVELY WIDE OR RELATIVELY TALL FIGURES. THE BASIC CASE,
+% THOUGH IS MAXFRAMEIMAGE.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%TThese still aren't great. 
+
+% titledImageFrame, full page non-plain one does not respect bottom
+% margin..
+
+% and the maxImageFrame also gets it wrong. (Are the margins not
+% really 1cm?).
+
+% So in both cases, I'm kludging for the moment by doing 95% of full height.
+
+% These now rely also on two lines of customisation to
+% beamerbaseframe.sty.
+% I have my altered beamerbaseframe.sty, available online next to this
+% file. (google for cpbl/software). In my
+% distribution, it belongs in /usr/share/texmf/tex/latex/beamer/base/beamerbaseframe.sty
+
+
+% Make one image take up the entire slide content area in beamer,.:
+% centered/centred full-screen image, with title:
+
+% THIS DOES NOT WORK YET: It does not know how much space is left
+% after the title and TOC header. How do I get this value? It seems
+% that beamerframetextheigh is not the right one.
+\newcommand{\titledImageFrame}[2]{
+\begin{frame}{#2}
+%\begin{changemargin}{-1cm}{-1cm}
+\begin{center}
+\includegraphics[width=108mm,height=.95\beamerframetextheight,keepaspectratio]{#1}
+\end{center}
+%\end{changemargin}
+\end{frame}
+}
+% This one seems to work.
+\newcommand{\titledPlainImageFrame}[2]{
+\begin{frame}[plain]{#2}
+%\begin{changemargin}{-1cm}{-1cm}
+\begin{center}
+\includegraphics[width=108mm,height=\beamerframetextheight,keepaspectratio]{#1}
+\end{center}
+%\end{changemargin}
+\end{frame}
+}
+
+\newcommand{\titledMaxImageFrame}[2]{
+\begin{frame}[plain]{#2}
+\begin{changemargin}{-1cm}{-1cm}
+\begin{center}
+\includegraphics[width=128mm,height=\beamerframetextheight,keepaspectratio]{#1}
+\end{center}
+\end{changemargin}
+\end{frame}
+}
+\newcommand{\titledMaxWideImageFramePlain}[2]{
+\begin{frame}[plain]{#2}
+\begin{changemargin}{-1cm}{-1cm}
+\begin{center}
+\includegraphics[width=128mm,height=\beamerframetextheight,keepaspectratio]{#1}
+\end{center}
+\end{changemargin}
+\end{frame}
+}
+\newcommand{\titledMaxWideImageFrame}[2]{
+\begin{frame}{#2}
+\begin{changemargin}{-1cm}{-1cm}
+\begin{center}
+\includegraphics[width=128mm,height=\beamerframetextheight,keepaspectratio]{#1}
+\end{center}
+\end{changemargin}
+\end{frame}
+}
+
+% Make one image take up the entire slide content area in beamer.:
+% centered/centred full-screen image, no title:
+% This uses the whole screen except for the 1cm border around it
+% all. 128x96mm
+\newcommand{\plainImageFrame}[1]{
+\begin{frame}[plain]
+%\begin{changemargin}{-1cm}{-1cm}
+\begin{center}
+\includegraphics[width=108mm,height=76mm,keepaspectratio]{#1}
+\end{center}
+%\end{changemargin}
+\end{frame}
+}
+
+% Make one image take up the entire slide area, including borders, in beamer.:
+% centered/centred full-screen image, no title:
+% This uses the entire whole screen
+\newcommand{\maxImageFrame}[1]{
+\begin{frame}[plain]
+\begin{changemargin}{-1cm}{-1cm} % This should end up with no margins.
+\begin{center}
+\includegraphics[width=\paperwidth,height=\paperheight,keepaspectratio]{#1}
+\end{center}
+\end{changemargin}
+\end{frame}
+}
+
+
+\@ifclassloaded{beamer}{
+\newenvironment{wideframe}
+{\begin{frame}[fragile,environment=wideframe]
+\begin{changemargin}{-1cm}{-1cm} % This should end up with no margins.
+\begin{center}}
+{\end{center}
+\end{changemargin}
+\end{frame}}
+
+
+\newcommand{\maxEmptyFrame}[1]{
+\begin{frame}[plain]
+\begin{changemargin}{-1cm}{-1cm} % This should end up with no margins.
+\begin{center}
+#1
+\end{center}
+\end{changemargin}
+\end{frame}
+}
+}% End of ifclassloaded
+
+
+
+
+
+% Another (!!) figure shorthand: redundant, surely!
+% This one enforces the same caption title in TOF and figure.
+
+\newcommand{\LELwfig}[5]{
+\begin{figure}
+\noindent \begin{centering}
+\includegraphics[#1]{#2}
+\par\end{centering}
+\simplefigcap{#3}{#4}{fig:#5}
+%%%%\caption{#3 \label{fig:#4}}
+\end{figure}
+}
+
+
+
+\newcommand{\rdctex}{/home/cpbl/rdc/texdocs/}
+
+\usepackage{xspace}
+
+
+\newcommand{\simplefigcap}[3]{\caption[#1]{{\bf #1.} #2\label{#3}}}
+
+\newcommand{\LELpath}{/home/cpbl/models/veblenNeighbourhoods/figuresLEL/}
+

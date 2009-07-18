@@ -1,0 +1,362 @@
+\documentclass[phd,oneside,11pt,norunningheaders]{ubcthesiscpbl}%[phd,10pt,noupper,runningheaders]{ubcthesis} 
+\usepackage[utf8]{inputenc}  
+\usepackage{setspace}
+\newcommand{\ifdoDoubleSpace}[1]{}
+% committee option is for draft: 1.5 spacing
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+%\makeatletter
+
+\if@twoside
+\def\setpageforTOC{\setcounter{page}{2}}
+\else
+\def\setpageforTOC{}
+\fi
+
+\if@twoside
+  \def\ps@plain{%
+    %\let\@oddfoot\@empty\let\@evenfoot\@empty
+    \let\@oddhead\@empty\let\@evenhead\@empty
+    %\def\@evenhead{%
+    \def\@evenfoot{%
+      \parbox{\textwidth}{%
+        \makebox[\textwidth]{{\pagenumberfont\thepage}\hfill}
+        %\if@headline\vspace{\headlinespace}\fi
+        }%
+    }%
+    %\def\@oddhead{%
+    \def\@oddfoot{%
+      \parbox{\textwidth}{%
+        \makebox[\textwidth]{\hfill{\pagenumberfont\thepage}}
+        %\if@headline\vspace{\headlinespace}\fi
+      }%
+    }%
+    }%
+\fi
+
+
+  \def\ps@plain{%
+    %\let\@oddfoot\@empty\let\@evenfoot\@empty
+    \let\@oddhead\@empty\let\@evenhead\@empty
+    %\def\@evenhead{%
+    \def\@evenfoot{%
+      \parbox{\textwidth}{%
+        \makebox[\textwidth]{{\pagenumberfont\thepage}\hfill}
+        %\if@headline\vspace{\headlinespace}\fi
+        }%
+    }%
+    %\def\@oddhead{%
+    \def\@oddfoot{%
+      \parbox{\textwidth}{%
+        \makebox[\textwidth]{\hfill{\pagenumberfont\thepage}}
+        %\if@headline\vspace{\headlinespace}\fi
+      }%
+    }%
+    }%
+
+
+\makeatother
+\usepackage{phdthesis}
+\usepackage{mathptmx} 
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+\usepackage{varioref} % eqref is in here?????
+
+\usepackage{url} % For a url..
+\usepackage{amssymb} % amssymb/amsmath have?? checkmark? eqref?
+\usepackage{amsmath} % align environment (everyone says stop using eqnarray!)
+
+
+\usepackage{index}
+% Following two are just black holes to accomodate index calls in the
+% variable list table
+\newindex{vars}{vidx}{and}{Coded variables}
+\newindex{surveyvars}{sidx}{sand}{Survey variables}
+
+\providecommand{\tabularnewline}{\\} % LyX relic
+
+%******** natbib ********************************
+% This is a very nice package for bibliographies.  It includes options
+% for sorting and compressing bibliographic entries.
+\usepackage[square,authoryear]{natbib} % REMOVED OPTIONS: numbers,sort&compress,
+
+% cPbL: For chapter-level bibliographies:
+\usepackage{bibtopic}
+\bibliographystyle{aguCpbl}%cje}
+
+%******** graphics and graphicx ******************************
+% This allows you to include encapsulated postscript files.  If you
+% don't have this, comment the \includegraphics{} line following the
+% comment "%includegraphics" later in this file.
+\usepackage{graphicx}
+
+%******** lscape ******************************
+% This allows you to include landscape layout pages by using the
+% |landscape| environment. Note that this output might only be valid
+% after converting to a postscript or pdf file.
+\usepackage{lscape}
+
+%******** psfrag ******************************
+% This allows you to replace text in postscript pictures with formated
+% latex text.  This allows you to use math in graph labels
+% etc. Uncomment the psfrag lines following the "%psfrag" comment
+% later in this file if you don't have this package.  The replacements
+% will only be visible in the final postscript file: they will be
+% listed in the .dvi file but not performed.
+\usepackage{psfrag}
+
+%******** afterpage ***************************
+% This package allows you to issue commands at the end of the current
+% page.  A good use for this is to use the command
+% \afterpage{\clearpage} right after a figure.  This will cause the
+% figure to be inserted on the page following the current one (or on
+% the current page if it will fit) but will not break the page in the
+% middle.
+\usepackage{afterpage}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Allow a new preface entity which is useful for a DEDICATION
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Use as follows:
+%     \beforepreface
+%     \dedication{To my grandparents ...}
+%     \prefacesection{Abstract}   ...
+%
+% 2000 February 14: cPbL
+\def\dedication#1{
+  \chapter[Dedication]{} % Put in TOC but don't display "Dedication"
+                         % on page
+%  \thispagestyle{empty}  % No page number
+  \thispagestyle{plain}   % Yes page number
+  \vspace{6cm}
+  \begin{center}
+    #1
+  \end{center}
+  }
+     
+% Define a command to start a bib section for manuscript-based thesis
+\newcommand{\placeSecBib}[1]{
+\forThesis{
+\newpage
+\begin{btSect}{veblen,evolution,institutions,swb,general,urban,weather,sk} 
+\chapter*{Bibliography for #1} 
+\addcontentsline{toc}{section}{Bibliography for #1}
+\btPrintCited 
+\end{btSect} 
+\end{btUnit}
+}
+}
+
+%\renewcommand{\listfigurename}{List of figures}
+%\renewcommand{\listtablename}{List of tables}
+
+ 
+% These commands are optional.  The defaults are shown.
+%\institution{The University Of British ColumbiaV}
+%\institutionaddress{Vancouver, Canada}
+\program{Economics}
+
+% You can issue as many of these as you have...
+\previousdegree{S.B. Physics, Massachusetts Institute of Technology, 1995}
+\previousdegree{M.Sc. Applied Physics, Stanford University, 1998}
+\previousdegree{Ph.D. Applied Physics, Stanford University, 2001}
+
+
+% These commands are required.
+\title{Geography, reference groups, and the determinants of life satisfaction}
+\subtitle{}
+\author{Christopher Paul Barrington-Leigh}
+\copyrightyear{2009} 
+\submitdate{January 2009}%\today}
+
+\advisor{Thomas Lemieux}
+\advisortitle{Professor of Economics}
+% One might want to override the format of the section and chapter
+% numbers.  This shows you how to do it.  Note that
+\renewcommand\thepart         {\Roman{part}}
+\renewcommand\thechapter      {\arabic{chapter}}
+\renewcommand\thesection      {\thechapter.\arabic{section}}
+\renewcommand\thesubsection   {\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+\renewcommand\theparagraph    {\thesubsubsection.\arabic{paragraph}}
+\renewcommand\thesubparagraph {\theparagraph.\arabic{subparagraph}}
+
+\usepackage{relsize}
+\newcommand\muchsmaller{\smaller\smaller}
+
+\usepackage{cpblRef}
+\usepackage{cpblTables}
+
+
+% Below is for the data (survey appendix). Gods help me!
+\usepackage{psfrag,color,graphicx}
+\graphicspath{{/home/cpbl/papers/incomeCMA/plots/}{./}}
+
+\graphicspath{{/home/cpbl/models/veblenNeighbourhoods/figuresLEL/}{/home/cpbl/models/veblenNeighbourhoods/figuresvs/}{./}{./figuresvs}{./tmpg}{/home/cpbl/papers/incomeCMA/plots/}{./}}
+\usepackage{amsthm}
+\usepackage{ushort} % For an underbar that looks like \bar.
+\usepackage{wrapfig} % For acknowledgements only
+
+% BELOW DEFINES THE THEOREM ENVIROS I NEED: PROPOSITION, LEMMA, PROOF
+
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+
+\newenvironment{definition}[1][Definition]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{example}[1][Example]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+\newenvironment{remark}[1][Remark]{\begin{trivlist}
+\item[\hskip \labelsep {\bfseries #1}]}{\end{trivlist}}
+
+% Some tools to differentiate between thesis version and journal
+% manuscript version.
+\newcommand{\forThesis}[1]{#1}
+\newcommand{\forPaper}[1]{}
+
+
+
+\newcommand{\LELcfig}[1]{\includegraphics[width=0.75\textwidth,keepaspectratio]{#1.\epspdf}}%{\input{#1}.tex}
+% Above redundant: see cpblRef.sty LELwfig
+
+
+\newcommand{\epspdf}{pdf}%{eps}%
+\newcommand{\cmykrgb}{cmyk}%{rgb}
+\newcommand{\rawplotspath}{/home/cpbl/models/veblenNeighbourhoods/plots/raw/}
+\newcommand{\iCMArawplotspath}{/home/cpbl/econ/favouritePlots/cityScatterPlots/}%{papers/incomeCMA/plots/raw/}
+\usepackage[footnotesize,bf]{caption} % Does this actually call caption2 or caption3?
+\setlength{\captionmargin}{20pt}
+
+
+% Inconspicuous hyperref -- very nice.
+  \usepackage[   
+       colorlinks,
+      citecolor=black,
+       filecolor=black,
+       linkcolor=black,
+       urlcolor=black  
+   ]{hyperref}
+
+
+
+\newif\ifNBER
+
+%%% TURN OFF COMMENTS:
+\renewcommand{\draftComment}[1]{}
+\renewcommand{\safeDraftComment}[1]{}
+\renewcommand{\cpblOldComment}[1]{}
+
+% Turn on comments:
+
+%\renewcommand{\draftComment}{\draftCommentColouredBox}
+%\renewcommand{\cpblOldComment}{\draftCommentColouredBox}
+ 
+% UBC has strange format requirements, but some things not strict. So
+% don't worry about things looking nice. Widen so I can fit my big tables:
+% To ensure that the margin fiddling for the huge/wide/long tables
+%\addtolength\oddsidemargin{-1cm}
+%\addtolength\evensidemargin{-1cm}
+%\addtolength\textwidth{2cm}
+\addtolength\oddsidemargin{-1cm}
+\addtolength\evensidemargin{-1cm}
+\addtolength\textwidth{2cm}
+
+\newcommand{\starsOrColours}[2]{#1}
+
+\ifdoDoubleSpace{\doublespacing}
+\begin{document}
+%\renewcommand\baselinestretch{1.0}
+
+\ifdoDoubleSpace{ \begin{singlespace} }
+
+% This starts numbering in Roman numerals as required for the thesis
+% style.
+\frontmatter
+
+% The order of the following components is preserved.  The order
+% listed here is the order currently required by the library.
+\maketitle
+\newpage\thispagestyle{empty}\newpage  %\pagestyle{empty}
+\begin{abstract} %\pagestyle{plain}
+\setcounter{page}{2}
+
+This dissertation combines three contributions to the literature on
+the determinants of well-being and the social nature of preferences....
+
+
+\end{abstract}
+\newpage\thispagestyle{empty}\newpage  %\pagestyle{empty}
+\setpageforTOC
+
+
+\tableofcontents
+%\listoftables
+%\listoffigures
+
+\input{acknowledgements}
+
+
+\dedication{\Large \em
+For Iris: this one --- and I promise it's the last --- is for you,\\
+who set me on this hidden path in 2000,\\ \vspace{5mm}
+And in memory of Robert, who had so much left to say.
+}
+
+% Force a new page.
+\newpage
+
+
+% Suppress the running headers for this page only.
+\thispagestyle{plain}
+
+% Now regular page numbering begins.
+\mainmatter%
+
+
+
+\ifdoDoubleSpace{ \end{singlespace} }
+\setcounter{secnumdepth}{4}
+\setcounter{tocdepth}{4}
+%\include{Introduction}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\chapter{Introduction}
+\label{sec:Introduction}
+Creating a network applications in nowadays might be a complicated process of design which involves long series of research and experiments or be a fairly simple procedure that does take only tenth of it time and effort. In both cases the frequent evaluation metric is the application scalability more than thousands line of code or model complexity. With time gained popularity network  applications usage arises what in consequence implies increase in frequency that application is requested to serve its functionality. This growth can be calculated and included at the is planing level becoming a good programming practice that places itself close to other already widely approved design patterns. With no doubt scalability is staring to play a more and more important role being often set at the same level with such issues like portability or security[quote]. I was looking for idea for an application that by its original functionality would heave the potential to become with time a really heavy traffic network application with lots of active users.
+
+\section{Popular notes taking applications}\label{sec:popular_apps} 
+blablabla
+\subsection{Appx}
+\subsection{Appy}
+\section{Popular Version Control Systems}\label{sec:popular_vcs}
+\subsection{Mercurial}
+\subsection{Comparison}
+\section{Scalability}\label{sec:scalability}
+\section{Role of programming languge}\label{sec:language}
+\subsection{Python}
+\subsection{Comparison}
+
+\include{Chapter_01} 
+\include{Chapter_02} 
+\include{Chapter_03} 
+
+%\include{Conclusion}     %% Honors theses are required to 
+                          %% have an unnumbered chapter
+                          %% for conclusions.  The file
+                          %% Conclusion.tex should begin
+                          %%   
+                          %% \chapter*{Conclusion}
+                          %% followed by the appropriate
+                          %% text.
+
+%-->\include{biblio}            %% Calls biblio.tex.  See below.
+%-->\Appendix                 %% Use this command if you have one 
+                          %% appendix. Use \Appendices if you 
+                          %% have more than one.
+	
+%-->\include{toolong}         %% Calls toolong.tex which contains
+                          %% an appendix.
+
+
+\end{document}

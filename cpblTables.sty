@@ -1,0 +1,1198 @@
+% Long table, wide tables, landscape, longtable, beamer table, etc, in LaTeX
+
+% Aha! I figured out how. Now versions "C" and "CA" are
+% interchangeable options. In "CA", you can leave the format
+% specification blank!!! It's built in now to the table
+% file. COOOOL. I just defined new commands \ctStartTabular and \ctStartLongtable
+
+
+% TO DO:
+% Use array's "\extrarowheight" to get around problem of coloured
+% cells touching the border lines.
+
+%
+% This is a set of wrappers for formatting tables. The idea is to
+% specify tabular/table data in a way which is general enough for
+% various different layout options to be chosen on the fly. In the
+% latest, "C" version, this means having an included .tex file which
+% defines certain possible components of a table, and then an option
+% of several different calls that implement laying it out.
+% 
+% In particular, this was designed originally for use with my
+% cpblStata.py package, so some of the definitions in this file are
+% particular to that.
+%
+% CPBL, Aug 2008
+
+% I should still make a supertabular option...
+% longtable has the horrible property that it starts as soon as you
+% invoke it; there is no floating behaviour at all! So you shouldn't
+% mix it in with floats, which was the whole point of the modularity
+% provided by this function. I have been using it, with the call
+% embedded in an \afterpage command. 
+
+% TO DO! Incorporate proper use of afterpage into all long and
+% landscape tables!
+% For some reason, I cannot get this to work. What does work for a
+% landscape table function is to call inside \afterpage{\clearpage <HERE> }
+% So for now, always do that.
+% \ifx \@cpblTableSimple \@empty
+% %Code to be executed if the macro is undefined
+% \else
+% %Code to be executed if the macro IS defined
+% \begin{tabular}{??}
+% \ctFirstHeader
+% \ctBody
+% \fi
+
+
+% OCtober 2008: I want captions to be full text-width when landscape
+% (ie on page by selves) but indented when not landscape, so they are
+% distinguishable from the text. (What did I do for my Stanford
+% thesis?)
+% Hm, well, try the following from my last dissertation: [?]
+
+
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{relsize}
+\usepackage{colortbl} %% handy for colored cells in tables, etc.
+\usepackage{xcolor} %% For general, v powerful color handling: e.g simple coloured text.
+%\usepackage[svgnames]{xcolor} %% svgnames clashes with Beamer?
+
+% Can drop this if using newer, better formats.
+%\usepackage{cpblTables_oldFormats}
+
+
+    %%\newcommand{\redcross}{\textcolor{DarkRed}{$\times$}}
+    %%\newcommand{\bluecheck}{\textcolor{Blue}{$\surd$}}
+    \newcommand{\NoMark}{\textcolor{red}{$\times$}}
+    \newcommand{\YesMark}{\textcolor{blue}{$\checkmark$}}
+    \newcommand{\showSEs}[2]{#1} % To show SEs
+    %\newcommand{\showSEs}[2]{#2} % To not show SEs
+    \usepackage{longtable}
+    \usepackage{array} % This modifies tabular environment to modern features.
+
+    \usepackage{afterpage}
+    \usepackage{graphicx} % for resizebox
+%\usepackage{singlespace}
+%%%-    \usepackage[
+%%%-    %\hypersetup{
+%%%-        colorlinks,%
+%%%-        citecolor=black,%
+%%%-        filecolor=black,%
+%%%-        linkcolor=black,%
+%%%-        urlcolor=black
+%%%-    %}
+%%%-    ]{hyperref}
+%     \usepackage[colorlinks]{hyperref}
+% \hypersetup{
+%     bookmarks=true,         % show bookmarks bar?
+% %    unicode=false,          % non-Latin characters in Acrobats bookmarks
+% %    pdftoolbar=true,        % show Acrobats toolbar?
+% %    pdfmenubar=true,        % show Acrobats menu?
+% %    pdffitwindow=true,      % page fit to window when opened
+%     pdftitle={My title},    % title
+%     pdfauthor={Author},     % author
+%     pdfsubject={Subject},   % subject of the document
+%     pdfnewwindow=true,      % links in new window
+%     pdfkeywords={keywords}, % list of keywords
+%     colorlinks=true,       % false: boxed links; true: colored links
+%     linkcolor=grey,%red,          % color of internal links
+%     citecolor=grey,%green,        % color of links to bibliography
+%     filecolor=grey,%magenta,      % color of file links
+%     urlcolor=grey,%cyan           % color of external links
+% }
+
+
+    \definecolor{OLDcSignifOne}{rgb}{.92,.92,.3}
+    \definecolor{OLDcSignifTwo}{rgb}{.78,.78,.3}
+    \definecolor{OLDcSignifThree}{rgb}{.6,.6,.3}
+
+
+    % OVERWRITE For printing grayscale:
+    \definecolor{cSignifOne}{rgb}{.75,.75,.75}
+    \definecolor{cSignifTwo}{rgb}{.63,.63,.63}
+    \definecolor{cSignifThree}{rgb}{.5,.5,.5}
+
+    \definecolor{caggNormal}{rgb}{.9,.9,.9}
+    \definecolor{caggSignifOne}{rgb}{.75,.75,.75}
+    \definecolor{caggSignifTwo}{rgb}{.63,.63,.63}
+    \definecolor{caggSignifThree}{rgb}{.5,.5,.5}
+
+    % Settings for colour display:
+
+    \definecolor{cSignifOne}{rgb}{.92,1,.92}
+    \definecolor{cSignifTwo}{rgb}{.78,1,.78}
+    \definecolor{cSignifThree}{rgb}{.5,1,.5}
+
+    \definecolor{caggNormal}{rgb}{.9,.9,.9}
+    \definecolor{caggSignifOne}{rgb}{.82,.9,.82}
+    \definecolor{caggSignifTwo}{rgb}{.68,.9,.68}
+    \definecolor{caggSignifThree}{rgb}{.4,.9,.4}
+
+    
+    %%\newcommand{\coefse}[1]{\raisebox{.7ex}[0pt]{\smaller\smaller (#1)}}
+    \newcommand{\coefse}[1]{{\smaller\smaller (#1)}}
+    \newcommand{\coefseSmall}[1]{{\smaller\smaller (#1)}}
+
+
+
+    %%\newcommand{\signifTenPercent}{$^*$}
+    %%\newcommand{\signifFivePercent}{$^{**}$}
+    %%\newcommand{\signifOnePercent}{$^{***}$}
+
+    \newcommand{\aggc}{\cellcolor{caggNormal}}
+    %% bACKWARD compatibility:
+    \newcommand{\signifOne}{\cellcolor{OLDcSignifOne}}
+    \newcommand{\signifTwo}{\cellcolor{OLDcSignifTwo}}
+    \newcommand{\signifThree}{\cellcolor{OLDcSignifThree}}
+
+
+    % Set dummies to be overwritten, below.
+    \newcommand{\wrapSigTenPercent}{}
+    \newcommand{\wrapSigFivePercent}{}
+    \newcommand{\wrapSigOnePercent}{}
+    \newcommand{\aggwrapSigTenPercent}{}
+    \newcommand{\aggwrapSigFivePercent}{}
+    \newcommand{\aggwrapSigOnePercent}{}
+
+    \newcommand{\signifTenPercent}{}
+    \newcommand{\signifFivePercent}{}
+    \newcommand{\signifOnePercent}{}
+
+    \newcommand{\aggsignifTenPercent}{}
+    \newcommand{\aggsignifFivePercent}{}
+    \newcommand{\aggsignifOnePercent}{}
+
+    % Now we want to overwrite these dummies with stars or colours:
+    % Colours version definitions
+
+    %% VErsion September 2008: switch to wrappers.
+    \newcommand{\colourswrapSigTenPercent}[1]{#1\cellcolor{cSignifOne}}
+    \newcommand{\colourswrapSigFivePercent}[1]{#1\cellcolor{cSignifTwo}}
+    \newcommand{\colourswrapSigOnePercent}[1]{#1\cellcolor{cSignifThree}}
+    \newcommand{\coloursaggwrapSigTenPercent}[1]{#1\cellcolor{caggSignifOne}}
+    \newcommand{\coloursaggwrapSigFivePercent}[1]{#1\cellcolor{caggSignifTwo}}
+    \newcommand{\coloursaggwrapSigOnePercent}[1]{#1\cellcolor{caggSignifThree}}
+
+    \newcommand{\colourssignifTenPercent}{\cellcolor{cSignifOne}}
+    \newcommand{\colourssignifFivePercent}{\cellcolor{cSignifTwo}}
+    \newcommand{\colourssignifOnePercent}{\cellcolor{cSignifThree}}
+
+    \newcommand{\coloursaggsignifTenPercent}{\cellcolor{caggSignifOne}}
+    \newcommand{\coloursaggsignifFivePercent}{\cellcolor{caggSignifTwo}}
+    \newcommand{\coloursaggsignifOnePercent}{\cellcolor{caggSignifThree}}
+
+    % Boldness version definitions:
+    \newcommand{\boldwrapSigTenPercent}[1]{{\em #1}$^{*}$}
+    \newcommand{\boldwrapSigFivePercent}[1]{{\bf\em #1}$^{}$}%**
+    \newcommand{\boldwrapSigOnePercent}[1]{{\bf #1}$^{*}$}%***
+    \newcommand{\boldaggwrapSigTenPercent}[1]{{\em #1}$^{*}$\cellcolor{caggNormal}}
+    \newcommand{\boldaggwrapSigFivePercent}[1]{{\bf\em #1}$^{*}$\cellcolor{caggNormal}}
+    \newcommand{\boldaggwrapSigOnePercent}[1]{{\bf #1}$^{*}$\cellcolor{caggNormal}}
+
+    \newcommand{\boldsignifTenPercent}{$^{*}$}
+    \newcommand{\boldsignifFivePercent}{$^{**}$}
+    \newcommand{\boldsignifOnePercent}{$^{***}$}
+    \newcommand{\boldaggsignifTenPercent}{$^{*}$\cellcolor{caggNormal}}
+    \newcommand{\boldaggsignifFivePercent}{$^{**}$\cellcolor{caggNormal}}
+    \newcommand{\boldaggsignifOnePercent}{$^{***}$\cellcolor{caggNormal}}
+
+    % Stars version definitions:
+    \newcommand{\starswrapSigTenPercent}[1]{{#1}$^{*}$}
+    \newcommand{\starswrapSigFivePercent}[1]{{#1}$^{**}$}
+    \newcommand{\starswrapSigOnePercent}[1]{{ #1}$^{***}$}
+    \newcommand{\starsaggwrapSigTenPercent}[1]{#1$^{*}$\cellcolor{caggNormal}}
+    \newcommand{\starsaggwrapSigFivePercent}[1]{#1$^{**}$\cellcolor{caggNormal}}
+    \newcommand{\starsaggwrapSigOnePercent}[1]{#1$^{***}$\cellcolor{caggNormal}}
+    \newcommand{\starssignifTenPercent}{$^{*}$}
+    \newcommand{\starssignifFivePercent}{$^{**}$}
+    \newcommand{\starssignifOnePercent}{$^{***}$}
+    \newcommand{\starsaggsignifTenPercent}{$^{*}$\cellcolor{caggNormal}}
+    \newcommand{\starsaggsignifFivePercent}{$^{**}$\cellcolor{caggNormal}}
+    \newcommand{\starsaggsignifOnePercent}{$^{***}$\cellcolor{caggNormal}}
+
+    % For online: use colours instead!
+    \newcommand{\useColoursForSignificance}{
+    \renewcommand{\wrapSigTenPercent}{\colourswrapSigTenPercent}
+    \renewcommand{\wrapSigFivePercent}{\colourswrapSigFivePercent}
+    \renewcommand{\wrapSigOnePercent}{\colourswrapSigOnePercent}
+
+    \renewcommand{\aggwrapSigTenPercent}{\coloursaggwrapSigTenPercent}
+    \renewcommand{\aggwrapSigFivePercent}{\coloursaggwrapSigFivePercent}
+    \renewcommand{\aggwrapSigOnePercent}{\coloursaggwrapSigOnePercent}
+
+    \renewcommand{\signifTenPercent}{\colourssignifTenPercent}
+    \renewcommand{\signifFivePercent}{\colourssignifFivePercent}
+    \renewcommand{\signifOnePercent}{\colourssignifOnePercent}
+    \renewcommand{\aggsignifTenPercent}{\coloursaggsignifTenPercent}
+    \renewcommand{\aggsignifFivePercent}{\coloursaggsignifFivePercent}
+    \renewcommand{\aggsignifOnePercent}{\coloursaggsignifOnePercent}
+}
+    % For printout: use stars instead!
+    \newcommand{\useStarsForSignificance}{
+    \renewcommand{\wrapSigTenPercent}{\starswrapSigTenPercent}
+    \renewcommand{\wrapSigFivePercent}{\starswrapSigFivePercent}
+    \renewcommand{\wrapSigOnePercent}{\starswrapSigOnePercent}
+    \renewcommand{\aggwrapSigTenPercent}{\starsaggwrapSigTenPercent}
+    \renewcommand{\aggwrapSigFivePercent}{\starsaggwrapSigFivePercent}
+    \renewcommand{\aggwrapSigOnePercent}{\starsaggwrapSigOnePercent}
+
+    \renewcommand{\signifTenPercent}{\starssignifTenPercent}
+    \renewcommand{\signifFivePercent}{\starssignifFivePercent}
+    \renewcommand{\signifOnePercent}{\starssignifOnePercent}
+    \renewcommand{\aggsignifTenPercent}{\starsaggsignifTenPercent}
+    \renewcommand{\aggsignifFivePercent}{\starsaggsignifFivePercent}
+    \renewcommand{\aggsignifOnePercent}{\starsaggsignifOnePercent}
+}
+
+    % For printout: use boldness instead!
+    \newcommand{\useBoldForSignificance}{
+    \renewcommand{\wrapSigTenPercent}{\boldwrapSigTenPercent}
+    \renewcommand{\wrapSigFivePercent}{\boldwrapSigFivePercent}
+    \renewcommand{\wrapSigOnePercent}{\boldwrapSigOnePercent}
+    \renewcommand{\aggwrapSigTenPercent}{\boldaggwrapSigTenPercent}
+    \renewcommand{\aggwrapSigFivePercent}{\boldaggwrapSigFivePercent}
+    \renewcommand{\aggwrapSigOnePercent}{\boldaggwrapSigOnePercent}
+
+    \renewcommand{\signifTenPercent}{\boldsignifTenPercent}
+    \renewcommand{\signifFivePercent}{\boldsignifFivePercent}
+    \renewcommand{\signifOnePercent}{\boldsignifOnePercent}
+    \renewcommand{\aggsignifTenPercent}{\boldaggsignifTenPercent}
+    \renewcommand{\aggsignifFivePercent}{\boldaggsignifFivePercent}
+    \renewcommand{\aggsignifOnePercent}{\boldaggsignifOnePercent}
+}
+
+% Start with colours! setting as default
+ \useColoursForSignificance
+
+    \newcommand{\sltheadernum}[1]{#1}  %    \newcommand{\sltheadernum}[1]{\smaller smaller #1}
+
+    \newcommand{\sltheadername}[1]{#1}
+    \newcommand{\slthfill}{\hfill } % Change this to a space to change
+                                % the way transposed cpblStata tables
+                                % are laid out..
+
+    \newcommand{\usetinytablefont}{\scriptsize}    
+
+    \newcommand{\cpblColourLegend}{Significance:~\begin{tabular}{ccc}
+        \wrapSigOnePercent{1\%}~~~~&
+\wrapSigFivePercent{5\%}~~~~&
+\wrapSigTenPercent{10\%}
+\\ \end{tabular} }
+%        1\%\signifOnePercent & 5\%\signifFivePercent &
+%        10\%\signifTenPercent\\ \end{tabular} }
+
+    % I want to make this dependent on whether we are in draft
+    % mode... How??
+% Following darkness is about right for my printer. Should be combined
+% with a marginmark, though.
+    \definecolor{cDraftComment}{rgb}{.8,.8,.8}%{.95,.92,.92}%{.9,.82,.82}
+% Here's one possible definition of draftcomment
+    \newcommand{\draftCommentColouredText}[1]{{\color{cDraftComment} #1}}
+%\definecolor{MyGray}{rgb}{0.96,0.97,0.98}
+\makeatletter\newenvironment{graybox}{%
+   \begin{lrbox}{\@tempboxa}\begin{minipage}{\columnwidth}}{\end{minipage}\end{lrbox}%
+   \colorbox{cDraftComment}{\usebox{\@tempboxa}}
+}\makeatother
+    \newcommand{\draftCommentColouredBox}[1]{
+
+\begin{graybox}#1 \end{graybox}}
+% Actually, overwrite it again: just use yellow highlighting:
+\usepackage{soul} % This defines the highlighting command, \hl, though
+                  % it apparently needs a postscript-aware
+                  % implementation to view properly??
+    \newcommand{\draftCommentHighlighted}[1]{ \hl{\sc #1} }
+    \newcommand{\draftCommentHidden}[1]{}
+%\usepackage{framed}
+\newcommand{\draftComment}{\draftCommentColouredBox}%{\cpblSwallow}%{\draftCommentHighlighted}%
+%\renewcommand{\draftComment}[1]{\begin{framed} #1 \end{framed}}%\draftCommentColouredBox}%{\cpblSwallow}%{\draftCommentHighlighted}%
+\newcommand{\safeDraftComment}{\draftCommentColouredBox}%{\cpblSwallow}%
+
+\newcommand{\cpblMeanRowName}{}%mm$\mu$}
+
+
+% The height (and width) available in a Beamer presentation vary  with
+% theme!!! and with the length of the title...
+
+\newcommand{\beamertextheight}{42mm}
+
+%    \newcommand{\draftComment}[1]{}%{\sc\scriptsize #1}}
+    %\renewcommand{\draftComment}[1]{{\sc\scriptsize #1}}
+    % In the mean time, just put the draft renewcommand in your
+    % preamble for draft mode.
+
+%% Make a series of capsules to format tables different ways:
+%% ARguments are: {1:format}{2:short caption}{3:caption with label}{4:file}{5:footer}
+            %% \cpblTableALong{1:format}{2:short caption}{3:caption with label}{4:ncols for footer}{5:footer}{6:file}
+
+%% This rubber might still be useful one day:  \begin{tabular*}{\textwidth}{@{\extracolsep{\fill}}l*{20}{c}}
+
+
+%% The header and multi-page header are written to the included file. 
+%% In all cases, now, the included file will just be &-separated rows... no
+%%
+%% First, define this thing to be used (redefined) within functions, below:
+\newcommand{\ifLongTable}[1]{}
+\newcommand{\ifNotLongTable}[1]{}
+\newcommand{\longTableFooter}{}
+\newcommand{\cpblEcho}[1]{#1} %% Just a tool to help redefine the above commands.
+\newcommand{\cpblSwallow}[1]{}%% Just a tool to help redefine the above commands.
+
+\newcommand{\ntabcols}{1}
+\newcommand{\longtableContinueHeader}{\tablename\ \thetable{} -- {\em continued from previous page}}
+\newcommand{\longtableContinueFooter}{{Continued on next page}}
+\newcommand{\cpblfirsthline}{\hline \hline}
+\newcommand{\cpbllasthline}{\hline \hline}
+
+\newcommand{\ctStartTabular}{}
+\newcommand{\ctStartLongtable}{}
+
+\newcommand{\ctFirstHeader}{}
+\newcommand{\ctSubsequentHeaders}{}
+\newcommand{\ctNtabCols}{}
+\newcommand{\ctBody}{}
+\newcommand{\ctLastHline}{\hline \hline}
+% These definitions should be renewed after each loading of a .tex
+% file that might change them!
+\newcommand{\ctResetDefinitions}{
+\renewcommand{\ctStartTabular}{}
+\renewcommand{\ctStartLongtable}{}
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+}
+
+
+\newcommand{\cpblTableSimple}{} % Placeholder so that default
+\newcommand{\ctUsingWrapper}{} % Placeholder so that default
+                                % behaviour of included .tex files
+                                % from my stata code makes no output.
+\newcommand{\ctFormat}{}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Below: actual definitions of different table styles/layouts
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%% Format for "B" types:
+%% \cpblTableBWide{1:format}{2:table (toc) name}{3:short caption title}{4:caption}{5:label}{6:ncols for footer}{7:footer}{8:file}
+
+%% Format for "C" types:
+%% \cpblTableBWide{1:format}{2:table (toc) name}{3:short caption title}{4:caption}{5:label}{6:footer}{7:file}
+
+%% The file must redefine certain commands:
+%% ctFirstHeader
+%% ctSubsequentHeaders
+%% ctNtabCols
+%% ctBody
+%% maybe more, if needed for other formats!
+
+% Aug 2008: I still havent got the first/last hlines quite right for
+% all types...
+
+
+%================== \cpblTableCSimple ============================
+\newcommand{\cpblTableCSimple}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+\input{#7}
+%\begin{singlespace}
+\begin{table}
+\centering
+%%\begin{center} %% This does not work. Neither does \centering
+%\setlength\tabcolsep{1pt}
+\begin{tabular}{#1} % [c] has no effect, and table is not centred here.
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular}
+
+#6
+%%\end{center}
+\caption[#2]{{\bf #3.} #4 \label{#5} \draftComment{[#5] [#7]}}
+\end{table}
+%
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+%\end{singlespace}
+}
+%================== \cpblTableCASimple ============================
+\newcommand{\cpblTableCASimple}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+\ctResetDefinitions\input{#7}
+%\begin{singlespace}
+\begin{table}
+\centering
+%%\begin{center} %% This does not work. Neither does \centering
+%\setlength\tabcolsep{1pt}
+%%\begin{tabular}{#1} % [c] has no effect, and table is not centred here.
+\ctStartTabular
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular}
+
+#6
+%%\end{center}
+\caption[#2]{{\bf #3.} #4 \label{#5} \draftComment{[#5] [#7]}}
+\end{table}
+%
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+%\end{singlespace}
+}
+
+
+%================== \cpblTableCSimpleKLUDGE_FOR-GALLUP ============================
+\newcommand{\cpblTableCSimpleNum}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+\ctResetDefinitions\input{#7}
+%\begin{singlespace}
+\begin{table}
+\centering
+%%\begin{center} %% This does not work. Neither does \centering
+%\setlength\tabcolsep{1pt}
+\begin{tabular}{#1} % [c] has no effect, and table is not centred here.
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular}
+
+#6
+%%\end{center}
+%\caption
+\\#2% [#2]{{\bf #3.} #4 \label{#5} \draftComment{[#5] [#7]}}
+\end{table}
+%
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+%\end{singlespace}
+}
+
+
+%================== \cpblTableCWide ============================
+\newcommand{\cpblTableCWide}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+\ctResetDefinitions\input{#7}
+\begin{table}
+%%\begin{center}
+\resizebox{\textwidth}{!}{
+\setlength\tabcolsep{1pt}
+\begin{tabular}{#1}
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} }
+\\ #6
+%%\end{center}
+\caption[#2]{{\bf #3.} #4 \label{#5} \draftComment{[#5] [#7]}}
+\end{table}
+%
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+%================== \cpblTableCAWide ============================
+\newcommand{\cpblTableCAWide}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+\ctResetDefinitions\input{#7}
+\begin{table}
+%%\begin{center}
+\resizebox{\textwidth}{!}{
+\setlength\tabcolsep{1pt}
+%\begin{tabular}{#1}
+\ctStartTabular
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} }
+\\ #6
+%%\end{center}
+\caption[#2]{{\bf #3.} #4 \label{#5} \draftComment{[#5] [#7]}}
+\end{table}
+%
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+
+%================== \cpblTableCWidth ============================
+\newcommand{\cpblTableCWidth}[8]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+\ctResetDefinitions\input{#7}
+\begin{table}
+%%\begin{center}
+\resizebox{#8}{!}{
+\setlength\tabcolsep{1pt}
+\begin{tabular}{#1}
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} }
+\\ #6
+%%\end{center}
+\caption[#2]{{\bf #3.} #4 \label{#5} \draftComment{[#5] [#7]}}
+\end{table}
+%
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+%================== \cpblTableCAWidth ============================
+\newcommand{\cpblTableCAWidth}[8]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+\ctResetDefinitions\input{#7}
+\begin{table}
+%%\begin{center}
+\resizebox{#8}{!}{
+\setlength\tabcolsep{1pt}
+%\begin{tabular}{#1}
+\ctStartTabular
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} }
+\\ #6
+%%\end{center}
+\caption[#2]{{\bf #3.} #4 \label{#5} \draftComment{[#5] [#7]}}
+\end{table}
+%
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+
+%================== \cpblTableCWidthEightIn ============================
+\newcommand{\cpblTableCWidthEightIn}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+\ctResetDefinitions\input{#7}
+\begin{table}
+%%\begin{center}
+\resizebox{8in}{!}{
+\setlength\tabcolsep{1pt}
+\begin{tabular}{#1}
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} }
+\\ #6
+%%\end{center}
+\caption[#2]{{\bf #3.} #4 \label{#5} \draftComment{[#5] [#7]}}
+\end{table}
+%
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+%================== \cpblTableCWidthFiveIn ============================
+\newcommand{\cpblTableCWidthFiveIn}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+\ctResetDefinitions\input{#7}
+\begin{table}
+%%\begin{center}
+\resizebox{5in}{!}{
+\setlength\tabcolsep{1pt}
+\begin{tabular}{#1}
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} }
+\\ #6
+%%\end{center}
+\caption[#2]{{\bf #3.} #4 \label{#5} \draftComment{[#5] [#7]}}
+\end{table}
+%
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+%================== \cpblTableCBeamerSimple ============================
+\newcommand{\cpblTableCBeamerSimple}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+%%  %\renewcommand{\ctNtabCols}{JUNKME}
+\begin{frame}{#3}
+\begin{center}
+\ctResetDefinitions\input{#7}
+\setlength\tabcolsep{1pt}
+\begin{tabular}{#1}
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} 
+\\ #6
+%%\end{table}
+\end{center}
+\end{frame}
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+
+%================== \cpblTableCABeamerSimple ============================
+\newcommand{\cpblTableCABeamerSimple}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+%%  %\renewcommand{\ctNtabCols}{JUNKME}
+\begin{frame}{#3}
+\begin{center}
+\ctResetDefinitions\input{#7}
+\setlength\tabcolsep{1pt}
+\ctStartTabular
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular}
+\\ #6
+%%\end{table}
+\end{center}
+\end{frame}
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+
+%================== \cpblTableCABeamerTall ============================
+\newcommand{\cpblTableCABeamerTall}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+%%  %\renewcommand{\ctNtabCols}{JUNKME}
+\begin{frame}{#3}
+\begin{center}
+\ctResetDefinitions\input{#7}
+\setlength\tabcolsep{1pt}
+\resizebox{!}{\beamertextheight}{ %%42mm}{ %%was:42mm Beamer pres's are 128x96mm.
+\ctStartTabular
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} }
+\\ #6
+%%\end{table}
+\end{center}
+\end{frame}
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+
+%================== \cpblTableCABeamerWide ============================
+\newcommand{\cpblTableCABeamerWide}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+%%  %\renewcommand{\ctNtabCols}{JUNKME}
+\begin{frame}{#3}
+\begin{center}
+\ctResetDefinitions\input{#7}
+\setlength\tabcolsep{1pt}
+\resizebox{\textwidth}{!}{
+\ctStartTabular
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} }
+\\ #6
+%%\end{table}
+\end{center}
+\end{frame}
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%================== \cpblTableCBeamerWide ============================
+\newcommand{\cpblTableCBeamerWide}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+%%\begin{center}
+\begin{frame}{#3}
+\ctResetDefinitions\input{#7}
+\resizebox{\textwidth}{!}{
+\setlength\tabcolsep{1pt}
+\begin{tabular}{#1}
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} }
+\\ #6
+%%\end{center}
+%%\end{table}
+\end{frame}
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+
+%================== \cpblTableCBeamerTall ============================
+\newcommand{\cpblTableCBeamerTall}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+\begin{frame}{#3}
+\begin{center}%\centering
+\ctResetDefinitions\input{#7}
+\resizebox{!}{\beamertextheight}{ %%42mm}{ %%was:42mm Beamer pres's are 128x96mm.
+%\setlength\tabcolsep{1pt}
+\begin{tabular}{#1}
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} }
+\\ #6
+%%\end{table}
+\end{center}
+\end{frame}
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+%================== \cpblTableCBeamerHeight ============================
+\newcommand{\cpblTableCBeamerHeight}[8]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+\begin{frame}{#3}
+\begin{center}%\centering
+\ctResetDefinitions\input{#7}
+\resizebox{!}{#8}{ %%42mm}{ %%was:42mm Beamer pres's are 128x96mm.
+\setlength\tabcolsep{1pt}
+\begin{tabular}{#1}
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} }
+\\ #6
+%%\end{table}
+\end{center}
+\end{frame}
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+
+%================== \cpblTableCSideways ============================
+% This is under testing.
+\newcommand{\cpblTableCSideways}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+\ctResetDefinitions\input{#7}
+
+\begin{sidewaystable}[h]
+\centering
+\setlength\tabcolsep{1pt}
+\begin{tabular}{#1}
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} 
+\\ #6
+\caption[#2]{{\bf #3.} #4 \label{#5} \draftComment{[#5] [#7]}}
+\end{sidewaystable}
+
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+
+%================== \cpblTableCLong ============================
+%% This is for multi-page tables with longtable
+\newcommand{\cpblTableCLong}[7]{
+\afterpage{\clearpage
+\renewcommand{\longTableFooter}{} %%{\multicolumn{#4}{l}{#}}
+\ctResetDefinitions\input{#7} % Defines some components of a table.
+\begin{longtable}[c]{#1} %% Fails:\centering
+\caption[#2]{{\bf #3.}  #4 \\#6 \label{#5} \draftComment{[#5] [#7]}}\\
+
+\ctFirstHeader
+
+\endfirsthead
+\ctSubsequentHeaders
+\hline \endhead 
+ \hline \multicolumn{\ctNtabCols}{r}{\longtableContinueFooter}  \endfoot  \longTableFooter \endlastfoot 
+\ctBody
+\cpbllasthline
+%%%  \renewcommand{\ntabcols}{#5}
+%%\usetinytablefont 
+\end{longtable}
+%
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}% afterpage
+}
+
+%================== \cpblTableCALong ============================
+%% This is for multi-page tables with longtable
+\newcommand{\cpblTableCALong}[7]{
+\afterpage{\clearpage
+\renewcommand{\longTableFooter}{} %%{\multicolumn{#4}{l}{#}}
+\ctResetDefinitions\input{#7} % Defines some components of a table.
+\ctStartLongtable
+%%%%\begin{longtable}[c]{#1} %% Fails:\centering
+\caption[#2]{{\bf #3.}  #4 \\#6 \label{#5} \draftComment{[#5] [#7]}}\\
+
+\ctFirstHeader
+
+\endfirsthead
+\ctSubsequentHeaders
+\hline \endhead 
+ \hline \multicolumn{\ctNtabCols}{r}{\longtableContinueFooter}  \endfoot  \longTableFooter \endlastfoot 
+\ctBody
+\cpbllasthline
+%%%  \renewcommand{\ntabcols}{#5}
+%%\usetinytablefont 
+\end{longtable}
+\newpage\clearpage
+%
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+}% afterpage
+
+
+%================== \cpblTableCLongHere ============================
+%% This is for multi-page tables with longtable
+\newcommand{\cpblTableCLongHere}[7]{
+\renewcommand{\longTableFooter}{} %%{\multicolumn{#4}{l}{#}}
+\ctResetDefinitions\input{#7} % Defines some components of a table.
+\begin{longtable}[c]{#1} %% Fails:\centering
+\caption[#2]{{\bf #3.}  #4 \\#6 \label{#5} \draftComment{[#5] [#7]}}\\
+
+\ctFirstHeader
+
+\endfirsthead
+\ctSubsequentHeaders
+\hline \endhead 
+ \hline \multicolumn{\ctNtabCols}{r}{\longtableContinueFooter}  \endfoot  \longTableFooter \endlastfoot 
+\ctBody
+\cpbllasthline
+%%%  \renewcommand{\ntabcols}{#5}
+%%\usetinytablefont 
+\end{longtable}
+%
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+
+
+%================== \cpblTableCWideLandscape ============================
+\newcommand{\cpblTableCWideLandscape}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+%%\afterpage{\clearpage}
+%%\afterpage{
+\ctResetDefinitions\input{#7}
+\setlength\tabcolsep{1pt}
+\begin{landscape}
+%\thispagestyle{empty}
+{\usetinytablefont
+\begin{table}
+%%\begin{center}
+\resizebox{8in}{!}{   %%\resizebox{\textwidth}{!}{
+\setlength\tabcolsep{1pt}
+\begin{tabular}{#1}
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} }
+\\ #6
+%%\end{center}
+\caption[#2]{{\bf #3.} #4 \label{#5} \draftComment{[#5] [#7]}}
+\end{table}
+%
+}% Tinytablefont
+%\newpage ?
+\end{landscape}
+\setlength\tabcolsep{6pt}% Default
+%%} % End afterpage
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+% FOLLOWING CHANGED DEC 2008: THE AFTERPAGE STUFF NOW IS PART OF THE
+% CALL. This seems to work if done with a clearpage (or newpage?) at
+% the end, before end of afterpage. So maybe I sould do it for all
+% other landscapes... Well.. I couldn't get it working with
+% LongLandscapes, right?
+% %================== \cpblTableCAWideLandscape ============================
+% \newcommand{\cpblTableCAWideLandscape}[7]{
+%   \renewcommand{\ifLongTable}[1]{}
+%   \renewcommand{\ifNotLongTable}{\cpblEcho}
+%   \renewcommand{\longTableFooter}{}
+%   %\renewcommand{\ctNtabCols}{JUNKME}
+% %%\afterpage{\clearpage}
+% %%\afterpage{
+% \ctResetDefinitions\input{#7}
+% \setlength\tabcolsep{1pt}
+% \begin{landscape}
+% %\thispagestyle{empty}
+% {\usetinytablefont
+% \begin{table}
+% %%\begin{center}
+% \resizebox{8in}{!}{   %%\resizebox{\textwidth}{!}{
+% \setlength\tabcolsep{1pt}
+% %%\begin{tabular}{#1}
+% \ctStartTabular
+% \ctFirstHeader
+% \ctBody
+% \cpbllasthline 
+% \end{tabular} }
+% \\ #6
+% %%\end{center}
+% \caption[#2]{{\bf #3.} #4 \label{#5} \draftComment{[#5] [#7]}}
+% \end{table}
+% %
+% }% Tinytablefont
+% %\newpage ?
+% \end{landscape}
+% \setlength\tabcolsep{6pt}% Default
+% %%} % End afterpage
+% \renewcommand{\ctFirstHeader}{}
+% \renewcommand{\ctSubsequentHeaders}{}
+% %\renewcommand{\ctNtabCols}{}
+% \renewcommand{\ctBody}{}
+% \renewcommand{\ctLastHline}{\hline \hline}
+% }
+
+%================== \cpblTableCAWideLandscape ============================
+\newcommand{\cpblTableCAWideLandscape}[7]{
+  \renewcommand{\ifLongTable}[1]{}
+  \renewcommand{\ifNotLongTable}{\cpblEcho}
+  \renewcommand{\longTableFooter}{}
+  %\renewcommand{\ctNtabCols}{JUNKME}
+\afterpage{\clearpage
+%%\afterpage{
+\ctResetDefinitions\input{#7}
+\setlength\tabcolsep{1pt}
+\begin{landscape}
+%\thispagestyle{empty}
+{\usetinytablefont
+\begin{table}
+%%\begin{center}
+\resizebox{8in}{!}{   %%\resizebox{\textwidth}{!}{
+\setlength\tabcolsep{1pt}
+%%\begin{tabular}{#1}
+\ctStartTabular
+\ctFirstHeader
+\ctBody
+\cpbllasthline 
+\end{tabular} }
+\\ #6
+%%\end{center}
+\caption[#2]{{\bf #3.} #4 \label{#5} \draftComment{[#5] [#7]}}
+\end{table}
+%
+}% Tinytablefont
+%\newpage ?
+\end{landscape}
+\setlength\tabcolsep{6pt}% Default
+\clearpage} % End afterpage
+\renewcommand{\ctFirstHeader}{}
+\renewcommand{\ctSubsequentHeaders}{}
+%\renewcommand{\ctNtabCols}{}
+\renewcommand{\ctBody}{}
+\renewcommand{\ctLastHline}{\hline \hline}
+}
+
+
+% Following does not work! I need to know the textwidth properly..
+%\newcommand{\cpblTableCWideLandscape}[7]{
+%\begin{landscape}
+%\cpblTableCWide{#1}{#2}{#3}{#4}{#5}{#6}{#7}
+%\end{landscape}
+%}
+
+%  Following DOES work. Change margins before calling a long landscape
+%  table. This fits more length of table on each page. Can look a big
+%  ugly, of course... And the change needed depends on what is
+%  current! 10pt? 11pt?12pt? all different.
+
+%================== \cpblTableCLongLandscape ============================
+\newcommand{\cpblTableCLongLandscape}[7]{
+\afterpage{\clearpage
+\setlength\tabcolsep{1pt}
+\addtolength\textwidth{6cm}%
+\begin{landscape}
+%\thispagestyle{empty}
+\addtolength\oddsidemargin{-3cm}%
+\cpblTableCLong{#1}{#2}{#3}{#4}{#5}{#6}{#7}
+\clearpage\newpage
+\end{landscape}
+\addtolength\textwidth{-6cm}%
+\setlength\tabcolsep{6pt} % Default
+} % end afterpage
+
+}
+%================== \cpblTableCALongLandscape ============================
+\newcommand{\cpblTableCALongLandscape}[7]{
+\afterpage{\clearpage
+\setlength\tabcolsep{1pt}
+\addtolength\textwidth{6cm}%
+\begin{landscape}
+%\thispagestyle{empty}
+\addtolength\oddsidemargin{-3cm}%
+\cpblTableCALong{#1}{#2}{#3}{#4}{#5}{#6}{#7}
+\clearpage\newpage
+\end{landscape}
+\addtolength\oddsidemargin{3cm}%
+\addtolength\textwidth{-6cm}%
+\setlength\tabcolsep{6pt} % Default
+} % end afterpage
+}
+
+
+
+%================== \cpblTableCLongHerLandscape ============================
+\newcommand{\cpblTableCLongHereLandscape}[7]{
+\setlength\tabcolsep{1pt}
+\addtolength\textwidth{6cm}%
+\begin{landscape}
+%\thispagestyle{empty}
+\addtolength\oddsidemargin{-3cm}%
+\cpblTableCLong{#1}{#2}{#3}{#4}{#5}{#6}{#7}
+\end{landscape}
+\addtolength\textwidth{-6cm}%
+\setlength\tabcolsep{6pt} % Default
+}
+
+
+
+
+%================== \cpblTableCSimpleLandscape ============================
+\newcommand{\cpblTableCSimpleLandscape}[7]{
+\begin{landscape}
+\cpblTableCSimple{#1}{#2}{#3}{#4}{#5}{#6}{#7}
+\end{landscape}
+}
+
+
+
+
+
+
+
