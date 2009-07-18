@@ -1,10 +1,9 @@
-\documentclass[phd,oneside,11pt,norunningheaders]{ubcthesiscpbl}%[phd,10pt,noupper,runningheaders]{ubcthesis} 
+\documentclass[phd,oneside,11pt,norunningheaders]{ubcthesiscpbl}
+%[phd,10pt,noupper,runningheaders]{ubcthesis} 
 \usepackage[utf8]{inputenc}  
 \usepackage{setspace}
 \newcommand{\ifdoDoubleSpace}[1]{}
 % committee option is for draft: 1.5 spacing
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
 %\makeatletter
 
 \if@twoside
@@ -34,7 +33,6 @@
     }%
 \fi
 
-
   \def\ps@plain{%
     %\let\@oddfoot\@empty\let\@evenfoot\@empty
     \let\@oddhead\@empty\let\@evenhead\@empty
@@ -54,14 +52,12 @@
     }%
     }%
 
-
 \makeatother
 \usepackage{phdthesis}
 \usepackage{mathptmx} 
 \setcounter{secnumdepth}{4}
 \setcounter{tocdepth}{4}
 \usepackage{varioref} % eqref is in here?????
-
 \usepackage{url} % For a url..
 \usepackage{amssymb} % amssymb/amsmath have?? checkmark? eqref?
 \usepackage{amsmath} % align environment (everyone says stop using eqnarray!)
@@ -161,7 +157,6 @@
 \previousdegree{M.Sc. Applied Physics, Stanford University, 1998}
 \previousdegree{Ph.D. Applied Physics, Stanford University, 2001}
 
-
 % These commands are required.
 \title{Geography, reference groups, and the determinants of life satisfaction}
 \subtitle{}
@@ -183,7 +178,6 @@
 
 \usepackage{relsize}
 \newcommand\muchsmaller{\smaller\smaller}
-
 \usepackage{cpblRef}
 \usepackage{cpblTables}
 
@@ -198,7 +192,6 @@
 \usepackage{wrapfig} % For acknowledgements only
 
 % BELOW DEFINES THE THEOREM ENVIROS I NEED: PROPOSITION, LEMMA, PROOF
-
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{proposition}[theorem]{Proposition}
@@ -221,7 +214,6 @@
 \newcommand{\LELcfig}[1]{\includegraphics[width=0.75\textwidth,keepaspectratio]{#1.\epspdf}}%{\input{#1}.tex}
 % Above redundant: see cpblRef.sty LELwfig
 
-
 \newcommand{\epspdf}{pdf}%{eps}%
 \newcommand{\cmykrgb}{cmyk}%{rgb}
 \newcommand{\rawplotspath}{/home/cpbl/models/veblenNeighbourhoods/plots/raw/}
@@ -238,8 +230,6 @@
        linkcolor=black,
        urlcolor=black  
    ]{hyperref}
-
-
 
 \newif\ifNBER
 
@@ -279,17 +269,10 @@
 % listed here is the order currently required by the library.
 \maketitle
 \newpage\thispagestyle{empty}\newpage  %\pagestyle{empty}
-\begin{abstract} %\pagestyle{plain}
-\setcounter{page}{2}
 
-This dissertation combines three contributions to the literature on
-the determinants of well-being and the social nature of preferences....
-
-
-\end{abstract}
+\include{abstract}
 \newpage\thispagestyle{empty}\newpage  %\pagestyle{empty}
 \setpageforTOC
-
 
 \tableofcontents
 %\listoftables
@@ -297,51 +280,25 @@ the determinants of well-being and the social nature of preferences....
 
 \input{acknowledgements}
 
-
 \dedication{\Large \em
 For Iris: this one --- and I promise it's the last --- is for you,\\
 who set me on this hidden path in 2000,\\ \vspace{5mm}
 And in memory of Robert, who had so much left to say.
 }
-
-% Force a new page.
-\newpage
-
-
-% Suppress the running headers for this page only.
-\thispagestyle{plain}
-
-% Now regular page numbering begins.
-\mainmatter%
-
-
+		
+\newpage				% Force a new page.
+\thispagestyle{plain}		% Suppress the running headers for this page only.
+\mainmatter			%Now regular page numbering begins.
 
 \ifdoDoubleSpace{ \end{singlespace} }
-\setcounter{secnumdepth}{4}
-\setcounter{tocdepth}{4}
-%\include{Introduction}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\chapter{Introduction}
-\label{sec:Introduction}
-Creating a network applications in nowadays might be a complicated process of design which involves long series of research and experiments or be a fairly simple procedure that does take only tenth of it time and effort. In both cases the frequent evaluation metric is the application scalability more than thousands line of code or model complexity. With time gained popularity network  applications usage arises what in consequence implies increase in frequency that application is requested to serve its functionality. This growth can be calculated and included at the is planing level becoming a good programming practice that places itself close to other already widely approved design patterns. With no doubt scalability is staring to play a more and more important role being often set at the same level with such issues like portability or security[quote]. I was looking for idea for an application that by its original functionality would heave the potential to become with time a really heavy traffic network application with lots of active users.
 
-\section{Popular notes taking applications}\label{sec:popular_apps} 
-blablabla
-\subsection{Appx}
-\subsection{Appy}
-\section{Popular Version Control Systems}\label{sec:popular_vcs}
-\subsection{Mercurial}
-\subsection{Comparison}
-\section{Scalability}\label{sec:scalability}
-\section{Role of programming languge}\label{sec:language}
-\subsection{Python}
-\subsection{Comparison}
-
-\include{Chapter_01} 
-\include{Chapter_02} 
-\include{Chapter_03} 
-
-%\include{Conclusion}     %% Honors theses are required to 
+\include{Chapter_01} % Introduction,Theory
+\include{Chapter_02} % System concept
+\include{Chapter_03} % System description
+\include{Chapter_04} % System evalualtion
+\include{Chapter_05} % Conclusion
+     
+		       %% Honors theses are required to 
                           %% have an unnumbered chapter
                           %% for conclusions.  The file
                           %% Conclusion.tex should begin
@@ -357,6 +314,5 @@ blablabla
 	
 %-->\include{toolong}         %% Calls toolong.tex which contains
                           %% an appendix.
-
 
 \end{document}
