@@ -74,11 +74,12 @@
 %******** natbib ********************************
 % This is a very nice package for bibliographies.  It includes options
 % for sorting and compressing bibliographic entries.
-\usepackage[square,authoryear]{natbib} % REMOVED OPTIONS: numbers,sort&compress,
+%\usepackage[square,authoryear]{natbib} % REMOVED OPTIONS: numbers,sort&compress,
+\usepackage[square,comma,numbers,sort&compress]{natbib}
 
 % cPbL: For chapter-level bibliographies:
-\usepackage{bibtopic}
-\bibliographystyle{aguCpbl}%cje}
+%\usepackage{bibtopic}
+%\bibliographystyle{aguCpbl}%cje}
 
 %******** graphics and graphicx ******************************
 % This allows you to include encapsulated postscript files.  If you
@@ -280,11 +281,11 @@
 
 \input{acknowledgements}
 
-\dedication{\Large \em
-For Iris: this one --- and I promise it's the last --- is for you,\\
-who set me on this hidden path in 2000,\\ \vspace{5mm}
-And in memory of Robert, who had so much left to say.
-}
+%\dedication{\Large \em
+%For Iris: this one --- and I promise it's the last --- is for you,\\
+%who set me on this hidden path in 2000,\\ \vspace{5mm}
+%And in memory of Robert, who had so much left to say.
+%}
 		
 \newpage				% Force a new page.
 \thispagestyle{plain}		% Suppress the running headers for this page only.
@@ -306,8 +307,12 @@ And in memory of Robert, who had so much left to say.
                           %% \chapter*{Conclusion}
                           %% followed by the appropriate
                           %% text.
+\begin{spacing}{1.0}
+	\bibliographystyle{plain}
+	\bibliography{mbib}
+\end{spacing}
 
-%-->\include{biblio}            %% Calls biblio.tex.  See below.
+%\include{biblio}            %% Calls biblio.tex.  See below.
 %-->\Appendix                 %% Use this command if you have one 
                           %% appendix. Use \Appendices if you 
                           %% have more than one.
