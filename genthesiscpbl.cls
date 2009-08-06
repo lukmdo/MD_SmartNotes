@@ -213,11 +213,11 @@
 \newcommand*{\copyrightnotice}[1]{\gdef\@copyrightnotice{#1}}
 \providecommand*{\@copyrightnotice}{%
   \ClassWarning{genthesis}{No \noexpand\copyrightnotice given}}
-\institution{The University of British Columbia}
-\institutionaddress{Vancouver, Canada}
-\department{Department of Physics and Astronomy}
-\program{in Physics}
-\faculty{The Faculty of Graduate Studies}
+\institution{AGH-University of Science and Technology}
+\institutionaddress{Cracow, Poland}
+\department{Department of E}
+\program{in Telecommunications}
+\faculty{The Faculty of Electrical Engineering, Automatics, Computer Science and Electronics}
 \copyrighttext{\copyright\ \@author\ \@copyrightyear}
 \copyrightnotice{All rights reserved.  This work may not be\\
   reproduced in whole or in part, by photocopy\\

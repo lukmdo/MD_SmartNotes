@@ -1,0 +1,2755 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/1999/REC-html401-19991224/loose.dtd">
+
+
+	<html lang="pl">
+
+<!-- machid: WkFSZzctYUFHdmlGS3lEWW9jbTdidFBYZ0xtb0RhQ3A2RktjVF80T0pQai1zS0habERWczB3 -->
+<head>
+
+	
+	<title>YouTube - Tech Talk: Linus Torvalds on git</title>
+
+			<link rel="stylesheet" type="text/css" href="http://s.ytimg.com/yt/cssbin/www-core-vfl112167.css"/>
+
+
+		
+		
+		
+
+
+
+
+	
+
+
+
+
+		<script type="text/javascript" src="http://s.ytimg.com/yt/js/base_all_with_bidi-vfl112013.js"></script>
+
+
+		
+
+
+		<script type="text/javascript">
+			var gIsGoogleAnalyticsEnabled = false;
+			
+	var gXSRF_token = '';
+	var gXSRF_field_name = '';
+	var gXSRF_ql_pair = '';
+	var onLoadFunctionList = onLoadFunctionList || [];
+
+		gXSRF_token = 'B1MbKyuL4d03gSWngSg6hMiQNm18MTI0OTI1MjA4Mg==';
+		gXSRF_field_name = 'session_token';
+		onLoadFunctionList.push(function() { populate_session_token() });
+
+
+		gXSRF_ql_pair = 'session_token=KfWDvHzrpqLvAYk-1CjJ9peAC4p8MA==';
+
+
+
+
+
+		</script>
+
+		
+	
+
+
+
+
+
+
+
+	<script type="text/vbscript">
+	Sub movie_player_FSCommand(ByVal command, ByVal args)
+		call movie_player_DoFSCommand(command, args)
+	End Sub
+	</script>
+
+
+	<script type="text/javascript">
+		var MSG_Hide = 'Ukryj';
+		var MSG_Show = 'Wyświetl';
+		var MSG_Login = 'Zaloguj się, aby wykonać tę czynność.';
+		var MSG_Loading = 'Trwa ładowanie...';
+		var MSG_ShowingAll = 'Oglądanie wszystkich filmów wideo';
+		var MSG_LoginFavorites = 'Musisz się zalogować, aby dodać ten film wideo do swoich ulubionych.';
+		var MSG_LoginAddPlaylist = 'Musisz się zalogować, aby dodać ten film wideo do listy odtwarzania.';
+		var MSG_LoginReportConcern = 'Musisz się zalogować, aby zgłosić uwagi.';
+		var MSG_FlagDefault = 'Wybierz powód';
+
+
+
+			var swfUrl = canPlayV9Swf() ? "http://s.ytimg.com/yt/swf/watch-vfl112169.swf" : "http://s.ytimg.com/yt/swf/watch_v8-vfl112169.swf";
+
+
+
+		var swfArgs = {"usef": 1, "watermark": "http://s.ytimg.com/yt/swf/logo-vfl106645.swf,http://s.ytimg.com/yt/swf/hdlogo-vfl100714.swf", "video_id": "4XpnKHJAok8", "sw": "0.05", "l": 4214, "sk": "kiG2IV2NCcQ1Hu0s45EsPIR5VmhKrZ5-C", "fmt_map": "5/0/7/0/0", "vq": "2", "t": "vjVQa1PpcFOGjG2L6wmGDKSj51rWtH1pbbXP5YU7iPk=", "hl": "pl", "plid": "AARwHAzBTuN2GOz4", "keywords": "Google%2Ctech%2Ctalks%2Cengineering", "cr": "PL", "fmt_url_map": "5%7Chttp%3A//v17.lscache4.c.youtube.com/videoplayback%3Fip%3D0.0.0.0%26sparams%3Did%252Cexpire%252Cip%252Cipbits%252Citag%252Cburst%252Cfactor%26itag%3D5%26ipbits%3D0%26signature%3D9F9F14014EE9CBFDEBD8CC0F2D5E02C3E662CFC5.8887A8F3A0B6DF60EDE15AFA92383768CDA50E88%26sver%3D3%26expire%3D1249189200%26key%3Dyt1%26factor%3D1.25%26burst%3D40%26id%3De17a67287240a24f"};
+		var watchGamUrl = null;
+		var watchDCUrl = null;
+		var expressInstallUrl = null;
+		var ad_eurl = null;
+		var watchIsPlayingAll = false;
+		var isWidescreen = false;
+		var watchSetWmode = false;
+		var isHDAvailable = false;
+		var widePlayerStyles = 		["watch-wide-mode"]
+;
+
+		var embedUrl = 'http://www.youtube.com/v/4XpnKHJAok8&hl=pl&fs=1';
+		var fullscreenUrl = '/watch_fullscreen?fs=1&watermark=http%3A%2F%2Fs.ytimg.com%2Fyt%2Fswf%2Flogo-vfl106645.swf%2Chttp%3A%2F%2Fs.ytimg.com%2Fyt%2Fswf%2Fhdlogo-vfl100714.swf&video_id=4XpnKHJAok8&sw=0.05&l=4214&sk=kiG2IV2NCcQ1Hu0s45EsPIR5VmhKrZ5-C&fmt_map=5%2F0%2F7%2F0%2F0&vq=2&t=vjVQa1PpcFOGjG2L6wmGDKSj51rWtH1pbbXP5YU7iPk%3D&hl=pl&plid=AARwHAzBTuN2GOz4&keywords=Google%252Ctech%252Ctalks%252Cengineering&cr=PL&fmt_url_map=5%257Chttp%253A%2F%2Fv17.lscache4.c.youtube.com%2Fvideoplayback%253Fip%253D0.0.0.0%2526sparams%253Did%25252Cexpire%25252Cip%25252Cipbits%25252Citag%25252Cburst%25252Cfactor%2526itag%253D5%2526ipbits%253D0%2526signature%253D9F9F14014EE9CBFDEBD8CC0F2D5E02C3E662CFC5.8887A8F3A0B6DF60EDE15AFA92383768CDA50E88%2526sver%253D3%2526expire%253D1249189200%2526key%253Dyt1%2526factor%253D1.25%2526burst%253D40%2526id%253De17a67287240a24f&title=Tech Talk: Linus Torvalds on git';
+		var additionalStatsHonorsUrl = '/watch_ajax?v=4XpnKHJAok8&action_get_statistics_and_data=1&l=EN';
+
+		var watchUsername = 'Google';
+		var pageVideoId = '4XpnKHJAok8';
+		var pageVideoSearchQueryStr = '';
+		var playnextFrom = '';
+		var playnextCount = '0';
+		var qlAutoscrollDestination = 0;
+		var ytLocale = 'pl_PL';
+		var isPlaylistCssAndJsLoaded = false;
+		var axc = '';
+		var subscribeaxc = '';
+		var isLoggedIn =  false ;
+
+
+			function showCommentReplyForm(form_id, reply_parent_id, is_main_comment_form) {
+		var msg = new Object();
+		msg["post"] = "Zaloguj się, aby opublikować komentarz.";
+		showCommentReplyForm_js(form_id, reply_parent_id, is_main_comment_form, msg);
+	}
+
+	function updateCharCount(charCount_id, label_id, textArea) {
+		var msg = new Object();
+		msg["exceeded"] = "Liczba znaków przekracza limit:";
+		msg["remaining"] = "Liczba pozostałych znaków:"; 
+		updateCharCount_js(charCount_id, label_id, textArea, 500, msg)
+	}
+
+	function loginMsg(div_id, display_val) {
+		var msg = new Object();
+		msg["login"] = 'Zaloguj się';
+		loginMsg_js(div_id, display_val, msg);
+	}
+
+	function printCommentReplyForm(form_id, reply_parent_id, is_main_comment_form) {
+		var msg = new Object();
+		msg["post"] = "Zamieść komentarz";
+		msg["remaining"] = "Liczba pozostałych znaków:";
+		msg["discard"] = "Odrzuć"; 
+		printCommentReplyForm_js(form_id, reply_parent_id, is_main_comment_form, 'V', 'top.goog.i18n.bidi.setDirAttribute(event,this)', 'video_id', '4XpnKHJAok8', '', 500, msg);
+	}
+
+	function postThreadedComment(comment_form_id) {
+		var msg = new Object();
+		msg["add"] = "Trwa dodawanie komentarza...";
+		postThreadedComment_js(comment_form_id, msg);
+	}
+
+	function commentApproved(xmlHttpRequest) {
+		alert("Komentarz zatwierdzony.")
+	}
+
+	function ThreadedCommentHandler(comment_form, comment_form_id) {
+		var msg = new Object();
+		msg["empty"] = "Należy wpisać komentarz!";
+		msg["toolong"] = "Twój komentarz musi mieć mniej niż 500 znaków!";
+		return ThreadedCommentHandler_js(comment_form, comment_form_id, msg);
+	}
+
+	function commentResponse(xmlHttpRequest) {
+		var msg = new Object();
+		msg["ok"] = "Komentarz został opublikowany!";
+		msg["pending"] = "Komentarz oczekujący na zaakceptowanie!";
+		msg["toolong"] = "Wprowadzony komentarz jest zbyt długi. Maksymalna długość to 500 znaków. Napisz krótszy komentarz i spróbuj ponownie";
+		msg["tooshort"] = "Wprowadzony komentarz jest zbyt krótki. Napisz dłuższy komentarz i spróbuj ponownie";
+		msg["toosoon"] = "Przekroczono limit liczby komentarzy";
+		msg["email"] = "Aby móc publikować komentarze, musisz potwierdzić swój adres e-mail. Kliknij przycisk OK, aby potwierdzić adres.";
+		msg["captchFail"] = "Odpowiedź na listy dotyczące obrazu była nieprawidłowa. Spróbuj ponownie.";
+		msg["koreaFail"] = "본인확인제로 인해 한국 국가 설정시 동영상/댓글 업로드 기능을 자발적으로 비활성화합니다.  We have voluntarily disabled this functionality on kr.youtube.com because of the Korean real-name verification law.";
+		msg["default"] = "Zamieść komentarz"; 
+		commentResponse_js(xmlHttpRequest, msg);
+	}
+
+
+
+
+
+
+		onLoadFunctionList.push(function() { if (_gel('watch-customize-embed-div')) { generateEmbed(); } });
+
+
+		onLoadFunctionList.push(function() { enableVideoQualityDisplay() });
+
+		onLoadFunctionList.push(function(event) {
+			url = document.location.href;
+			if (url.match('#fav')) {
+				document.location.href = url.replace('#fav', '#');
+				addToFaves('addToFavesForm');
+			}
+		});
+
+
+		function toggleLights(lightsOff) {
+			if (lightsOff) {
+				addClass(document.body, 'watch-lights-off');
+			} else {
+				removeClass(document.body, 'watch-lights-off');
+			}
+
+			if (!lightsOff) {
+				hideDiv('watch-longform-shade');
+			} else {
+				_gel('watch-longform-shade').style.height = parseInt(_gel('baseDiv').offsetHeight) + 'px';
+				showDiv('watch-longform-shade');
+			}
+		}
+
+		onLoadFunctionList.push(function() {
+			addListener(document.body, 'click',	function(e) {
+				stopPropagation(e);
+
+				var evt = e || window.event;
+				var target = evt.target || evt.srcElement;
+				if (!hasAncestor(target, 'watch-longform-buttons')) {
+					toggleLights(false);
+				}
+			});
+		});
+
+
+
+
+
+
+
+	</script>
+
+
+
+
+
+
+
+
+
+
+	
+	
+
+	
+
+
+	<link rel="search" type="application/opensearchdescription+xml" href="/opensearch?locale=pl_PL" title="Wyszukiwanie filmów wideo w YouTube">
+	<link rel="icon" href="http://s.ytimg.com/yt/favicon-vfl86530.ico" type="image/x-icon">
+	<link rel="shortcut icon" href="http://s.ytimg.com/yt/favicon-vfl86530.ico" type="image/x-icon">
+		<link rel="canonical" href="/watch?v=4XpnKHJAok8"/>
+
+<link rel="alternate" type="application/rss+xml" href="http://gdata.youtube.com/feeds/base/videos/4XpnKHJAok8/related?client=ytapi-youtube-watch&v=2" title="YouTube - Tech Talk: Linus Torvalds on gitPodobne filmy wideo">
+
+		<link rel="alternate" media="handheld" href="http://m.youtube.com/watch?desktop_uri=%2Fwatch%3Fv%3D4XpnKHJAok8&v=4XpnKHJAok8&gl=PL">
+
+
+		<meta name="title" content="Tech Talk: Linus Torvalds on git">
+
+		<meta name="description" content="Linus Torvalds visits Google to share his thoughts on git, the source control management system he created two years ago.">
+
+	<meta name="keywords" content="Google, tech, talks, engineering">
+
+</head>
+
+
+<body class="pl_PL not-english" onload="performOnLoadFunctions();" onunload="performOnUnloadFunctions();">
+
+
+
+
+
+
+
+
+
+
+
+<div id="baseDiv" class="date-20090801 video-info  ">
+
+
+	
+
+	<!-- begin top section -->
+			<div id="masthead">
+		<div id="masthead-inner">
+				
+					<a href="/" onmousedown="urchinTracker('/Events/Header_3/YouTubeLogo');" id="logo"><button onclick="window.top.location.href='/'; return false;" class="master-sprite" title=""></button></a>
+			<div id="region-and-language-picker-links-wrapper">
+				<button id="slogan" class="master-sprite" title=""></button>
+						<span class="util-item first with-flag"><a href="#" class="region-picker-link hLink" onclick="loadFlagImgs('region-picker-box'); return false;" onmousedown="urchinTracker('/Events/Header/UtilLinks/I18n/text');">Polska</a></span>
+	<span class="util-item"><a href="#" class="language-picker-link hLink" onclick="loadFlagImgs('language-picker-box'); return false;" onmousedown="urchinTracker('/Events/Header/UtilLinks/I18n/text');">Polski</a></span>
+
+			</div>
+			<div class="user-info">
+					
+
+
+
+	<div id="util-links" class="normal-utility-links">
+
+
+			<span class="util-item first"><b><a class="hLink" href="/signup?next=/watch%3Fv%3D4XpnKHJAok8" onmousedown="urchinTracker('/Events/Header/UtilLinks/SignUp');">
+Zarejestruj się
+
+		</a></b></span>
+			<span class="util-item"><a class="hLink" href="/watch_queue?all" onmousedown="urchinTracker('/Events/Header/UtilLinks/QuickList');">Podręczna lista</a> (<span id="quicklist-utility">0</span>)</span>
+		<span class="util-item"><a class="hLink" href="http://www.google.com/support/youtube/bin/static.py?page=start.cs&hl=pl-PL" onmousedown="urchinTracker('/Events/Header/UtilLinks/Help');">Pomoc</a></span>
+
+
+			<span class="util-item"><a class="hLink" href="/login?next=/" onmousedown="urchinTracker('/Events/Header/UtilLinks/SignIn');">Zaloguj się</a></span>
+
+
+	</div>
+
+	<form name="logoutForm" method="post" target="_top" action="/index">
+		<input type="hidden" name="action_logout" value="1">
+	</form>
+
+
+
+			</div>
+			<div id="masthead-region-and-language-picker-box" style="display: none;">Trwa ładowanie...</div>
+			<div class="clear"></div>
+		</div>
+		
+		<div id="bar" class="master-sprite">
+			<div id="bar-inner">
+					
+					<a class="master-sprite nav-item" href="/" onmousedown="urchinTracker('/Events/Header_3/MainTabs/HomeTab');">Strona główna</a>
+
+
+					<a class="master-sprite nav-item" href="/browse" onmousedown="urchinTracker('/Events/Header_3/MainTabs/VideosTab');">Filmy wideo</a>
+
+
+					<a class="master-sprite nav-item" href="/members" onmousedown="urchinTracker('/Events/Header_3/MainTabs/ChannelsTab');">Kanały</a>
+
+					<a class="master-sprite nav-item" href="/community" onmousedown="urchinTracker('/Events/Header_3/MainTabs/CommunityTab');">Społeczność</a>
+					
+
+				<div id="masthead-bar-contents">
+					
+	<form autocomplete="off" class="search-form" action="/results" method="get" name="searchForm">
+		<input id="masthead-search-term" class="search-term" name="search_query" type="text" tabindex="1" onkeyup = "top.goog.i18n.bidi.setDirAttribute(event,this)"  value="" maxlength="128"  onfocus="addClass(this, 'search-term-focus')" onblur="removeClass(this, 'search-term-focus')">
+			<input id="search-type-masthead" name="search_type" type="hidden" value="">
+	<a class="yt-button yt-button-primary" id="" style="" href="#" onclick="document.searchForm.submit(); return false;"><span>Szukaj</span></a>
+
+	</form>
+
+							<span class="yt-menubutton yt-menubutton-urgent" id="upload-button" style="" onmouseenter="this.className += ' yt-menubutton-urgent-hover';" onmouseleave="this.className = this.className.replace(' yt-menubutton-urgent-hover', '');"><a class="yt-menubutton-btn yt-button yt-button-urgent" href="/my_videos_upload" onclick="urchinTracker('/Events/Header/UploadButton');"><span>Prześlij film</span></a><a class="yt-menubutton-arr yt-button yt-button-urgent" href="/my_videos_upload" onclick="urchinTracker('/Events/Header/UploadButton');"><button></button><span></span></a><ul class="yt-menubutton-menu"><li><a href="/my_videos_upload" onclick="urchinTracker('/Events/Header/UploadButton');">Prześlij plik wideo</a></li><li><a href="/my_webcam" onclick="urchinTracker('Events/Header/WebcamButton');">Zarejestruj z kamery internetowej</a></li></ul>  </span>  
+
+				</div>
+				<div class="clearL"></div>
+			</div>	
+		</div>	
+
+		<div class="clear"></div>
+	</div> 
+
+
+			<style type="text/css">
+		.errorParagraph {
+			margin-top: 0px;
+			margin-bottom: 10px;
+		}
+	</style>
+	<div id="default-language-box" style="margin: 10px 0 20px 0; text-align: left; padding: 8px 10px; background-color: #e6efff; border: 1px solid #aeaed5; font-size: 13px;">
+		<div id="default-language-top">
+			<div class="box-close-link"><a href="/watch?v=4XpnKHJAok8&amp;opt_out_ackd=1hl=pl&amp;persist_hl=1&amp;gl=PL&amp;persist_gl=1" class="eLink">Zamknij</a><img alt="Zamknij" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" onclick="hideDiv('default-language-box');"></div>
+			<div id="default-language-translated">
+					<p class="errorParagraph"><strong>Witamy w YouTube!</strong> </p>
+					
+					<p class="errorParagraph"><strong>Sugerowany język (ustawiliśmy w ten sposób Twoje preferencje):</strong>  Polski</p>
+					
+					<p class="errorParagraph"><strong>Sugerowany filtr kraju (ustawiliśmy w ten sposób Twoje preferencje):</strong>  Polska</p>
+					
+					<p class="errorParagraph">Filtr kraju pokazuje popularne filmy z wybranego kraju na listach, takich jak <a href="/browse?s=mp">Najczęściej oglądane</a>, i w wynikach wyszukiwania.Jeśli chcesz zmienić któreś z tych preferencji, użyj linków znajdujących się u góry strony obok logo YouTube.</p>
+					
+					<p class="errorParagraph">Kliknij przycisk „OK”, aby zaakceptować te ustawienia, lub przycisk „Anuluj”, aby ustawić opcje „English (US)” jako preferowany język oraz „Cały świat (Wszystkie kraje)” jako filtr kraju.</p>
+								<div style="padding-left: 350px;">
+					<div style="width: 250px;">
+							<a class="yt-button yt-button-urgent" id="" style="" href="/watch?v=4XpnKHJAok8&amp;opt_out_ackd=1hl=pl&amp;persist_hl=1&amp;gl=PL&amp;persist_gl=1" onclick=""><span>OK</span></a>
+							<a class="yt-button" id="" style="" href="/watch?v=4XpnKHJAok8&amp;opt_out_ackd=1&amp;hl=en&amp;persist_hl=1&amp;gl=US&amp;persist_gl=1" onclick=""><span>Anuluj</span></a>
+					</div>
+				</div>
+
+			</div>
+			<div id="default-language-english" style="display: none;">
+				<br>
+					<p class="errorParagraph"><strong>Welcome to YouTube!</strong> </p>
+					
+					<p class="errorParagraph"><strong>Suggested Language (we have set your preference to this):</strong> Polish</p>
+					
+					<p class="errorParagraph"><strong>Suggested Country Filter (we have set your preference to this):</strong> Poland</p>
+					
+					<p class="errorParagraph">The country filter shows you popular videos from the selected country on lists like <a href="/browse?s=mp">Most Viewed</a> and in search results. If you would like to change either of these preferences, please use the links next to the YouTube logo at the top of the page.</p>
+					
+					<p class="errorParagraph">Click &quot;OK&quot; to accept these settings, or click &quot;Cancel&quot; to set your language preference to &quot;English (US)&quot; and your country filter to &quot;Worldwide (All)&quot;.</p>
+
+								<div style="padding-left: 350px;">
+					<div style="width: 250px;">
+							<a class="yt-button yt-button-urgent" id="" style="" href="/watch?v=4XpnKHJAok8&amp;opt_out_ackd=1hl=pl&amp;persist_hl=1&amp;gl=PL&amp;persist_gl=1" onclick=""><span>OK</span></a>
+							<a class="yt-button" id="" style="" href="/watch?v=4XpnKHJAok8&amp;opt_out_ackd=1&amp;hl=en&amp;persist_hl=1&amp;gl=US&amp;persist_gl=1" onclick=""><span>Anuluj</span></a>
+					</div>
+				</div>
+
+			</div>
+				<div id="default-language-english-show-link">
+					<a href="#" style="font-size: 10px; text-decoration: none;" onclick="toggleDisplay2('default-language-english-show-link'); toggleDisplay2('default-language-english-hide-link'); toggleDisplay2('default-language-english'); return false;">Show message in English</a>
+				</div>
+				<div id="default-language-english-hide-link" style="display: none;">
+					<a href="#" style="font-size: 10px; text-decoration: none;" onclick="toggleDisplay2('default-language-english-hide-link'); toggleDisplay2('default-language-english'); toggleDisplay2('default-language-english-show-link'); return false;">Hide message in English</a>
+				</div>
+
+			<div class="clear"></div>
+		</div>
+	</div>
+
+
+	
+
+	
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div id="watch-vid-title" class="title  longform">
+
+	<div id="watch-longform-buttons">
+
+			<div id="lights-off-switch" class="reverse-tooltip-wrapper">
+				<button id="watch-longform-lights-off" class="master-sprite" onclick="toggleLights(true); this.blur()" onmouseover="toggleSimpleTooltip(this, true)" onmouseout="toggleSimpleTooltip(this, false)"></button>
+				<div class="reverse-tooltip-wrapper-box hid"><div class="reverse-tooltip-box">Przygaś światła</div><img class="reverse-tooltip-box-bot" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif"></div>
+			</div>
+			<div id="lights-on-switch" class="reverse-tooltip-wrapper">
+				<button id="watch-longform-lights-on" class="master-sprite" onclick="toggleLights(false); this.blur()" onmouseover="toggleSimpleTooltip(this, true)" onmouseout="toggleSimpleTooltip(this, false)"></button>
+				<div class="reverse-tooltip-wrapper-box hid"><div class="reverse-tooltip-box">Rozjaśnij światła</div><img class="reverse-tooltip-box-bot" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif"></div>
+			</div>
+			<div id="player-open-popup" class="reverse-tooltip-wrapper">
+				<button id="watch-longform-popup" class="master-sprite" onclick="showPopupPlayer('4XpnKHJAok8', 640, 480); this.blur(); return false;" onmouseover="toggleSimpleTooltip(this, true)" onmouseout="toggleSimpleTooltip(this, false)"></button>
+				<div class="reverse-tooltip-wrapper-box hid"><div class="reverse-tooltip-box">Obejrzyj ten film wideo w nowym oknie</div><img class="reverse-tooltip-box-bot" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif"></div>
+			</div>
+
+
+		<div class="clearL"></div>
+	</div>
+
+
+		<h1 >Tech Talk: Linus Torvalds on git</h1>
+
+</div>
+
+<div class="clearL"></div>
+<!-- end top section -->
+
+
+
+
+<div id="watch-this-vid" class="yt-rounded">
+				<div id="watch-player-div" class="flash-player">
+					<div id="watch-noplayer-div">
+						<noscript>Masz wyłączoną obsługę języka JavaScript lub używasz starej wersji odtwarzacza Flash Player firmy Adobe. <a href="http://www.adobe.com/go/getflashplayer/" onmousedown="urchinTracker('/Events/VideoWatch/GetFlash');">Pobierz najnowszy odtwarzacz Flash</a>.</noscript>
+						<script type="text/javascript">
+							document.write('Masz wyłączoną obsługę języka JavaScript lub używasz starej wersji odtwarzacza Flash Player firmy Adobe. <a href=\"http://www.adobe.com/go/getflashplayer/\" onmousedown=\"urchinTracker(\'/Events/VideoWatch/GetFlash\');\">Pobierz najnowszy odtwarzacz Flash</a>.');
+						</script>
+					</div>
+				</div> 				<script type="text/javascript">
+					var fo = writeMoviePlayer("watch-player-div", false, null, null, "100%", "100%");
+				</script>
+
+</div>
+
+
+
+
+<!-- begin right section -->
+<div id="watch-other-vids">
+
+
+
+
+
+
+
+
+
+
+
+
+
+			<div id="watch-channel-vids-div" class="vcard">
+		<div id="watch-channel-vids-top">
+
+
+				<div id="watch-channel-icon" class="user-thumb-medium"><div>
+					<a class="url" href="/user/Google" onmousedown="urchinTracker('/Events/VideoWatch/ChannelIconLink');"><img src="http://i4.ytimg.com/i/K8sQmJBp8GCxrOtXWBpyEA/1.jpg" class="photo" alt="Ikona kanału"></a>
+				</div></div>
+
+				<div id="watch-channel-subscribe">
+
+						<div id="subscribeDiv">
+		<a class="yt-button yt-button-urgent" id="" style="" href="#" onclick="subscribe(watchUsername, 'username', subscribeaxc, true); return false;"><span>Subskrybuj</span></a>
+	</div>
+	<div id="unsubscribeDiv" class="hid">
+		<a class="yt-button" id="" style="" href="#" onclick="unsubscribe(watchUsername, 'username', subscribeaxc); return false;"><span>Anuluj subskrypcję</span></a>
+	</div>
+
+
+				</div>
+
+				<div id="watch-channel-stats">
+					<a href="/user/Google" onmousedown="urchinTracker('/Events/VideoWatch/ChannelNameLink');" class="hLink fn n contributor">Google</a><br>
+						<span class="watch-video-added post-date">14 V 2007</span><br/>
+					<div id="watch-video-details-toggle" class="expand-panel">
+						<div class="collapse-content">
+							(<a id="watch-video-desc-toggle-more" href="#" class="eLink" onClick="togglePanel(_gel('watch-video-details')); togglePanel(_gel('watch-video-details-toggle')); urchinTracker('/Events/VideoWatch/VideoDescMoreInfo'); return false;">więcej informacji</a>)
+						</div>
+						<div class="expand-content">
+							(<a href="#" class="eLink" onClick="togglePanel(_gel('watch-video-details')); togglePanel(_gel('watch-video-details-toggle')); urchinTracker('/Events/VideoWatch/VideoDescLessInfo'); return false;">mniej informacji</a>)
+						</div>
+					</div>
+				</div>
+
+			<div class="clear"></div>
+		</div> 
+
+		<div id="subscribeMessage" style="display: none"></div>
+
+		<div id="subscribeLoginInvite" style="border: 1px solid rgb(153, 153, 153); padding: 5px; background-color:#ffffff;margin:8px 5px 0 5px;display:none;">
+			
+		<div style="border: 1px solid rgb(204, 204, 204); padding: 4px; background: #eee; text-align: center;">
+			<strong>Czy chcesz subskrybować?</strong><br/>
+
+			<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&service=youtube&passive=true&continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&hl=en_US&ltmpl=sso">Zaloguj</a> lub <a href="/signup?next=%2F">zarejestruj się</a> teraz!
+
+
+
+	</div>  
+
+		</div>
+
+
+
+
+
+
+
+
+
+		<div id="watch-video-details" class="expand-panel">
+
+
+			<div id="watch-video-details-inner">
+
+				<div class="collapse-content">
+
+					<div  class="watch-video-desc">
+						<span  class="description">Linus Torvalds visits Google to share his thoughts on git, the source control management system he created two years ago. </span>
+					</div>
+				</div>
+
+				<div class="expand-content">
+
+					<div  class="watch-video-desc description">
+						<span >Linus Torvalds visits Google to share his thoughts on git, the source control management system he created two years ago. </span>
+					</div>
+
+
+					<div id="watch-category">
+						<span class="watch-channel-stat">Kategoria:&nbsp;</span>
+						<a id="watch-video-category" href="/browse?c=26" class="hLink category" onmousedown="urchinTracker('/Events/VideoWatch/VideoCategoryLink');">Poradniki i styl</a><br/>
+					</div>
+
+
+					<div id="watch-video-tags-div">
+						<div class="floatL">
+							<span class="watch-channel-stat">Tagi:&nbsp;</span>
+						</div>
+						<div id="watch-video-tags" class="floatL">
+								<a href="/results?search_query=Google&amp;search=tag" class="hLink">Google</a>&nbsp;
+								<a href="/results?search_query=tech&amp;search=tag" class="hLink">tech</a>&nbsp;
+								<a href="/results?search_query=talks&amp;search=tag" class="hLink">talks</a>&nbsp;
+								<a href="/results?search_query=engineering&amp;search=tag" class="hLink">engineering</a>&nbsp;
+
+						</div>
+						<div class="clearL"></div>
+					</div>
+
+
+
+				</div> 
+
+
+				<div id="watch-url-div">
+					<form action="" name="urlForm" id="urlForm">
+						<label for="watch-url-field">URL</label>
+						<input name="video_link" id="watch-url-field" type="text" class="email-video-url" value="http://www.youtube.com/watch?v=4XpnKHJAok8" onClick="javascript:document.urlForm.video_link.focus();document.urlForm.video_link.select();" onmousedown="urchinTracker('/Events/VideoWatch/CopyPasteLinkFromMoreInfo');" readonly>
+						<div class="clearL"></div>
+					</form>
+				</div>
+
+
+				<div id="watch-embed-div">
+					<form action="" name="embedForm" id="embedForm">
+						<label for="embed_code">Umieść</label>
+						<div>
+							<input id="embed_code" name="embed_code" type="text" value="&lt;object width=&quot;425&quot; height=&quot;344&quot;&gt;&lt;param name=&quot;movie&quot; value=&quot;http://www.youtube.com/v/4XpnKHJAok8&amp;hl=pl&amp;fs=1&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowFullScreen&quot; value=&quot;true&quot;&gt;&lt;/param&gt;&lt;param name=&quot;allowscriptaccess&quot; value=&quot;always&quot;&gt;&lt;/param&gt;&lt;embed src=&quot;http://www.youtube.com/v/4XpnKHJAok8&amp;hl=pl&amp;fs=1&quot; type=&quot;application/x-shockwave-flash&quot; allowscriptaccess=&quot;always&quot; allowfullscreen=&quot;true&quot; width=&quot;425&quot; height=&quot;344&quot;&gt;&lt;/embed&gt;&lt;/object&gt;" onclick="document.embedForm.embed_code.focus();document.embedForm.embed_code.select();customizeEmbed(isWidescreen, true);" readonly />
+							<span id="watch-embed-customize-wrapper" class="tooltip-wrapper">
+								<button id="watch-embed-customize" onclick="customizeEmbed(isWidescreen); urchinTracker('/Events/VideoWatch/CustomizeEmbed'); return false;" class="master-sprite" title="" onmouseover="toggleSimpleTooltip(this, true)" onmouseout="toggleSimpleTooltip(this, false)"></button>
+								<div class="tooltip-wrapper-box hid"><div class="tooltip-box">Dostosuj</div><img class="tooltip-box-bot" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif"></div>
+							</span>
+
+						</div>
+						<div class="clearL"></div>
+					</form>
+				</div> 
+			</div> 
+				<form id="watch-customize-embed-div" name="embedCustomizeForm" style="display: none;">Trwa ładowanie...</form>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		</div> 	</div> 
+
+
+
+
+
+
+
+				<div id="watch-channel-videos-panel" class="watch-discoverbox-wrapper expand-panel expanded" onExpanded="toggleChannelVideos('Google');"> 
+		<a href="#" onclick="togglePanel(this.parentNode); this.blur(); return false;" class="expand-header"><button title="" class="master-sprite watch-arrow"></button>			<span>Więcej od: Google
+					</span></a>
+		<div id="watch-channel-vids-body" class="watch-discoverbox-body mini-list-view expand-content">
+					<div id="watch-channel-discoverbox" class="watch-discoverbox" style="height:302px" onscroll="performDelayLoad('channel')">
+				
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=Pgsw-NgDoFE&feature=channel" rel="nofollow"><img title="Mobile Tricks - What can you do with your phone?" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" thumb="http://i1.ytimg.com/vi/Pgsw-NgDoFE/default.jpg" class="vimg90" qlicon="Pgsw-NgDoFE" alt="Mobile Tricks - What can you do with your phone?"></a><div class="addtoQL90"><a href="#" ql="Pgsw-NgDoFE" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i1.ytimg.com/vi/Pgsw-NgDoFE/default.jpg', 'Mobile Tricks - What can you do with your phone?')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:12</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=Pgsw-NgDoFE&feature=channel" title="Mobile Tricks - What can you do with your phone?" rel="nofollow">Mobile Tricks - What can you do with your phone?</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 680269</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=LRmrMiOWdfc&feature=channel" rel="nofollow"><img title="Google Chrome announcement" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" thumb="http://i1.ytimg.com/vi/LRmrMiOWdfc/default.jpg" class="vimg90" qlicon="LRmrMiOWdfc" alt="Google Chrome announcement"></a><div class="addtoQL90"><a href="#" ql="LRmrMiOWdfc" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i1.ytimg.com/vi/LRmrMiOWdfc/default.jpg', 'Google Chrome announcement')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>52:05</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=LRmrMiOWdfc&feature=channel" title="Google Chrome announcement" rel="nofollow">Google Chrome announcement</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 83242</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=0p2cEQCsBuY&feature=channel" rel="nofollow"><img title="Beijing 2008 in Google Earth 3D" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" thumb="http://i1.ytimg.com/vi/0p2cEQCsBuY/default.jpg" class="vimg90" qlicon="0p2cEQCsBuY" alt="Beijing 2008 in Google Earth 3D"></a><div class="addtoQL90"><a href="#" ql="0p2cEQCsBuY" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i1.ytimg.com/vi/0p2cEQCsBuY/default.jpg', 'Beijing 2008 in Google Earth 3D')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:19</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=0p2cEQCsBuY&feature=channel" title="Beijing 2008 in Google Earth 3D" rel="nofollow">Beijing 2008 in Google Earth 3D</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 294737</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=Yjdp70474LE&feature=channel" rel="nofollow"><img title="Open Source Developers at Google: Amit Singh on MacFuse" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" thumb="http://i2.ytimg.com/vi/Yjdp70474LE/default.jpg" class="vimg90" qlicon="Yjdp70474LE" alt="Open Source Developers at Google: Amit Singh on MacFuse"></a><div class="addtoQL90"><a href="#" ql="Yjdp70474LE" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/Yjdp70474LE/default.jpg', 'Open Source Developers at Google: Amit Singh on MacFuse')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:24:13</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=Yjdp70474LE&feature=channel" title="Open Source Developers at Google: Amit Singh on MacFuse" rel="nofollow">Open Source Developers at Google: Amit Singh on...</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 52554</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=v_UyVmITiYQ&feature=channel" rel="nofollow"><img title="Google Wave Developer Preview at Google I/O 2009" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" thumb="http://i3.ytimg.com/vi/v_UyVmITiYQ/default.jpg" class="vimg90" qlicon="v_UyVmITiYQ" alt="Google Wave Developer Preview at Google I/O 2009"></a><div class="addtoQL90"><a href="#" ql="v_UyVmITiYQ" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i3.ytimg.com/vi/v_UyVmITiYQ/default.jpg', 'Google Wave Developer Preview at Google I/O 2009')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:20:12</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=v_UyVmITiYQ&feature=channel" title="Google Wave Developer Preview at Google I/O 2009" rel="nofollow">Google Wave Developer Preview at Google I/O 2009</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 3400440</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=Xlh8gSF_hhE&feature=channel" rel="nofollow"><img title="10 Features of Google Chrome" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i1.ytimg.com/vi/Xlh8gSF_hhE/default.jpg', 'channel')" qlicon="Xlh8gSF_hhE" alt="10 Features of Google Chrome"></a><div class="addtoQL90"><a href="#" ql="Xlh8gSF_hhE" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i1.ytimg.com/vi/Xlh8gSF_hhE/default.jpg', '10 Features of Google Chrome')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>3:37</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=Xlh8gSF_hhE&feature=channel" title="10 Features of Google Chrome" rel="nofollow">10 Features of Google Chrome</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 530563</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=gSbZMeh_69w&feature=channel" rel="nofollow"><img title="A day in the life of webmaster support" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i4.ytimg.com/vi/gSbZMeh_69w/default.jpg', 'channel')" qlicon="gSbZMeh_69w" alt="A day in the life of webmaster support"></a><div class="addtoQL90"><a href="#" ql="gSbZMeh_69w" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i4.ytimg.com/vi/gSbZMeh_69w/default.jpg', 'A day in the life of webmaster support')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>6:27</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=gSbZMeh_69w&feature=channel" title="A day in the life of webmaster support" rel="nofollow">A day in the life of webmaster support</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 22539</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=aXJklICrFJI&feature=channel" rel="nofollow"><img title="Every millisecond counts" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i2.ytimg.com/vi/aXJklICrFJI/default.jpg', 'channel')" qlicon="aXJklICrFJI" alt="Every millisecond counts"></a><div class="addtoQL90"><a href="#" ql="aXJklICrFJI" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/aXJklICrFJI/default.jpg', 'Every millisecond counts')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:13</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=aXJklICrFJI&feature=channel" title="Every millisecond counts" rel="nofollow">Every millisecond counts</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 24573</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=s-fKcZ5pKLE&feature=channel" rel="nofollow"><img title="Python 3000" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i4.ytimg.com/vi/s-fKcZ5pKLE/default.jpg', 'channel')" qlicon="s-fKcZ5pKLE" alt="Python 3000"></a><div class="addtoQL90"><a href="#" ql="s-fKcZ5pKLE" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i4.ytimg.com/vi/s-fKcZ5pKLE/default.jpg', 'Python 3000')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:06:41</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=s-fKcZ5pKLE&feature=channel" title="Python 3000" rel="nofollow">Python 3000</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 7640</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=quQAHpZvntI&feature=channel" rel="nofollow"><img title="Street View for mobile" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i2.ytimg.com/vi/quQAHpZvntI/default.jpg', 'channel')" qlicon="quQAHpZvntI" alt="Street View for mobile"></a><div class="addtoQL90"><a href="#" ql="quQAHpZvntI" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/quQAHpZvntI/default.jpg', 'Street View for mobile')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:07</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=quQAHpZvntI&feature=channel" title="Street View for mobile" rel="nofollow">Street View for mobile</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 2202</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=1JNgKNRSgm0&feature=channel" rel="nofollow"><img title="Learn to use orkut promote" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i2.ytimg.com/vi/1JNgKNRSgm0/default.jpg', 'channel')" qlicon="1JNgKNRSgm0" alt="Learn to use orkut promote"></a><div class="addtoQL90"><a href="#" ql="1JNgKNRSgm0" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/1JNgKNRSgm0/default.jpg', 'Learn to use orkut promote')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:34</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=1JNgKNRSgm0&feature=channel" title="Learn to use orkut promote" rel="nofollow">Learn to use orkut promote</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 18198</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=yu_X0XJoWO4&feature=channel" rel="nofollow"><img title="Zoom photo navigation in Street View (short)" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i2.ytimg.com/vi/yu_X0XJoWO4/default.jpg', 'channel')" qlicon="yu_X0XJoWO4" alt="Zoom photo navigation in Street View (short)"></a><div class="addtoQL90"><a href="#" ql="yu_X0XJoWO4" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/yu_X0XJoWO4/default.jpg', 'Zoom photo navigation in Street View (short)')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>0:35</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=yu_X0XJoWO4&feature=channel" title="Zoom photo navigation in Street View (short)" rel="nofollow">Zoom photo navigation in Street View (short)</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 10967</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=Umj1lvgoI68&feature=channel" rel="nofollow"><img title="Google's commitment to free expression" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i2.ytimg.com/vi/Umj1lvgoI68/default.jpg', 'channel')" qlicon="Umj1lvgoI68" alt="Google's commitment to free expression"></a><div class="addtoQL90"><a href="#" ql="Umj1lvgoI68" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/Umj1lvgoI68/default.jpg', 'Google\'s commitment to free expression')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>3:30</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=Umj1lvgoI68&feature=channel" title="Google's commitment to free expression" rel="nofollow">Google's commitment to free expression</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 16271</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=L17cV5YwUVY&feature=channel" rel="nofollow"><img title="Moon in Google Earth - Demo at Newseum" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i1.ytimg.com/vi/L17cV5YwUVY/default.jpg', 'channel')" qlicon="L17cV5YwUVY" alt="Moon in Google Earth - Demo at Newseum"></a><div class="addtoQL90"><a href="#" ql="L17cV5YwUVY" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i1.ytimg.com/vi/L17cV5YwUVY/default.jpg', 'Moon in Google Earth - Demo at Newseum')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>13:38</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=L17cV5YwUVY&feature=channel" title="Moon in Google Earth - Demo at Newseum" rel="nofollow">Moon in Google Earth - Demo at Newseum</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 38722</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=zHJ77RsnFXI&feature=channel" rel="nofollow"><img title="Moon in Google Earth" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i3.ytimg.com/vi/zHJ77RsnFXI/default.jpg', 'channel')" qlicon="zHJ77RsnFXI" alt="Moon in Google Earth"></a><div class="addtoQL90"><a href="#" ql="zHJ77RsnFXI" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i3.ytimg.com/vi/zHJ77RsnFXI/default.jpg', 'Moon in Google Earth')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>2:51</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=zHJ77RsnFXI&feature=channel" title="Moon in Google Earth" rel="nofollow">Moon in Google Earth</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 1194811</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=RFt0FYKIFVg&feature=channel" rel="nofollow"><img title="Google Maps Favorite Places - Launch Event" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i3.ytimg.com/vi/RFt0FYKIFVg/default.jpg', 'channel')" qlicon="RFt0FYKIFVg" alt="Google Maps Favorite Places - Launch Event"></a><div class="addtoQL90"><a href="#" ql="RFt0FYKIFVg" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i3.ytimg.com/vi/RFt0FYKIFVg/default.jpg', 'Google Maps Favorite Places - Launch Event')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>55:22</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=RFt0FYKIFVg&feature=channel" title="Google Maps Favorite Places - Launch Event" rel="nofollow">Google Maps Favorite Places - Launch Event</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 8660</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=OFH5b8wKg18&feature=channel" rel="nofollow"><img title="Favorite Places on Google Maps" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i4.ytimg.com/vi/OFH5b8wKg18/default.jpg', 'channel')" qlicon="OFH5b8wKg18" alt="Favorite Places on Google Maps"></a><div class="addtoQL90"><a href="#" ql="OFH5b8wKg18" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i4.ytimg.com/vi/OFH5b8wKg18/default.jpg', 'Favorite Places on Google Maps')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:30</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=OFH5b8wKg18&feature=channel" title="Favorite Places on Google Maps" rel="nofollow">Favorite Places on Google Maps</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 45814</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=_HvRu9bVH14&feature=channel" rel="nofollow"><img title="Google Voice for mobile" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i4.ytimg.com/vi/_HvRu9bVH14/default.jpg', 'channel')" qlicon="_HvRu9bVH14" alt="Google Voice for mobile"></a><div class="addtoQL90"><a href="#" ql="_HvRu9bVH14" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i4.ytimg.com/vi/_HvRu9bVH14/default.jpg', 'Google Voice for mobile')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:04</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=_HvRu9bVH14&feature=channel" title="Google Voice for mobile" rel="nofollow">Google Voice for mobile</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 138588</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=SVvx13dpTEA&feature=channel" rel="nofollow"><img title="Real estate search on Google Maps" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i4.ytimg.com/vi/SVvx13dpTEA/default.jpg', 'channel')" qlicon="SVvx13dpTEA" alt="Real estate search on Google Maps"></a><div class="addtoQL90"><a href="#" ql="SVvx13dpTEA" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i4.ytimg.com/vi/SVvx13dpTEA/default.jpg', 'Real estate search on Google Maps')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:26</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=SVvx13dpTEA&feature=channel" title="Real estate search on Google Maps" rel="nofollow">Real estate search on Google Maps</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 9527</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=qrka_3jui8M&feature=channel" rel="nofollow"><img title="Tasks" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i2.ytimg.com/vi/qrka_3jui8M/default.jpg', 'channel')" qlicon="qrka_3jui8M" alt="Tasks"></a><div class="addtoQL90"><a href="#" ql="qrka_3jui8M" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/qrka_3jui8M/default.jpg', 'Tasks')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:02</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=qrka_3jui8M&feature=channel" title="Tasks" rel="nofollow">Tasks</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 58412</div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+
+		<div id="watch-channel-video-list-loading-div" class="watch-discoverbox-more-link" style="display:none">Trwa ładowanie...</div>
+			<div class="watch-discoverbox-more-link">
+				<a href="/user/Google?view=videos">
+Zobacz wszystkie filmy wideo (1004)
+								</a>
+			</div>
+	</div>
+
+		</div>
+		<div class="clearL"></div>
+	</div>
+
+
+
+
+
+
+
+
+
+ 	<div id="quicklistDiv" class="hid">
+		
+	<div id="quicklist-panel" class="expand-panel expanded" style="margin-bottom: 10px">
+		<div class="expand-content floatR">
+			<span id="playall_QL" class="smallText watch-playlist-action ">
+				<a href="#" onclick="return autoNext('QL');">Odtwórz wszystkie</a>
+			</span>
+			<span id="playingall_QL" class="smallText watch-playlist-action hid">
+				<a href="#" onclick="return autoNextOff('QL');">Zatrzymaj autoodtwarzanie</a>
+			</span>
+			<span class="smallText grayText">|</span>
+			<span class="smallText">
+				<span class="grayText" id="QL_no_next_video" style="display:none"
+					>Odtwarzaj następny</span>
+				<a href="#" id="QL_next_video" 
+					onclick="playnextFrom='QL';gotoNext(false, null, true); return false;">Odtwarzaj następny</a>
+			</span>
+		</div>
+
+
+
+		<a class="expand-header" href="#" onClick="togglePanel(this.parentNode); return false;"><button title="" class="master-sprite watch-arrow"></button> <span >Podręczna lista</span> <span class="watch-quicklist-count">(<span id="playlistVideoCount_QL">0</span>)</span></a>
+
+
+
+
+
+		<div id="playlistContainer_QL" class="expand-content watch-playlist-container watch-playlist-auto-height">
+			<div id="playlistRows_QL">
+							<div id="playlistRow_placeholder_QL" class=" hid  watch-playlist-row   ">
+		<a href="" class="watch-playlist-row-link">
+			<div class="watch-playlist-index">
+					<span id="playlistRowIndex_placeholder_QL" class="phIndex">1</span>
+			</div>
+			<div class="watch-playlist-row-left"><div class="v50WrapperOuter"><div class="v50WrapperInner">
+				<img class="vimg50" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" alt="" title="">
+			</div></div></div>
+			<div class="watch-playlist-row-middle">
+					<div class="vtitle" title=""  style="text-decoration: underline;">
+						
+					</div>
+					<div class="vfacets phUsername" style="color: #000;">
+						
+					</div>
+			</div>
+		</a>
+		<div class="watch-playlist-row-right">
+			<span class="watch-playlist-item-duration">
+				
+			</span>
+				<img class="watch-playlist-row-deleter" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" onclick="watchRemoveVideo('QL', this)" alt="">
+		</div>
+	</div>
+
+	
+	
+	
+	
+
+
+			</div>
+		</div>
+
+
+		<div id="watch-playlist-actions" class="expand-content">
+				<span class="smallText">
+					<a href="#" onClick="clearWatchQueue(); urchinTracker('/Events/VideoWatch/QuickList+ClearLink'); return false;" title="Usuń wszystkie filmy wideo z podręcznej listy" rel="nofollow">Wyczyść</a> <span class="smallText grayText">|</span>
+					<a href="/edit_playlist_info?watch_queue=1" title="Zapisz wszystkie filmy wideo na trwałej liście odtwarzania" onmousedown="urchinTracker('/Events/VideoWatch/QuickList+SaveLink');" rel="nofollow">Zapisz</a>
+				</span>
+
+		</div>
+
+	</div> 
+ 	</div>
+
+
+
+
+	
+			<div id="watch-featured-videos-panel" class="watch-discoverbox-wrapper expand-panel expanded" > 
+		<a href="#" onclick="togglePanel(this.parentNode); this.blur(); return false;" class="expand-header"><button title="" class="master-sprite watch-arrow"></button>			<span>Wyróżnione filmy wideo
+		</span></a>
+		<div id="watch-featured-vids-body" class="watch-discoverbox-body mini-list-view expand-content">
+					<div id="watch-featured-discoverbox" class="watch-discoverbox" style="height:302px" onscroll="performDelayLoad('featured')">
+				
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=svuAyu42yEk&feature=featured" rel="nofollow"><img title="Lista funkcji" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" thumb="http://i4.ytimg.com/vi/svuAyu42yEk/default.jpg" class="vimg90" qlicon="svuAyu42yEk" alt="Lista funkcji"></a><div class="addtoQL90"><a href="#" ql="svuAyu42yEk" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i4.ytimg.com/vi/svuAyu42yEk/default.jpg', 'Lista funkcji')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:32</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=svuAyu42yEk&feature=featured" title="Lista funkcji" rel="nofollow">Lista funkcji</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 65260</div>
+			<div class="video-username"><a href="/user/googlechromepl">googlechromepl</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=d4hp2ZCa3bg&feature=featured" rel="nofollow"><img title="Ty i Twoja przeglądarka" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" thumb="http://i1.ytimg.com/vi/d4hp2ZCa3bg/default.jpg" class="vimg90" qlicon="d4hp2ZCa3bg" alt="Ty i Twoja przeglądarka"></a><div class="addtoQL90"><a href="#" ql="d4hp2ZCa3bg" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i1.ytimg.com/vi/d4hp2ZCa3bg/default.jpg', 'Ty i Twoja przeglądarka')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:12</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=d4hp2ZCa3bg&feature=featured" title="Ty i Twoja przeglądarka" rel="nofollow">Ty i Twoja przeglądarka</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 56940</div>
+			<div class="video-username"><a href="/user/googlechromepl">googlechromepl</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=xkr7JYMxF2E&feature=featured" rel="nofollow"><img title="Google Chrome" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" thumb="http://i1.ytimg.com/vi/xkr7JYMxF2E/default.jpg" class="vimg90" qlicon="xkr7JYMxF2E" alt="Google Chrome"></a><div class="addtoQL90"><a href="#" ql="xkr7JYMxF2E" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i1.ytimg.com/vi/xkr7JYMxF2E/default.jpg', 'Google Chrome')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:24</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=xkr7JYMxF2E&feature=featured" title="Google Chrome" rel="nofollow">Google Chrome</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 20427</div>
+			<div class="video-username"><a href="/user/googlechromepl">googlechromepl</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=90aQx0zd7qo&feature=featured" rel="nofollow"><img title="Ewolucja Prostoty" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" thumb="http://i2.ytimg.com/vi/90aQx0zd7qo/default.jpg" class="vimg90" qlicon="90aQx0zd7qo" alt="Ewolucja Prostoty"></a><div class="addtoQL90"><a href="#" ql="90aQx0zd7qo" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/90aQx0zd7qo/default.jpg', 'Ewolucja Prostoty')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>0:45</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=90aQx0zd7qo&feature=featured" title="Ewolucja Prostoty" rel="nofollow">Ewolucja Prostoty</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 32506</div>
+			<div class="video-username"><a href="/user/googlechromepl">googlechromepl</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=CKtPrmYuyzc&feature=featured" rel="nofollow"><img title="Lidia Kopania - I Don't Wanna Leave (Poland)" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" thumb="http://i4.ytimg.com/vi/CKtPrmYuyzc/default.jpg" class="vimg90" qlicon="CKtPrmYuyzc" alt="Lidia Kopania - I Don't Wanna Leave (Poland)"></a><div class="addtoQL90"><a href="#" ql="CKtPrmYuyzc" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i4.ytimg.com/vi/CKtPrmYuyzc/default.jpg', 'Lidia Kopania - I Don\'t Wanna Leave (Poland)')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>3:09</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=CKtPrmYuyzc&feature=featured" title="Lidia Kopania - I Don't Wanna Leave (Poland)" rel="nofollow">Lidia Kopania - I Don't Wanna Leave (Poland)</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 366480</div>
+			<div class="video-username"><a href="/user/eurovision">eurovision</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=YrmDR6WeGPo&feature=featured" rel="nofollow"><img title="Lidia Kopania's first rehearsal (impression) at the 2009 Eurovision Song Contest" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i2.ytimg.com/vi/YrmDR6WeGPo/default.jpg', 'featured')" qlicon="YrmDR6WeGPo" alt="Lidia Kopania's first rehearsal (impression) at the 2009 Eurovision Song Contest"></a><div class="addtoQL90"><a href="#" ql="YrmDR6WeGPo" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/YrmDR6WeGPo/default.jpg', 'Lidia Kopania\'s first rehearsal (impression) at the 2009 Eurovision Song Contest')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>3:53</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=YrmDR6WeGPo&feature=featured" title="Lidia Kopania's first rehearsal (impression) at the 2009 Eurovision Song Contest" rel="nofollow">Lidia Kopania's first rehearsal (impression) at...</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 109498</div>
+			<div class="video-username"><a href="/user/eurovision">eurovision</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=9pOAx8LN6RU&feature=featured" rel="nofollow"><img title="Eurovision Countdown 2009 - Episode 3" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i2.ytimg.com/vi/9pOAx8LN6RU/default.jpg', 'featured')" qlicon="9pOAx8LN6RU" alt="Eurovision Countdown 2009 - Episode 3"></a><div class="addtoQL90"><a href="#" ql="9pOAx8LN6RU" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/9pOAx8LN6RU/default.jpg', 'Eurovision Countdown 2009 - Episode 3')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>28:31</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=9pOAx8LN6RU&feature=featured" title="Eurovision Countdown 2009 - Episode 3" rel="nofollow">Eurovision Countdown 2009 - Episode 3</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 73677</div>
+			<div class="video-username"><a href="/user/eurovision">eurovision</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=sR3i4U1Q3Eg&feature=featured" rel="nofollow"><img title="Stage design 2009 Eurovision Song Contest" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i4.ytimg.com/vi/sR3i4U1Q3Eg/default.jpg', 'featured')" qlicon="sR3i4U1Q3Eg" alt="Stage design 2009 Eurovision Song Contest"></a><div class="addtoQL90"><a href="#" ql="sR3i4U1Q3Eg" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i4.ytimg.com/vi/sR3i4U1Q3Eg/default.jpg', 'Stage design 2009 Eurovision Song Contest')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:00</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=sR3i4U1Q3Eg&feature=featured" title="Stage design 2009 Eurovision Song Contest" rel="nofollow">Stage design 2009 Eurovision Song Contest</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 209066</div>
+			<div class="video-username"><a href="/user/eurovision">eurovision</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=Z19zFlPah-o&feature=featured" rel="nofollow"><img title="Inspired Bicycles - Danny MacAskill April 2009" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i3.ytimg.com/vi/Z19zFlPah-o/default.jpg', 'featured')" qlicon="Z19zFlPah-o" alt="Inspired Bicycles - Danny MacAskill April 2009"></a><div class="addtoQL90"><a href="#" ql="Z19zFlPah-o" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i3.ytimg.com/vi/Z19zFlPah-o/default.jpg', 'Inspired Bicycles - Danny MacAskill April 2009')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>5:38</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=Z19zFlPah-o&feature=featured" title="Inspired Bicycles - Danny MacAskill April 2009" rel="nofollow">Inspired Bicycles - Danny MacAskill April 2009</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 8692261</div>
+			<div class="video-username"><a href="/user/inspiredbicycles">inspiredbicycles</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=6cS653udPCM&feature=featured" rel="nofollow"><img title="Act Two: YouTube Symphony Orchestra @ Carnegie Hall" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i3.ytimg.com/vi/6cS653udPCM/default.jpg', 'featured')" qlicon="6cS653udPCM" alt="Act Two: YouTube Symphony Orchestra @ Carnegie Hall"></a><div class="addtoQL90"><a href="#" ql="6cS653udPCM" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i3.ytimg.com/vi/6cS653udPCM/default.jpg', 'Act Two: YouTube Symphony Orchestra @ Carnegie Hall')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:25:30</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=6cS653udPCM&feature=featured" title="Act Two: YouTube Symphony Orchestra @ Carnegie Hall" rel="nofollow">Act Two: YouTube Symphony Orchestra @ Carnegie ...</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 555636</div>
+			<div class="video-username"><a href="/user/symphony">symphony</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=ueJcRmfweSM&feature=featured" rel="nofollow"><img title="Act One: YouTube Symphony Orchestra @ Carnegie Hall" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i2.ytimg.com/vi/ueJcRmfweSM/default.jpg', 'featured')" qlicon="ueJcRmfweSM" alt="Act One: YouTube Symphony Orchestra @ Carnegie Hall"></a><div class="addtoQL90"><a href="#" ql="ueJcRmfweSM" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/ueJcRmfweSM/default.jpg', 'Act One: YouTube Symphony Orchestra @ Carnegie Hall')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>59:32</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=ueJcRmfweSM&feature=featured" title="Act One: YouTube Symphony Orchestra @ Carnegie Hall" rel="nofollow">Act One: YouTube Symphony Orchestra @ Carnegie ...</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 921177</div>
+			<div class="video-username"><a href="/user/symphony">symphony</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=oC4FAyg64OI&feature=featured" rel="nofollow"><img title="&quot;The Internet Symphony&quot; Global Mash Up" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i4.ytimg.com/vi/oC4FAyg64OI/default.jpg', 'featured')" qlicon="oC4FAyg64OI" alt="&quot;The Internet Symphony&quot; Global Mash Up"></a><div class="addtoQL90"><a href="#" ql="oC4FAyg64OI" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i4.ytimg.com/vi/oC4FAyg64OI/default.jpg', '&quot;The Internet Symphony&quot; Global Mash Up')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>4:47</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=oC4FAyg64OI&feature=featured" title="&quot;The Internet Symphony&quot; Global Mash Up" rel="nofollow">&quot;The Internet Symphony&quot; Global Mash Up</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 1160742</div>
+			<div class="video-username"><a href="/user/symphony">symphony</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=e5erqEbn4uw&feature=featured" rel="nofollow"><img title="Meet the YouTube Symphony Orchestra" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i2.ytimg.com/vi/e5erqEbn4uw/default.jpg', 'featured')" qlicon="e5erqEbn4uw" alt="Meet the YouTube Symphony Orchestra"></a><div class="addtoQL90"><a href="#" ql="e5erqEbn4uw" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/e5erqEbn4uw/default.jpg', 'Meet the YouTube Symphony Orchestra')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>6:09</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=e5erqEbn4uw&feature=featured" title="Meet the YouTube Symphony Orchestra" rel="nofollow">Meet the YouTube Symphony Orchestra</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 522680</div>
+			<div class="video-username"><a href="/user/symphony">symphony</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=atQe8-mZzrc&feature=featured" rel="nofollow"><img title="AbradAb f/ Grubson - ODÓR" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i2.ytimg.com/vi/atQe8-mZzrc/default.jpg', 'featured')" qlicon="atQe8-mZzrc" alt="AbradAb f/ Grubson - ODÓR"></a><div class="addtoQL90"><a href="#" ql="atQe8-mZzrc" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/atQe8-mZzrc/default.jpg', 'AbradAb f/ Grubson - ODÓR')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>2:56</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=atQe8-mZzrc&feature=featured" title="AbradAb f/ Grubson - ODÓR" rel="nofollow">AbradAb f/ Grubson - ODÓR</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 151387</div>
+			<div class="video-username"><a href="/user/przedmarancza">przedmarancza</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=I0_NkxVDcR4&feature=featured" rel="nofollow"><img title="Умный кот  : )" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i2.ytimg.com/vi/I0_NkxVDcR4/default.jpg', 'featured')" qlicon="I0_NkxVDcR4" alt="Умный кот  : )"></a><div class="addtoQL90"><a href="#" ql="I0_NkxVDcR4" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/I0_NkxVDcR4/default.jpg', 'Умный кот  : )')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:42</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=I0_NkxVDcR4&feature=featured" title="Умный кот  : )" rel="nofollow">Умный кот  : )</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 685587</div>
+			<div class="video-username"><a href="/user/AFARSEXI">AFARSEXI</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=aSwzsd_QTfQ&feature=featured" rel="nofollow"><img title="sztuczne rzesy - jak nakladac! tutorial na makijaz mocny, dla wszystkich" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i2.ytimg.com/vi/aSwzsd_QTfQ/default.jpg', 'featured')" qlicon="aSwzsd_QTfQ" alt="sztuczne rzesy - jak nakladac! tutorial na makijaz mocny, dla wszystkich"></a><div class="addtoQL90"><a href="#" ql="aSwzsd_QTfQ" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/aSwzsd_QTfQ/default.jpg', 'sztuczne rzesy - jak nakladac! tutorial na makijaz mocny, dla wszystkich')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>9:32</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=aSwzsd_QTfQ&feature=featured" title="sztuczne rzesy - jak nakladac! tutorial na makijaz mocny, dla wszystkich" rel="nofollow">sztuczne rzesy - jak nakladac! tutorial na maki...</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 186183</div>
+			<div class="video-username"><a href="/user/ohmykat">ohmykat</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=p7kqT5Bc9VA&feature=featured" rel="nofollow"><img title="360 stopni" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i1.ytimg.com/vi/p7kqT5Bc9VA/default.jpg', 'featured')" qlicon="p7kqT5Bc9VA" alt="360 stopni"></a><div class="addtoQL90"><a href="#" ql="p7kqT5Bc9VA" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i1.ytimg.com/vi/p7kqT5Bc9VA/default.jpg', '360 stopni')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>0:35</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=p7kqT5Bc9VA&feature=featured" title="360 stopni" rel="nofollow">360 stopni</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 230627</div>
+			<div class="video-username"><a href="/user/flisow">flisow</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=P1rCStGuOKM&feature=featured" rel="nofollow"><img title="Gotuj z Shebenem - 2x06 - Grecki kisiel z kóz" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i1.ytimg.com/vi/P1rCStGuOKM/default.jpg', 'featured')" qlicon="P1rCStGuOKM" alt="Gotuj z Shebenem - 2x06 - Grecki kisiel z kóz"></a><div class="addtoQL90"><a href="#" ql="P1rCStGuOKM" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i1.ytimg.com/vi/P1rCStGuOKM/default.jpg', 'Gotuj z Shebenem - 2x06 - Grecki kisiel z kóz')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>3:14</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=P1rCStGuOKM&feature=featured" title="Gotuj z Shebenem - 2x06 - Grecki kisiel z kóz" rel="nofollow">Gotuj z Shebenem - 2x06 - Grecki kisiel z kóz</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 106105</div>
+			<div class="video-username"><a href="/user/sheben11">sheben11</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=jE9IOvZ47_s&feature=featured" rel="nofollow"><img title="Trzeci Wymiar - Bezpowrotnie - klip - godzina IV" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i3.ytimg.com/vi/jE9IOvZ47_s/default.jpg', 'featured')" qlicon="jE9IOvZ47_s" alt="Trzeci Wymiar - Bezpowrotnie - klip - godzina IV"></a><div class="addtoQL90"><a href="#" ql="jE9IOvZ47_s" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i3.ytimg.com/vi/jE9IOvZ47_s/default.jpg', 'Trzeci Wymiar - Bezpowrotnie - klip - godzina IV')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>5:06</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=jE9IOvZ47_s&feature=featured" title="Trzeci Wymiar - Bezpowrotnie - klip - godzina IV" rel="nofollow">Trzeci Wymiar - Bezpowrotnie - klip - godzina IV</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 282086</div>
+			<div class="video-username"><a href="/user/3WISION">3WISION</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+		
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/watch?v=3wpaA8Ahprk&feature=featured" rel="nofollow"><img title="Kot vs. Mucha" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" class="vimg90" onload="delayLoad(this, 'http://i4.ytimg.com/vi/3wpaA8Ahprk/default.jpg', 'featured')" qlicon="3wpaA8Ahprk" alt="Kot vs. Mucha"></a><div class="addtoQL90"><a href="#" ql="3wpaA8Ahprk" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i4.ytimg.com/vi/3wpaA8Ahprk/default.jpg', 'Kot vs. Mucha')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>0:31</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/watch?v=3wpaA8Ahprk&feature=featured" title="Kot vs. Mucha" rel="nofollow">Kot vs. Mucha</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 643230</div>
+			<div class="video-username"><a href="/user/misiek666joemonster">misiek666joemonster</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+
+		<div id="watch-featured-video-list-loading-div" class="watch-discoverbox-more-link" style="display:none">Trwa ładowanie...</div>
+			<div class="watch-discoverbox-more-link">
+				<a href="/browse?s=rf">
+Zobacz więcej wyróżnionych filmów wideo
+				</a>
+			</div>
+	</div>
+
+		</div>
+		<div class="clearL"></div>
+	</div>
+
+
+
+
+
+
+
+
+
+
+
+	<div class="expand-panel expanded">
+		<span class="expand-header">Polecane filmy wideo</span>
+		<div id="watch-promoted-videos-container" class="watch-body expand-content watch-promoted-container grid-view">
+				<div class="watch-promoted-vid">
+					
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/cthru?key=Cvuy87cyOMa1Ox6Zj6yqrMoVwpkLChFO7XsYKQmx3Y3sDE-KMX-udHOxO3pq6-rjqUHfWHoU42OvOVDovZs6KbXKKZ0yLAxr0RKwuYtRltWeuRmFPJ0_j2qV3kkLdIBNGrSDPkiAhClyf3PulUH4Gmx_qtoNhphJXAZcJeXX_fiJuWI1ljtMu2i6NClHcZs9VrtjtfMEH5edEn5fejmBYw==" rel="nofollow"><img title="Kombii - Myślę o Tobie" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" thumb="http://i4.ytimg.com/vi/CO5tVScPerQ/default.jpg" class="vimg90" qlicon="CO5tVScPerQ" alt="Kombii - Myślę o Tobie"></a><div class="addtoQL90"><a href="#" ql="CO5tVScPerQ" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i4.ytimg.com/vi/CO5tVScPerQ/default.jpg', 'Kombii - Myślę o Tobie')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>3:51</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/cthru?key=Cvuy87cyOMa1Ox6Zj6yqrMoVwpkLChFO7XsYKQmx3Y3sDE-KMX-udHOxO3pq6-rjqUHfWHoU42OvOVDovZs6KbXKKZ0yLAxr0RKwuYtRltWeuRmFPJ0_j2qV3kkLdIBNGrSDPkiAhClyf3PulUH4Gmx_qtoNhphJXAZcJeXX_fiJuWI1ljtMu2i6NClHcZs9VrtjtfMEH5edEn5fejmBYw==" title="Kombii - Myślę o Tobie" rel="nofollow">Kombii - Myślę o Tobie</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 301286</div>
+			<div class="video-username"><a href="/user/UniversalMusicPolska">UniversalMusicPolska</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+				</div>
+				<div class="watch-promoted-vid">
+					
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/cthru?key=UPXd5t09vYvZ_-wlXa37p8C99vbBcFoUmqqCWARg-FM6kMsEZSCuibwgwDBxvQ_jsOev2usfO1adLhavb5PUULFJi1KT1MK39_DzyFR6yAz7kQK8a4VvOq6DM8stsT4KBt9A_g4Rfy0Ut-466JRKpIJh5W7P6SXbxxHn-cLs4rBJKZ5wSi-taoE97JUPDza7pZkDKc2jdpUf06ilEV7kyw==" rel="nofollow"><img title="PROTEST w Polskim Radiu" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" thumb="http://i2.ytimg.com/vi/YJ-l3ilqp_g/default.jpg" class="vimg90" qlicon="YJ-l3ilqp_g" alt="PROTEST w Polskim Radiu"></a><div class="addtoQL90"><a href="#" ql="YJ-l3ilqp_g" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i2.ytimg.com/vi/YJ-l3ilqp_g/default.jpg', 'PROTEST w Polskim Radiu')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:35</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/cthru?key=UPXd5t09vYvZ_-wlXa37p8C99vbBcFoUmqqCWARg-FM6kMsEZSCuibwgwDBxvQ_jsOev2usfO1adLhavb5PUULFJi1KT1MK39_DzyFR6yAz7kQK8a4VvOq6DM8stsT4KBt9A_g4Rfy0Ut-466JRKpIJh5W7P6SXbxxHn-cLs4rBJKZ5wSi-taoE97JUPDza7pZkDKc2jdpUf06ilEV7kyw==" title="PROTEST w Polskim Radiu" rel="nofollow">PROTEST w Polskim Radiu</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 1768</div>
+			<div class="video-username"><a href="/user/radioeuro">radioeuro</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+				</div>
+				<div class="watch-promoted-vid">
+					
+
+	<div class="video-entry ">
+		<div class="v90WideEntry"><div class="v90WrapperOuter"><div class="v90WrapperInner"><a href="/cthru?key=QIfY8iD87Z3vZ_sOkWOGXtf1dIOUET8EjhCdJp_-9jB9Lep3iUOnnnudvY7Z-UuOMQPhSmqzE-zvQ7wFE5rErBDb9hgFNyNjFxpb1ZWX91lPBjZ2NsS_XE45mmtA-jTsmlNmveJv33AhOnSIjT_19ea9QjY56CdnS7A2Jjb5iiq_wyIh6LB-7nPEnF-CDpm0u3wmK7BmI9q549PIf9VX4g==" rel="nofollow"><img title="Obwodnica śródmiejska już przejezdna" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif" thumb="http://i4.ytimg.com/vi/gXV-wZZc_7g/default.jpg" class="vimg90" qlicon="gXV-wZZc_7g" alt="Obwodnica śródmiejska już przejezdna"></a><div class="addtoQL90"><a href="#" ql="gXV-wZZc_7g" title="Dodaj film wideo do podręcznej listy"><button title="" class="master-sprite QLIconImg"
+	onclick="return onQuickAddClick(this, this.parentNode.getAttribute('ql'), 'http://i4.ytimg.com/vi/gXV-wZZc_7g/default.jpg', 'Obwodnica śródmiejska już przejezdna')"
+	onmouseover="mouseOverQuickAdd(this)"
+	onmouseout="mouseOutQuickAdd(this)"
+	onmousedown="urchinTracker('/Events/VideoWatch/QuickList+AddTo')"></button></a><div class="hid quicklist-inlist"><a href="/watch_queue?all">Dodano</a></div></div><div class="video-time"><span>1:22</span></div></div></div></div>
+		<div class="video-main-content">
+			<div  class="video-mini-title"><a href="/cthru?key=QIfY8iD87Z3vZ_sOkWOGXtf1dIOUET8EjhCdJp_-9jB9Lep3iUOnnnudvY7Z-UuOMQPhSmqzE-zvQ7wFE5rErBDb9hgFNyNjFxpb1ZWX91lPBjZ2NsS_XE45mmtA-jTsmlNmveJv33AhOnSIjT_19ea9QjY56CdnS7A2Jjb5iiq_wyIh6LB-7nPEnF-CDpm0u3wmK7BmI9q549PIf9VX4g==" title="Obwodnica śródmiejska już przejezdna" rel="nofollow">Obwodnica śródmiejska już przejezdna</a></div>
+			<div class="video-view-count">Liczba wyświetleń: 317</div>
+			<div class="video-username"><a href="/user/poranny24">poranny24</a></div>
+		</div>
+
+		<div class="video-clear-list-left"></div>
+	</div>
+
+				</div>
+
+			<div class="clearL"></div>
+		</div>
+	</div> 
+
+
+</div> <!-- end right section -->
+
+
+<!-- begin info section -->
+<div id="watch-this-vid-info">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	<div id="watch-ratings-views">
+		<div id="watch-rating-div">
+			
+
+		<script language="javascript">
+
+
+		document.getElementById('watch-rating-div').onmouseover = function() { hideDiv('defaultRatingMessage'); showDiv('hoverMessage'); };
+		document.getElementById('watch-rating-div').onmouseout = function() { showDiv('defaultRatingMessage'); hideDiv('hoverMessage'); };
+ 	
+		</script>
+
+<div id="ratingWrapper"><div class="floatL" onclick="urchinTracker('/Events/VideoWatch/Rated');"><div id="ratingStars" class="floatL">
+<button class="master-sprite ratingL ratingL-4.5" title="4.5"></button></div><div id="ratingMessage" ><div id="defaultRatingMessage"><span class="smallText">Oceny: 1565</span></div><div id="hoverMessage" style="width:100%" class="hid"><a href="/login?next=/watch%3Fv%3D4XpnKHJAok8">Zaloguj się</a>, aby wystawić ocenę.</div></div></div></div>
+
+		</div>
+		
+		<div id="watch-views-div">
+				<span id="watch-views">Liczba wyświetleń: <span id="watch-view-count">479973</span></span>
+		</div>
+
+
+
+		<div class="clear"></div>
+	</div>
+
+
+
+
+	<div id="watch-main-area">
+		<div id="watch-actions-area">
+			<div class="watch-tabs master-sprite">
+				<div id="watch-tab-favorite" class="watch-tab" onclick="if (!hasClass(this, 'disabled')) { addToFaves('addToFavesForm'); }">
+					<a id="watch-action-favorite-link" href="#" class="watch-action-link" onclick="return false;">
+						<button id="watch-action-favorite" class="master-sprite" title="Ulubione"></button>
+						<span class="watch-action-text">Ulubione</span>
+					</a>
+					<button class="master-sprite watch-tab-arrow" title=""></button></div>
+				<div id="watch-tab-share" onclick="if (hasClass(this, 'watch-tab-sel') && !isDisplayed('watch-share-video-div')) {urchinTracker('/Events/VideoWatch/ShareTab/OpensMore/pl_PL');processShareVideo('4XpnKHJAok8','watch-share-video-div', 'all');} else { resetSharing(); } watchSelectTab(this);" class="watch-tab watch-tab-sel">
+					<a id="watch-action-share-link" href="#" class="watch-action-link" onclick="return false;">
+						<button id="watch-action-share" class="master-sprite" title="Prześlij"></button>
+						<span class="watch-action-text">Udostępnij</span>
+					</a>
+					<button class="master-sprite watch-tab-arrow" title=""></button></div>
+				<div id="watch-tab-playlists" class="watch-tab" onclick="addToPlaylist('4XpnKHJAok8');">
+					<a id="watch-action-playlists-link" href="#" class="watch-action-link" onclick="return false">
+						<button id="watch-action-playlists" class="master-sprite" title="Dodaj do listy"></button>
+						<span class="watch-action-text">Listy odtwarzania</span>
+					</a>
+					<button class="master-sprite watch-tab-arrow" title=""></button></div>
+				<div id="watch-tab-flag" class="watch-tab " onclick="if (!hasClass(this, 'disabled')) { reportConcern('4XpnKHJAok8'); }" title="Zgłoś film jako nieodpowiedni">
+					<a id="watch-action-flag-link" href="#" class="watch-action-link" onclick="return false">
+						<button id="watch-action-flag" class="master-sprite" title="Zgłoś film jako nieodpowiedni"></button>
+						<span class="watch-action-text">Zgłoś</span>
+					</a>
+					<button class="master-sprite watch-tab-arrow" title=""></button></div>
+				<div class="clear"></div>
+			</div>
+
+			<div class="watch-tab-contents">
+				<div id="watch-tab-share-body" class="watch-tab-body watch-tab-sel">
+					<div id="aggregationServicesDiv">
+						<div id="watch-sharetab-options">
+							<div id="more-options"><a href="#" class="eLink" onclick="urchinTracker('/Events/VideoWatch/Share/MoreOptions/pl_PL');processShareVideo('4XpnKHJAok8','watch-share-video-div', 'all'); return false;" rel="nofollow">(więcej opcji udostępniania)</a></div>
+							
+							<div style="display: none;" id="fewer-options"><a href="#" class="eLink" onclick="resetSharing(); return false;" rel="nofollow">mniej opcji udostępniania</a></div>
+						</div>
+
+						<div id="watch-share-services-collapsed">
+										<div class="watch-recent-shares-div">
+				<div class="watch-recent-share">
+
+						<a href="#" target="_blank" onclick="recordServiceUsage('FOTKA', '4XpnKHJAok8', 'pl_PL');openPopup('http://www.fotka.pl/out/opis_importer.php?url=http%3A//www.youtube.com/watch%3Fv%3D4XpnKHJAok8', 'YouTube', 650, 1024, true);urchinTracker('/Events/VideoWatch/ShareAggr/Fotka/pl_PL');return false;">
+							<span>Fotka</span>
+						</a>
+
+				</div>
+			</div>
+			<div class="watch-recent-shares-div">
+				<div class="watch-recent-share">
+
+						<a href="#" target="_blank" onclick="recordServiceUsage('WYKOP', '4XpnKHJAok8', 'pl_PL');openPopup('http://www.wykop.pl/dodaj?url=http%3A//www.youtube.com/watch%3Fv%3D4XpnKHJAok8&amp;title=Tech%20Talk%3A%20Linus%20Torvalds%20on%20git&amp;desc=Linus%20Torvalds%20visits%20Google%20to%20share%20his%20thoughts%20on%20git%2C%20the%20source%20control%20management%20system%20he%20created%20two%20years%20ago.', 'YouTube', 650, 1024, true);urchinTracker('/Events/VideoWatch/ShareAggr/Wykop/pl_PL');return false;">
+							<span>Wykop</span>
+						</a>
+
+				</div>
+			</div>
+			<div class="watch-recent-shares-div">
+				<div class="watch-recent-share">
+
+						<a href="#" target="_blank" onclick="recordServiceUsage('GRONO', '4XpnKHJAok8', 'pl_PL');openPopup('http://grono.net/pub/dodaj-film/?url=http%3A//www.youtube.com/watch%3Fv%3D4XpnKHJAok8', 'YouTube', 650, 1024, true);urchinTracker('/Events/VideoWatch/ShareAggr/Grono/pl_PL');return false;">
+							<span>Grono</span>
+						</a>
+
+				</div>
+			</div>
+
+
+							<div class="clear"></div>
+						</div>
+						<div id="watch-share-services-expanded" style="display: none;">
+								<div class="watch-recent-shares-div">
+		<a href="#" onclick="recordServiceUsage('FOTKA', '4XpnKHJAok8', 'pl_PL');openPopup('http://www.fotka.pl/out/opis_importer.php?url=http%3A//www.youtube.com/watch%3Fv%3D4XpnKHJAok8', 'YouTube', 650, 1024, true);urchinTracker('/Events/VideoWatch/ShareService/Fotka/pl_PL');return false;" target="_blank"><span>Fotka</span></a>
+	</div>
+	<div class="watch-recent-shares-div">
+		<a href="#" onclick="recordServiceUsage('WYKOP', '4XpnKHJAok8', 'pl_PL');openPopup('http://www.wykop.pl/dodaj?url=http%3A//www.youtube.com/watch%3Fv%3D4XpnKHJAok8&amp;title=Tech%20Talk%3A%20Linus%20Torvalds%20on%20git&amp;desc=Linus%20Torvalds%20visits%20Google%20to%20share%20his%20thoughts%20on%20git%2C%20the%20source%20control%20management%20system%20he%20created%20two%20years%20ago.', 'YouTube', 650, 1024, true);urchinTracker('/Events/VideoWatch/ShareService/Wykop/pl_PL');return false;" target="_blank"><span>Wykop</span></a>
+	</div>
+	<div class="watch-recent-shares-div">
+		<a href="#" onclick="recordServiceUsage('GRONO', '4XpnKHJAok8', 'pl_PL');openPopup('http://grono.net/pub/dodaj-film/?url=http%3A//www.youtube.com/watch%3Fv%3D4XpnKHJAok8', 'YouTube', 650, 1024, true);urchinTracker('/Events/VideoWatch/ShareService/Grono/pl_PL');return false;" target="_blank"><span>Grono</span></a>
+	</div>
+	<div class="watch-recent-shares-div">
+		<a href="#" onclick="recordServiceUsage('FACEBOOK', '4XpnKHJAok8', 'pl_PL');openPopup('http://www.facebook.com/sharer.php?u=http%3A//www.youtube.com/watch%3Fv%3D4XpnKHJAok8&amp;t=Tech%20Talk%3A%20Linus%20Torvalds%20on%20git', 'YouTube', 440, 620, true);urchinTracker('/Events/VideoWatch/ShareService/Facebook/pl_PL');return false;" target="_blank"><span>Facebook</span></a>
+	</div>
+	<div class="watch-recent-shares-div">
+		<a href="#" onclick="recordServiceUsage('MYSPACE', '4XpnKHJAok8', 'pl_PL');openPopup('http://www.myspace.com/Modules/PostTo/Pages/?t=Tech%20Talk%3A%20Linus%20Torvalds%20on%20git&amp;c=%3Cobject%20width%3D%22425%22%20height%3D%22355%22%3E%3Cparam%20name%3D%22movie%22%20value%3D%22http%3A//www.youtube.com/v/4XpnKHJAok8%26hl%3Dpl%26rel%3D0%22%3E%3C/param%3E%3Cembed%20src%3D%22http%3A//www.youtube.com/v/4XpnKHJAok8%26hl%3Dpl%26rel%3D0%22%20type%3D%22application/x-shockwave-flash%22%20width%3D%22425%22%20height%3D%22355%22%3E%3C/embed%3E%3C/object%3E&amp;u=http%3A//www.youtube.com/watch%3Fv%3D4XpnKHJAok8&amp;l=1', 'YouTube', 650, 1024, true);urchinTracker('/Events/VideoWatch/ShareService/MySpace/pl_PL');return false;" target="_blank"><span>MySpace</span></a>
+	</div>
+	<div class="watch-recent-shares-div">
+		<a href="#" onclick="recordServiceUsage('DIGG', '4XpnKHJAok8', 'pl_PL');openPopup('http://digg.com/submit?phase=2&amp;url=http%3A//www.youtube.com/watch%3Fv%3D4XpnKHJAok8&amp;title=Tech%20Talk%3A%20Linus%20Torvalds%20on%20git&amp;bodytext=Linus%20Torvalds%20visits%20Google%20to%20share%20his%20thoughts%20on%20git%2C%20the%20source%20control%20management%20system%20he%20created%20two%20years%20ago.&amp;topic=videos_educational', 'YouTube', 650, 1024, true);urchinTracker('/Events/VideoWatch/ShareService/Digg/pl_PL');return false;" target="_blank"><span>Digg</span></a>
+	</div>
+	<div class="watch-recent-shares-div">
+		<a href="#" onclick="recordServiceUsage('ORKUT', '4XpnKHJAok8', 'pl_PL');openPopup('http://www.orkut.com/FavoriteVideos.aspx?u=http%3A//www.youtube.com/watch%3Fv%3D4XpnKHJAok8', 'YouTube', 650, 1024, true);urchinTracker('/Events/VideoWatch/ShareService/orkut/pl_PL');return false;" target="_blank"><span>orkut</span></a>
+	</div>
+	<div class="watch-recent-shares-div">
+		<a href="#" onclick="recordServiceUsage('LIVE SPACES', '4XpnKHJAok8', 'pl_PL');openPopup('http://spaces.live.com/BlogIt.aspx?Title=YouTube - Tech%20Talk%3A%20Linus%20Torvalds%20on%20git&amp;SourceURL=http%3A//www.youtube.com/watch%3Fv%3D4XpnKHJAok8&amp;description=%3Cobject%20width%3D%22425%22%20height%3D%22355%22%3E%3Cparam%20name%3D%22movie%22%20value%3D%22http%3A//www.youtube.com/v/4XpnKHJAok8%26hl%3Dpl%26rel%3D0%22%3E%3C/param%3E%3Cembed%20src%3D%22http%3A//www.youtube.com/v/4XpnKHJAok8%26hl%3Dpl%26rel%3D0%22%20type%3D%22application/x-shockwave-flash%22%20width%3D%22425%22%20height%3D%22355%22%3E%3C/embed%3E%3C/object%3E', 'YouTube', 650, 1024, true);urchinTracker('/Events/VideoWatch/ShareService/Live Spaces/pl_PL');return false;" target="_blank"><span>Live Spaces</span></a>
+	</div>
+
+							<div class="clear"></div>
+						</div>
+					</div> 					<div id="addToBlogResult" class="watch-action-result" style="display: none;">Ten film wideo wkrótce znajdzie się na Twoim blogu.</div>
+					<div id="watch-share-video-div" class="watch-more-action" style="display: none;">Trwa ładowanie...</div>
+					<div id="shareVideoEmailDiv" class="watch-more-action martT0" style="display: none;">Trwa ładowanie...</div>
+					<div id="shareMessageQuickDiv" class="watch-more-action" style="display: none;">Trwa ładowanie...</div>
+					<div id="watch-share-blog-quick" class="watch-more-action" style="display: none;">Trwa ładowanie...</div>
+					<div id="shareVideoResult" class="watch-action-result" style="display: none;">Dziękujemy za udostępnienie tego filmu wideo!</div>
+				</div>					<div id="watch-tab-favorite-body" class="watch-tab-body">
+					<div id="watch-add-faves-div" class="watch-more-action" style="display: none;">
+						<form method="post" action="/watch_ajax?action_add_favorite_video=1" name="addToFavesForm">
+							
+							<input type="hidden" name="action_add_favorite_video" value="1" />
+							<input type="hidden" name="video_id" value="4XpnKHJAok8" />
+							<input type="checkbox" checked name="add_to_favorite" />
+						</form>
+					</div>
+					<div id="watch-add-faves-loading" class="watch-more-action" style="display: none;">
+Zapisywanie...
+					</div>
+					<div id="watch-remove-faves-div" class="watch-more-action" style="display: none;">
+						<form method="post" action="/watch_ajax" name="removeFromFavesForm">
+							
+							<input type="hidden" name="action_remove_favorite_video" value="1" />
+							<input type="hidden" name="video_id" value="4XpnKHJAok8" />
+							<input type="checkbox" checked name="remove_from_favorite" />
+						</form>
+					</div>
+
+					<div id="watch-add-faves-result" class="watch-more-action" style="display: none;">
+						<div id="watch-remove-faves" class="watch-action-result" style="display: none;">
+							<div class="close"><a href="#" class="eLink" title="zamknij tę warstwę" onclick="watchSelectTab(_gel('watch-tab-share')); return false;">Zamknij</a></div>
+							<img class="watch-check-grn-circle" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif">
+							<span class="watch-action-response">
+Ten film wideo został <strong>dodany</strong> do Twoich <a href="/my_favorites">ulubionych</a>. (<a href="#" onclick="removeFromFaves('removeFromFavesForm'); return false;">Cofnij</a>)
+							</span>
+						</div>
+						<div id="watch-add-faves" class="watch-action-result" style="display: none;">
+							<div class="close"><a href="#" class="eLink" title="zamknij tę warstwę" onclick="watchSelectTab(_gel('watch-tab-share')); return false;">Zamknij</a></div>
+							<img class="watch-check-grn-circle" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif">
+							<span class="watch-action-response">
+Ten film wideo został <strong>usunięty</strong> z Twoich <a href="/my_favorites">ulubionych</a>. (<a href="#" onclick="addToFaves('addToFavesForm'); return false;">Cofnij</a>)
+							</span>
+						</div>
+					</div>
+
+						<div id="addToFavesLogin" style="padding: 2px 8px 8px 8px;">
+						<div class="close"><a href="#" title="zamknij tę warstwę" onclick="watchSelectTab(_gel('watch-tab-share')); return false;">zamknij</a></div>
+								Czy chcesz dodać do ulubionych?
+	<strong><a href="https://www.google.com/accounts/ServiceLogin?uilel=3&service=youtube&passive=true&continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252Fwatch%253Fv%253D4XpnKHJAok8%2523fav&hl=en_US&ltmpl=sso">Zaloguj</a> lub <a href="/signup?next=%2Fwatch%3Fv%3D4XpnKHJAok8%23fav">zarejestruj się</a> teraz!
+</strong>	
+
+						</div>
+
+				</div>					<div id="recent-fav-video" class="hid"></div>
+
+				<div id="watch-tab-playlists-body" class="watch-tab-body">
+					<div id="addToPlaylistDiv" class="watch-more-action" style="display: none;">Trwa ładowanie...</div>
+					<div id="addToPlaylistResult" class="watch-action-result" style="display: none;"><img class="watch-check-grn-circle" src="http://s.ytimg.com/yt/img/pixel-vfl73.gif">Film wideo został dodany do listy odtwarzania.</div>
+					<div id="rec-playlist-video">
+					</div>
+						<div id="addToPlaylistLogin" style="padding: 2px 8px 8px 8px;">
+						<div class="close"><a href="#" title="zamknij tę warstwę" onclick="watchSelectTab(_gel('watch-tab-share')); return false;">zamknij</a></div>
+								Czy chcesz dodać do list odtwarzania?
+	<strong><a href="https://www.google.com/accounts/ServiceLogin?uilel=3&service=youtube&passive=true&continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&hl=en_US&ltmpl=sso">Zaloguj</a> lub <a href="/signup?next=%2F">zarejestruj się</a> teraz!
+</strong>	
+
+						</div>
+
+				</div>
+				<div id="watch-tab-flag-body" class="watch-tab-body">
+					<div id="inappropriateVidDiv" class="watch-more-action" style="display: none;">Trwa ładowanie...</div>
+					<div id="inappropriateMsgsDiv" class="hid"></div>
+						<div id="inappropriateMsgLogin" style="padding: 2px 8px 8px 8px;">
+						<div class="close"><a href="#" title="zamknij tę warstwę" onclick="watchSelectTab(_gel('watch-tab-share')); return false;">zamknij</a></div>
+								Czy chcesz zgłosić nam ten film wideo?
+	<strong><a href="https://www.google.com/accounts/ServiceLogin?uilel=3&service=youtube&passive=true&continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&hl=en_US&ltmpl=sso">Zaloguj</a> lub <a href="/signup?next=%2F">zarejestruj się</a> teraz!
+</strong>	
+
+						</div>
+
+				</div>
+				<div id="watch-tab-download-body" class="watch-tab-body">
+				
+
+
+
+				</div>
+			</div> 			<div class="clear"></div>
+		</div> 
+	</div> 	
+
+
+
+
+
+
+
+
+
+
+
+
+	<div id="watch-stats-data-wrapper" class="expand-panel small-expand-panel">
+		<a href="#" onclick="togglePanel(this.parentNode); watchExpandStatBody(); this.blur(); urchinTracker('/Events/VideoWatch/InfoTab/Stats'); return false;" class="expand-header"><button title="" class="master-sprite watch-arrow"></button><span>Statystyki i dane</span></a>
+		<div id="watch-tab-stats-body" class="expand-content">Trwa ładowanie...</div>
+	</div>
+
+
+
+
+	<div class="expand-panel  small-expand-panel">
+			<div class="floatR">
+					<a class="hLink smallText" href="/login?next=/video_response_upload%3Fv%3D4XpnKHJAok8" onclick="urchinTracker('/Events/VideoWatch/PostVideoResponseSignIn');">Zaloguj się, aby opublikować odpowiedź wideo</a>
+			</div>
+
+		<a href="#" onclick="togglePanel(this.parentNode); this.blur(); return false;" class="expand-header"><button title="" class="master-sprite watch-arrow"></button><span>Odpowiedzi wideo</span> <span class="expand-header-stat">(0)</span></a>
+		<div id="watch-video-responses-none" class="expand-content">
+<b>Brak odpowiedzi</b> dla tego filmu wideo. Zgłoś pierwszy <a class="bold" href="/video_response_upload?v=4XpnKHJAok8">odpowiedź do filmu</a>.
+		</div>
+
+		<div class="clear"></div>
+	</div>	
+
+
+
+	<div id="watch-comment-panel" class="expand-panel expanded small-expand-panel" onexpanded="watchExpandComments('/watch_ajax?v=4XpnKHJAok8&amp;action_get_comments=1&amp;p=1&amp;commentthreshold=-5&amp;commentfilter=0&amp;page_size=10&amp;last_comment_id=', 456)" oncollapsed="watchCommentsPanelStateChange()">
+		
+		<div id="watch-comment-post-comment">
+				<a href="#" class="hLink smallText" onclick="showCommentReplyForm('main_comment2', '', false); urchinTracker('/Events/VideoWatch/PostTextCommentSignin'); return false;" id="post_text_comment_link" rel="nofollow">Zaloguj się, aby opublikować komentarz</a>
+
+		</div>
+
+		<a href="#" onclick="togglePanel(this.parentNode); this.blur(); return false;" class="expand-header"><button title="" class="master-sprite watch-arrow"></button><span>Komentarze tekstowe</span> <span class="expand-header-stat">(456)</span></a>&nbsp;&nbsp;<a href="#" class="smallText eLink" onclick="return toggleCommentsOptions('/watch_ajax?v=4XpnKHJAok8&amp;action_get_comments_options=1&amp;commentthreshold=-5&amp;commentfilter=0&amp;page_size=10')" onmousedown="urchinTracker('/Events/VideoWatch/CommentsOptions')">Opcje</a>
+
+		<div class="clear"></div>
+
+		<div id="watch-comments-options" class="hid">
+			<div id="watch-comments-options-inner">Trwa ładowanie...</div>
+		</div>
+
+		<div class="expand-content">
+
+			<div id="div_main_comment2"></div>
+
+			<div id="recent_comments" class="comments">
+								
+
+
+
+
+
+				<div class="watch-comment-head watch-comment-marked-spam smallText opacity30" id="spam_comment_btn_1">
+Komentarze oznaczone jako spam <a href="#" class="eLink smallText" onclick="showDiv('spam_comment_1'); hideDiv('spam_comment_btn_1'); showDiv('spam_comment_hide_btn_1'); return false;" rel="nofollow">Wyświetl</a>
+				</div>
+				<div class="watch-comment-head watch-comment-marked-spam smallText opacity80" id="spam_comment_hide_btn_1" style="display: none">
+Komentarze oznaczone jako spam <a href="#" class="eLink smallText" onclick="hideDiv('spam_comment_1'); showDiv('spam_comment_btn_1'); hideDiv('spam_comment_hide_btn_1'); return false;" rel="nofollow">Ukryj</a>
+				</div>
+				<div class="watch-comment-spam" id="spam_comment_1" style="display: none">
+
+
+
+
+
+
+		
+
+	<div id="bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU" class="watch-comment-entry">
+
+
+
+
+		<div class="watch-comment-head">
+
+			<div class="watch-comment-info">
+				<a class="watch-comment-auth" href="/user/phaobr" rel="nofollow">phaobr</a>
+				<span class="watch-comment-time"> (10 godz. temu) </span>
+
+				<a id="show_link_bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU"  class="watch-comment-head-link" onclick="displayHideCommentLink('bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU')">Wyświetl</a>
+				<a id="hide_link_bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU" class="watch-comment-head-link" onclick="displayShowCommentLink('bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU')">Ukryj</a>
+			</div>
+					<div id="comment_vote_bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU" class="watch-comment-voting">
+
+	<span class="watch-comment-score watch-comment-gray">&nbsp;0</span>
+
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-down" title="Kiepski komentarz" onMouseover="loginMsg('bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU', 1);" onMouseout="loginMsg('bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU', 0);"></button></a>
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-up" title="Dobry komentarz" onMouseover="loginMsg('bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU', 1);" onMouseout="loginMsg('bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU', 0);"></button></a>
+		<span id="comment_msg_bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU" class="watch-comment-msg"></span>
+
+	</div>
+
+
+			
+	<span id="comment_spam_bug_bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU" class="watch-comment-spam-bug">Oznaczono jako spam</span>
+	<div id="reply_comment_form_id_bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU" class="watch-comment-action">
+			<a onclick="showCommentReplyForm('comment_form_id_bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU', 'bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU', false)">Odpowiedz</a> 
+
+
+
+
+Oznaczono jako spam
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+			<div class="clearL"></div>
+		</div>
+
+			<div id="comment_body_bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU" >
+				<div class="watch-comment-body">
+					<div >
+
+						that doesn't mean﻿ much.
+					</div>
+				</div>
+				<div id="div_comment_form_id_bmVCy_aJJSoDSEwQw1e82J1AAvmnbWw0kVh9Ww07rsU"></div>
+			</div>
+
+
+
+
+
+	</div> 
+				</div>
+
+
+
+
+
+
+		
+
+	<div id="bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg" class="watch-comment-entry">
+
+
+
+
+		<div class="watch-comment-head">
+
+			<div class="watch-comment-info">
+				<a class="watch-comment-auth" href="/user/permanentbliss" rel="nofollow">permanentbliss</a>
+				<span class="watch-comment-time"> (1 dzień temu) </span>
+
+				<a id="show_link_bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg"  class="watch-comment-head-link" onclick="displayHideCommentLink('bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg')">Wyświetl</a>
+				<a id="hide_link_bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg" class="watch-comment-head-link" onclick="displayShowCommentLink('bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg')">Ukryj</a>
+			</div>
+					<div id="comment_vote_bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg" class="watch-comment-voting">
+
+	<span class="watch-comment-score watch-comment-gray">&nbsp;0</span>
+
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-down" title="Kiepski komentarz" onMouseover="loginMsg('bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg', 1);" onMouseout="loginMsg('bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg', 0);"></button></a>
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-up" title="Dobry komentarz" onMouseover="loginMsg('bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg', 1);" onMouseout="loginMsg('bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg', 0);"></button></a>
+		<span id="comment_msg_bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg" class="watch-comment-msg"></span>
+
+	</div>
+
+
+			
+	<span id="comment_spam_bug_bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg" class="watch-comment-spam-bug">Oznaczono jako spam</span>
+	<div id="reply_comment_form_id_bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg" class="watch-comment-action">
+			<a onclick="showCommentReplyForm('comment_form_id_bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg', 'bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg', false)">Odpowiedz</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+			<div class="clearL"></div>
+		</div>
+
+			<div id="comment_body_bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg" >
+				<div class="watch-comment-body">
+					<div >
+
+						Linus rules!!!﻿
+					</div>
+				</div>
+				<div id="div_comment_form_id_bmVCy_aJJSquhSiqHFavVzJ6rcT3576pU2WNFHp2tDg"></div>
+			</div>
+
+
+
+
+
+	</div> 
+
+
+
+
+
+
+		
+
+	<div id="bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g" class="watch-comment-entry">
+
+
+
+
+		<div class="watch-comment-head">
+
+			<div class="watch-comment-info">
+				<a class="watch-comment-auth" href="/user/ugod519" rel="nofollow">ugod519</a>
+				<span class="watch-comment-time"> (1 dzień temu) </span>
+
+				<a id="show_link_bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g"  class="watch-comment-head-link" onclick="displayHideCommentLink('bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g')">Wyświetl</a>
+				<a id="hide_link_bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g" class="watch-comment-head-link" onclick="displayShowCommentLink('bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g')">Ukryj</a>
+			</div>
+					<div id="comment_vote_bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g" class="watch-comment-voting">
+
+	<span class="watch-comment-score watch-comment-gray">&nbsp;0</span>
+
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-down" title="Kiepski komentarz" onMouseover="loginMsg('bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g', 1);" onMouseout="loginMsg('bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g', 0);"></button></a>
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-up" title="Dobry komentarz" onMouseover="loginMsg('bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g', 1);" onMouseout="loginMsg('bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g', 0);"></button></a>
+		<span id="comment_msg_bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g" class="watch-comment-msg"></span>
+
+	</div>
+
+
+			
+	<span id="comment_spam_bug_bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g" class="watch-comment-spam-bug">Oznaczono jako spam</span>
+	<div id="reply_comment_form_id_bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g" class="watch-comment-action">
+			<a onclick="showCommentReplyForm('comment_form_id_bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g', 'bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g', false)">Odpowiedz</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+			<div class="clearL"></div>
+		</div>
+
+			<div id="comment_body_bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g" >
+				<div class="watch-comment-body">
+					<div >
+
+						he has every right to sound that way﻿ <br/><br/>HE IS LINUX lol
+					</div>
+				</div>
+				<div id="div_comment_form_id_bmVCy_aJJSofPKsWLO_GaE8m1dx1FU8fwoeUBAe1F3g"></div>
+			</div>
+
+
+
+
+
+	</div> 
+
+
+
+
+
+
+		
+
+	<div id="bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU" class="watch-comment-entry">
+
+
+
+
+		<div class="watch-comment-head">
+
+			<div class="watch-comment-info">
+				<a class="watch-comment-auth" href="/user/oscarreyesdelacruz" rel="nofollow">oscarreyesdelacruz</a>
+				<span class="watch-comment-time"> (1 tydzień temu) </span>
+
+				<a id="show_link_bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU"  class="watch-comment-head-link" onclick="displayHideCommentLink('bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU')">Wyświetl</a>
+				<a id="hide_link_bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU" class="watch-comment-head-link" onclick="displayShowCommentLink('bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU')">Ukryj</a>
+			</div>
+					<div id="comment_vote_bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU" class="watch-comment-voting">
+
+	<span class="watch-comment-score watch-comment-gray">&nbsp;0</span>
+
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-down" title="Kiepski komentarz" onMouseover="loginMsg('bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU', 1);" onMouseout="loginMsg('bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU', 0);"></button></a>
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-up" title="Dobry komentarz" onMouseover="loginMsg('bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU', 1);" onMouseout="loginMsg('bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU', 0);"></button></a>
+		<span id="comment_msg_bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU" class="watch-comment-msg"></span>
+
+	</div>
+
+
+			
+	<span id="comment_spam_bug_bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU" class="watch-comment-spam-bug">Oznaczono jako spam</span>
+	<div id="reply_comment_form_id_bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU" class="watch-comment-action">
+			<a onclick="showCommentReplyForm('comment_form_id_bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU', 'bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU', false)">Odpowiedz</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+			<div class="clearL"></div>
+		</div>
+
+			<div id="comment_body_bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU" >
+				<div class="watch-comment-body">
+					<div >
+
+						@jpmorgan187:﻿ Yeap it is just 99.4% away, but it just about to own it. :)
+					</div>
+				</div>
+				<div id="div_comment_form_id_bmVCy_aJJSoUGGUG5XTdHXdjcY2JD6hBfAwpmMbalwU"></div>
+			</div>
+
+
+
+
+
+	</div> 
+
+
+
+
+
+
+		
+
+	<div id="bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54" class="watch-comment-entry">
+
+
+
+
+		<div class="watch-comment-head">
+
+			<div class="watch-comment-info">
+				<a class="watch-comment-auth" href="/user/silvercool2k" rel="nofollow">silvercool2k</a>
+				<span class="watch-comment-time"> (1 tydzień temu) </span>
+
+				<a id="show_link_bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54"  class="watch-comment-head-link" onclick="displayHideCommentLink('bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54')">Wyświetl</a>
+				<a id="hide_link_bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54" class="watch-comment-head-link" onclick="displayShowCommentLink('bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54')">Ukryj</a>
+			</div>
+					<div id="comment_vote_bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54" class="watch-comment-voting">
+
+	<span class="watch-comment-score watch-comment-gray">&nbsp;0</span>
+
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-down" title="Kiepski komentarz" onMouseover="loginMsg('bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54', 1);" onMouseout="loginMsg('bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54', 0);"></button></a>
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-up" title="Dobry komentarz" onMouseover="loginMsg('bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54', 1);" onMouseout="loginMsg('bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54', 0);"></button></a>
+		<span id="comment_msg_bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54" class="watch-comment-msg"></span>
+
+	</div>
+
+
+			
+	<span id="comment_spam_bug_bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54" class="watch-comment-spam-bug">Oznaczono jako spam</span>
+	<div id="reply_comment_form_id_bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54" class="watch-comment-action">
+			<a onclick="showCommentReplyForm('comment_form_id_bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54', 'bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54', false)">Odpowiedz</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+			<div class="clearL"></div>
+		</div>
+
+			<div id="comment_body_bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54" >
+				<div class="watch-comment-body">
+					<div >
+
+						is git﻿ better than portsnap? than ports in freebsd?
+					</div>
+				</div>
+				<div id="div_comment_form_id_bmVCy_aJJSo2YTI-5SUCQa8DZ_JDDK9Sa4Nu3IyqH54"></div>
+			</div>
+
+
+
+
+
+	</div> 
+
+				<div class="watch-comment-head watch-comment-marked-spam smallText opacity30" id="spam_comment_btn_2">
+Komentarze oznaczone jako spam <a href="#" class="eLink smallText" onclick="showDiv('spam_comment_2'); hideDiv('spam_comment_btn_2'); showDiv('spam_comment_hide_btn_2'); return false;" rel="nofollow">Wyświetl</a>
+				</div>
+				<div class="watch-comment-head watch-comment-marked-spam smallText opacity80" id="spam_comment_hide_btn_2" style="display: none">
+Komentarze oznaczone jako spam <a href="#" class="eLink smallText" onclick="hideDiv('spam_comment_2'); showDiv('spam_comment_btn_2'); hideDiv('spam_comment_hide_btn_2'); return false;" rel="nofollow">Ukryj</a>
+				</div>
+				<div class="watch-comment-spam" id="spam_comment_2" style="display: none">
+
+
+
+
+
+
+		
+
+	<div id="bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ" class="watch-comment-entry">
+
+
+
+
+		<div class="watch-comment-head">
+
+			<div class="watch-comment-info">
+				<a class="watch-comment-auth" href="/user/deagla" rel="nofollow">deagla</a>
+				<span class="watch-comment-time"> (2 tygodnie temu) </span>
+
+				<a id="show_link_bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ"  class="watch-comment-head-link" onclick="displayHideCommentLink('bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ')">Wyświetl</a>
+				<a id="hide_link_bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ" class="watch-comment-head-link" onclick="displayShowCommentLink('bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ')">Ukryj</a>
+			</div>
+					<div id="comment_vote_bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ" class="watch-comment-voting">
+
+	<span class="watch-comment-score watch-comment-gray">&nbsp;0</span>
+
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-down" title="Kiepski komentarz" onMouseover="loginMsg('bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ', 1);" onMouseout="loginMsg('bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ', 0);"></button></a>
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-up" title="Dobry komentarz" onMouseover="loginMsg('bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ', 1);" onMouseout="loginMsg('bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ', 0);"></button></a>
+		<span id="comment_msg_bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ" class="watch-comment-msg"></span>
+
+	</div>
+
+
+			
+	<span id="comment_spam_bug_bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ" class="watch-comment-spam-bug">Oznaczono jako spam</span>
+	<div id="reply_comment_form_id_bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ" class="watch-comment-action">
+			<a onclick="showCommentReplyForm('comment_form_id_bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ', 'bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ', false)">Odpowiedz</a> 
+
+
+
+
+Oznaczono jako spam
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+			<div class="clearL"></div>
+		</div>
+
+			<div id="comment_body_bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ" >
+				<div class="watch-comment-body">
+					<div >
+
+						The Illuminati aka blueblood's﻿ like Rothschilds, Warburgs, Windsors, Al Gore, Al Pike, Putin etc rule Freemasonry. They'll probably start WW3, force-vaccinate many in Fall, implement Codex Alimentarius and stage an alien invasion to get a fascist world government with us microchipped, so resist! Support Oracle Broadcasting, Dr. Deagle, David Icke &amp; Project Camelot!
+					</div>
+				</div>
+				<div id="div_comment_form_id_bmVCy_aJJSoflw_VI28oWY3sqpsDHbemM_6yxBRQGbQ"></div>
+			</div>
+
+
+
+
+
+	</div> 
+				</div>
+
+
+
+
+
+
+		
+
+	<div id="bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE" class="watch-comment-entry">
+
+
+
+
+		<div class="watch-comment-head">
+
+			<div class="watch-comment-info">
+				<a class="watch-comment-auth" href="/user/jpmorgan187" rel="nofollow">jpmorgan187</a>
+				<span class="watch-comment-time"> (2 tygodnie temu) </span>
+
+				<a id="show_link_bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE"  class="watch-comment-head-link" onclick="displayHideCommentLink('bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE')">Wyświetl</a>
+				<a id="hide_link_bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE" class="watch-comment-head-link" onclick="displayShowCommentLink('bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE')">Ukryj</a>
+			</div>
+					<div id="comment_vote_bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE" class="watch-comment-voting">
+
+	<span class="watch-comment-score watch-comment-green">+6</span>
+
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-down" title="Kiepski komentarz" onMouseover="loginMsg('bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE', 1);" onMouseout="loginMsg('bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE', 0);"></button></a>
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-up" title="Dobry komentarz" onMouseover="loginMsg('bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE', 1);" onMouseout="loginMsg('bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE', 0);"></button></a>
+		<span id="comment_msg_bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE" class="watch-comment-msg"></span>
+
+	</div>
+
+
+			
+	<span id="comment_spam_bug_bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE" class="watch-comment-spam-bug">Oznaczono jako spam</span>
+	<div id="reply_comment_form_id_bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE" class="watch-comment-action">
+			<a onclick="showCommentReplyForm('comment_form_id_bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE', 'bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE', false)">Odpowiedz</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+			<div class="clearL"></div>
+		</div>
+
+			<div id="comment_body_bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE" >
+				<div class="watch-comment-body">
+					<div >
+
+						Linux is﻿ about to own Microsoft.  Go Linux!
+					</div>
+				</div>
+				<div id="div_comment_form_id_bmVCy_aJJSpAA98Q8XENOLTC1i3T2VyG9_dStEpV0NE"></div>
+			</div>
+
+
+
+
+
+	</div> 
+
+
+
+
+
+
+		
+
+	<div id="bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8" class="watch-comment-entry">
+
+
+
+
+		<div class="watch-comment-head">
+
+			<div class="watch-comment-info">
+				<a class="watch-comment-auth" href="/user/sylemx" rel="nofollow">sylemx</a>
+				<span class="watch-comment-time"> (3 tygodnie temu) </span>
+
+				<a id="show_link_bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8"  class="watch-comment-head-link" onclick="displayHideCommentLink('bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8')">Wyświetl</a>
+				<a id="hide_link_bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8" class="watch-comment-head-link" onclick="displayShowCommentLink('bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8')">Ukryj</a>
+			</div>
+					<div id="comment_vote_bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8" class="watch-comment-voting">
+
+	<span class="watch-comment-score watch-comment-gray">&nbsp;0</span>
+
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-down" title="Kiepski komentarz" onMouseover="loginMsg('bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8', 1);" onMouseout="loginMsg('bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8', 0);"></button></a>
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-up" title="Dobry komentarz" onMouseover="loginMsg('bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8', 1);" onMouseout="loginMsg('bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8', 0);"></button></a>
+		<span id="comment_msg_bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8" class="watch-comment-msg"></span>
+
+	</div>
+
+
+			
+	<span id="comment_spam_bug_bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8" class="watch-comment-spam-bug">Oznaczono jako spam</span>
+	<div id="reply_comment_form_id_bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8" class="watch-comment-action">
+			<a onclick="showCommentReplyForm('comment_form_id_bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8', 'bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8', false)">Odpowiedz</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+			<div class="clearL"></div>
+		</div>
+
+			<div id="comment_body_bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8" >
+				<div class="watch-comment-body">
+					<div >
+
+						he sounds﻿ just so full of himself
+					</div>
+				</div>
+				<div id="div_comment_form_id_bmVCy_aJJSpBmzcrYbKKCuXiefYCs91AHSfmkH_54H8"></div>
+			</div>
+
+
+
+
+
+	</div> 
+
+
+
+
+
+
+		
+
+	<div id="bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo" class="watch-comment-entry">
+
+
+
+
+		<div class="watch-comment-head">
+
+			<div class="watch-comment-info">
+				<a class="watch-comment-auth" href="/user/Slurfs" rel="nofollow">Slurfs</a>
+				<span class="watch-comment-time"> (3 tygodnie temu) </span>
+
+				<a id="show_link_bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo"  class="watch-comment-head-link" onclick="displayHideCommentLink('bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo')">Wyświetl</a>
+				<a id="hide_link_bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo" class="watch-comment-head-link" onclick="displayShowCommentLink('bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo')">Ukryj</a>
+			</div>
+					<div id="comment_vote_bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo" class="watch-comment-voting">
+
+	<span class="watch-comment-score watch-comment-gray">&nbsp;0</span>
+
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-down" title="Kiepski komentarz" onMouseover="loginMsg('bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo', 1);" onMouseout="loginMsg('bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo', 0);"></button></a>
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-up" title="Dobry komentarz" onMouseover="loginMsg('bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo', 1);" onMouseout="loginMsg('bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo', 0);"></button></a>
+		<span id="comment_msg_bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo" class="watch-comment-msg"></span>
+
+	</div>
+
+
+			
+	<span id="comment_spam_bug_bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo" class="watch-comment-spam-bug">Oznaczono jako spam</span>
+	<div id="reply_comment_form_id_bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo" class="watch-comment-action">
+			<a onclick="showCommentReplyForm('comment_form_id_bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo', 'bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo', false)">Odpowiedz</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+			<div class="clearL"></div>
+		</div>
+
+			<div id="comment_body_bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo" >
+				<div class="watch-comment-body">
+					<div >
+
+						Yeah, he is﻿ - BUT he's not stupid... ;)
+					</div>
+				</div>
+				<div id="div_comment_form_id_bmVCy_aJJSrHzuYyTaw5QYApuNoCXd3ZR107PAN5iXo"></div>
+			</div>
+
+
+
+
+
+	</div> 
+
+
+
+
+
+
+		
+
+	<div id="bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM" class="watch-comment-entry">
+
+
+
+
+		<div class="watch-comment-head">
+
+			<div class="watch-comment-info">
+				<a class="watch-comment-auth" href="/user/NetSkay3d" rel="nofollow">NetSkay3d</a>
+				<span class="watch-comment-time"> (2 tygodnie temu) </span>
+
+				<a id="show_link_bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM"  class="watch-comment-head-link" onclick="displayHideCommentLink('bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM')">Wyświetl</a>
+				<a id="hide_link_bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM" class="watch-comment-head-link" onclick="displayShowCommentLink('bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM')">Ukryj</a>
+			</div>
+					<div id="comment_vote_bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM" class="watch-comment-voting">
+
+	<span class="watch-comment-score watch-comment-gray">&nbsp;0</span>
+
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-down" title="Kiepski komentarz" onMouseover="loginMsg('bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM', 1);" onMouseout="loginMsg('bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM', 0);"></button></a>
+		<a href="https://www.google.com/accounts/ServiceLogin?uilel=3&amp;service=youtube&amp;passive=true&amp;continue=http%3A%2F%2Fwww.youtube.com%2Fsignup%3Fnomobiletemp%3D1%26hl%3Den_US%26next%3D%252F&amp;hl=en_US&amp;ltmpl=sso"><button class="master-sprite watch-comment-up" title="Dobry komentarz" onMouseover="loginMsg('bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM', 1);" onMouseout="loginMsg('bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM', 0);"></button></a>
+		<span id="comment_msg_bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM" class="watch-comment-msg"></span>
+
+	</div>
+
+
+			
+	<span id="comment_spam_bug_bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM" class="watch-comment-spam-bug">Oznaczono jako spam</span>
+	<div id="reply_comment_form_id_bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM" class="watch-comment-action">
+			<a onclick="showCommentReplyForm('comment_form_id_bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM', 'bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM', false)">Odpowiedz</a> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	</div>
+
+			<div class="clearL"></div>
+		</div>
+
+			<div id="comment_body_bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM" >
+				<div class="watch-comment-body">
+					<div >
+
+						he has a reason to<br/>i dont﻿ blame him lol
+					</div>
+				</div>
+				<div id="div_comment_form_id_bmVCy_aJJSqjcazJlLLYf5Y5LC3vwmjRyDCq6tmLomM"></div>
+			</div>
+
+
+
+
+
+	</div> 
+
+
+
+
+		<div class="watch-comment-pagination">
+<div class="floatR">
+
+
+<span class="watch-comment-pnum"><a href="#" onclick="showLoading('recent_comments');ajaxRequest('/watch_ajax?v=4XpnKHJAok8&amp;action_get_comments=1&amp;p=2&amp;commentthreshold=-5&amp;commentfilter=0&amp;page_size=10&amp;last_comment_id=', { method: 'GET', update: 'recent_comments' }); return false;">Dalej</a></span>
+
+</div>
+
+<div class="floatL">
+	<span class="watch-comment-pnum">Strony:</span>
+
+
+
+			<span class="watch-comment-pnum">1</span>
+
+			<span class="watch-comment-pnum"><a href="#" onclick="showLoading('recent_comments');ajaxRequest('/watch_ajax?v=4XpnKHJAok8&amp;action_get_comments=1&amp;p=2&amp;commentthreshold=-5&amp;commentfilter=0&amp;page_size=10&amp;last_comment_id=', { method: 'GET', update: 'recent_comments' }); return false;">2</a></span>
+
+			<span class="watch-comment-pnum"><a href="#" onclick="showLoading('recent_comments');ajaxRequest('/watch_ajax?v=4XpnKHJAok8&amp;action_get_comments=1&amp;p=3&amp;commentthreshold=-5&amp;commentfilter=0&amp;page_size=10&amp;last_comment_id=', { method: 'GET', update: 'recent_comments' }); return false;">3</a></span>
+
+
+		&#160;...&#160;
+
+
+</div>
+
+<div class="clear"></div>
+</div>
+
+
+
+			</div>
+
+			<div id="watch-comment-view-all"><a href="/comment_servlet?all_comments&amp;v=4XpnKHJAok8&amp;fromurl=/watch%3Fv%3D4XpnKHJAok8" class="hLink" onmousedown="urchinTracker('/Events/VideoWatch/ViewAllComments');" rel="nofollow">Wyświetl wszystkie komentarze (456)</a></div>
+
+				<div id="watch-comment-post">
+					<h2>Chcesz skomentować?</h2>
+					<div>
+<a href="/signup?next=/watch%3Fv%3D4XpnKHJAok8">Dołącz do serwisu YouTube</a> w celu utworzenia bezpłatnego konta lub <a href="/login?next=/watch%3Fv%3D4XpnKHJAok8">zaloguj się</a>, jeśli już jesteś członkiem.
+					</div>
+
+				</div> 
+				<div id="div_main_comment"></div>
+
+		</div> 	</div> 
+
+</div> <!-- end info section -->
+
+
+
+
+
+
+
+	<!-- begin footer section -->
+		<div class="clear"></div>
+	
+	<div id="footer">
+		<div class="search">
+			<div class="form-wrapper">
+				
+	<form autocomplete="off" class="search-form" action="/results" method="get" name="footer-search-form">
+		<input id="footer-search-term" class="search-term" name="search_query" type="text"  onkeyup = "top.goog.i18n.bidi.setDirAttribute(event,this)"  value="" maxlength="128"  onfocus="addClass(this, 'search-term-focus')" onblur="removeClass(this, 'search-term-focus')">
+			<input id="search-type-footer" name="search_type" type="hidden" value="">
+	<a class="yt-button yt-button-primary" id="" style="" href="#" onclick="document.searchForm.submit(); return false;"><span>Szukaj</span></a>
+
+	</form>
+
+			</div>
+		</div>
+		<div class="links">
+			<table cellpadding="0" cellspacing="0">
+				<tr>
+					<th >YouTube</th>
+					<th >Programy</th>
+					<th >Pomoc</th>
+						<th>Zasady</th>
+					<th >- Odkryj</th>
+				</tr>
+				<tr>
+					<td><a href="/t/contact_us" 
+>Skontaktuj się z nami</a></td>
+					<td ><a href="/t/advertising" 
+>Reklama</a></td>
+					<td><a href="http://www.google.com/support/youtube/bin/static.py?page=start.cs&hl=pl-PL" 
+>Zasoby pomocy</a></td>
+					<td ><a href="/t/privacy" 
+>Polityka prywatności</a></td>
+					<td><a href="/mobile" 
+>YouTube w Twoim telefonie</a></td>
+				</tr>
+				<tr>
+					<td ><a href="/t/about" 
+>Informacje o firmie</a></td>
+							<td ><a href="http://code.google.com/apis/youtube/overview.html" 
+>Programiści</a></td>
+					<td><a href="/t/yt_handbook_home" 
+>Podręcznik YouTube</a></td>
+						<td ><a href="/t/terms" 
+>Warunki korzystania z serwisu</a></td>
+					<td><a href="/youtubeonyoursite" 
+>YouTube w Twojej witrynie</a></td>
+				</tr>
+				<tr>
+					<td><a href="/press_room" 
+>Kącik dla prasy</a></td>
+					<td><a href="/partners" 
+>Współpraca</a></td>
+					<td><a href="http://www.google.com/support/forum/p/youtube?hl=pl" 
+>Forum pomocy w ramach społeczności</a></td>
+					<td><a href="/t/copyright_notice" 
+>Informacje o prawach autorskich</a></td>
+					<td><a href="/youtubeonyourtv" 
+>YouTube w Twoim telewizorze</a></td>
+				</tr>
+				<tr>
+					<td><a href="http://ytbizblog.blogspot.com/" 
+>Blog firmowy</a></td>
+					<td><a href="/t/content_management" 
+>Zarządzanie treścią</a></td>
+					<td ><a href="http://www.google.com/support/youtube/bin/request.py?contact_type=abuse&hl=pl-PL" 
+>Centrum bezpieczeństwa</a></td>
+					<td><a href="/t/community_guidelines" 
+>Wytyczne dla społeczności</a></td>
+					<td><a href="/t/rss_feeds" 
+>Kanały RSS serwisu YouTube</a></td>
+				</tr>
+				<tr>
+					<td><a href="/blog" 
+>Blog YouTube</a></td>
+					<td colspan="3"></td>
+					<td ><a href="/testtube" 
+>TestTube</a></td>
+				</tr>
+			</table>
+		</div>
+			<div class="google-home">
+				<a href="http://www.google.pl/webmasters/igoogle/youtube.html">Dodaj YouTube do swojej strony głównej Google</a>
+			</div>
+	</div>
+	<div id="copyright">
+		&copy; 2009 YouTube, LLC
+	</div>
+
+	<!-- end footer section -->
+
+
+
+
+
+
+
+
+	<script type="text/javascript" src="http://www.google-analytics.com/ga.js"></script>
+
+
+<script type="text/javascript">
+var pageTracker = _gat._getTracker("UA-5706458-1");
+pageTracker._initData();
+function urchinTracker (a) {pageTracker._trackPageview(a);}
+</script>
+
+<script type="text/javascript">
+var page = "" + "/VideoWatch" + "/" + "Tech Talk: Linus Torvalds on git";
+pageTracker._trackPageview(page);
+</script>
+
+
+
+
+	<div id="watch-longform-shade" style="display: none"></div>
+
+	
+</div> <!-- end baseDiv -->
+
+<script type="text/javascript">
+		thumbnailDelayLoad.fudgeFactor = 0;
+
+	if (document.documentElement["getBoundingClientRect"]) {
+		addListener(window, 'scroll', thumbnailDelayLoad.loadImages);
+		addListener(window, 'resize', thumbnailDelayLoad.loadImages);
+	}
+	thumbnailDelayLoad.loadImages();
+
+		thumbnailDelayLoad.loadAllAtOnce = true;
+</script>
+
+
+
+
+<a name="pageBottom"></a>
+
+
+
+	
+
+
+
+</body>
+	<script type="text/javascript">
+		window.setTimeout(
+			"window.google.ac.install(document.searchForm,document.searchForm.search_query,'yt','pl','zamknij', \
+			'Propozycje', \
+			'Wyszukiwarka internetowa', \
+			-1, \
+			false)", 100);
+	</script>
+
+
+
+</html>

@@ -48,7 +48,7 @@
     \hbox to\@logocopywidth{%
       \hfil\@condupper{@upperinstitution}{\@institution}\hfil}
     \vspace{1.5ex}
-      \hbox to\@logocopywidth{\hfil (Vancouver)\hfil}
+      \hbox to\@logocopywidth{\hfil (Cracow, Poland)\hfil}
     \vspace{1.5ex}
     \vspace{2.5ex}
     \hbox to\@logocopywidth{\hfil\@submitdate\hfil}
@@ -69,6 +69,8 @@
     \vspace{1em}%
     {\authorfont%
       \@condupper{@upperauthor}{\@author}\par%
+      \vspace{1em}%
+      Advisor: Ph.D. Andrzej G\l{}owacz\par%
     }%
     \if@empty\@previousdegrees\else\vfil\fi%
     \if@empty\@previousdegrees\else\@previousdegrees\fi%
@@ -87,7 +89,7 @@
     \vspace{1em plus 1fil minus 0.5em}%
     \setbox0=\vbox{%
       \hbox{\@condupper{@upperinstitution}{\@institution}}
-      \hbox{(Vancouver)}
+      \hbox{Cracow, Poland}
       \hbox{\@submitdate}
       \hbox{\@copyrighttext}}
     \setlength{\@logocopywidth}{\wd0}

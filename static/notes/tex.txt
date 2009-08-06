@@ -1,0 +1,9 @@
+used class:
+    ubcthesiscpbl:
+    www: http://grad.econ.ubc.ca/cpbl/web/latex/ubcManuscriptThesis.html
+    zip: in static
+
+used style: (modified)
+    phdthesis:
+    www: http://www-ra.phys.utas.edu.au/%7Ejstevens/code_thesis_style.html
+    file:  
