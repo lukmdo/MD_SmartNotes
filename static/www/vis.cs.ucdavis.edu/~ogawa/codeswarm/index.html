@@ -1,0 +1,220 @@
+<html>
+
+	<head>
+		<title>code_swarm</title>
+		<meta name="keywords" content="software, visualization, Processing, Apache, PostgreSQL, Postgres, Python, Eclipse, UC Davis, VIDI, code_swarm, codeswarm, research" />
+		<meta name="description=" content="Visualizing the history of software projects. An experiment in organic software visualization." />
+
+		<style type="text/css">
+			body
+			{
+				background-color: #111;
+				//text-align: center;
+				font-family: sans-serif;
+				color: #CCC;
+
+				//border: 1px solid #FF0;
+				position: relative;
+				margin: 0px;
+			}
+
+			h1
+			{
+				text-align: center;
+				color: white;
+				padding-top: 20px;
+				font-family: bank gothic, courier new, monospace;
+			}
+
+			#container
+			{
+				background-color: #222;
+				border: 1px solid #222;
+				width: 640px;
+				margin: 0px auto;
+				min-height: 800px;
+				text-align: center;
+
+				padding: 0px 40px 10px 40px;
+			}
+
+			#video
+			{
+				color: #B69A0D;
+				padding: 10px 0px 20px 0px;
+				text-align: center;
+				font-size: x-large;
+				word-spacing: 20px;
+			}
+
+			#videos
+			{
+				padding: 10px 0px 10px 0px;
+			}
+
+			a
+			{
+				color: #78F;
+				text-decoration: none;
+			}
+
+			a:hover
+			{
+				text-decoration: underline;
+			}
+
+			p
+			{
+				font-size: small;
+			}
+
+			p.content
+			{
+				margin-top: 20px;
+				text-align: left;
+				//color: #CCC;
+			}
+
+			p.caption
+			{
+				margin-top: 2px;
+				color: #B6980D;
+				text-align: center;
+			}
+
+			p.subtitle
+			{
+				//color: #CCC;
+				text-align: center;
+				font-size: medium;
+			}
+
+			p.credits
+			{
+				padding: 20px 0px 0px 0px;
+			}
+
+			img
+			{
+				width: 640px;
+				//height: 480px;
+				border: 1px solid #888;
+			}
+
+			img.thumb
+			{
+				width: 175px;
+			}
+
+			span.codeswarm
+			{
+				font-family: monospace;
+				font-size: 12;
+			}
+
+			#videos .title
+			{
+				font-size: large;
+			}
+		</style>
+	</head>
+
+	<body>
+		<div id="container">
+
+			<h1>code_swarm</h1>
+
+			<p class="subtitle">An experiment in organic software visualization.</p>
+
+			<!--
+			<img src="apache.png" />
+			<p class="caption">A moment from the Apache project. <a href="http://www.vimeo.com/1076588">[video]</a></p>
+			-->
+
+			<img src="eclipse-640px.png" />
+			<p class="caption">A moment from the Eclipse project. <a href="http://www.vimeo.com/1130828">[video]</a></p>
+
+			<p class="content">
+			I've been studying software projects for a while now. Not the programming, but the people -- the way they interact with each other through collaboration and communication. My investigations have always been visual: I've built applications that create pictures of what is happening within software projects. But they have always had a rigid structure to them.
+			Organic information visualization, coined by <a href="http://benfry.com">Ben Fry</a>, is a different approach to information visualization. It eschews traditional data confinement in space and lets the elements play together in freeform and unpredictable ways.
+			</p>
+
+			<p class="content">
+			This visualization, called <span class="codeswarm">code_swarm</span>, shows the history of commits in a software project. A commit happens when a developer makes changes to the code or documents and transfers them into the central project repository. Both developers and files are represented as moving elements. When a developer commits a file, it lights up and flies towards that developer. Files are colored according to their purpose, such as whether they are source code or a document. If files or developers have not been active for a while, they will fade away. A histogram at the bottom keeps a reminder of what has come before.
+			</p>
+
+			<p class="content">
+			Please have a look at the videos below. Each one shows a particular software project's evolution. The videos also contain some background information on the projects.
+			The links will take you to Vimeo pages, where a low-quality version can be streamed and viewed in your browser. On those pages, towards the bottom-right, there are also links to download the full quality version of the video.
+			</p>
+
+			<div id="videos">
+				<table>
+          <tr>
+            <td><a class="video" href="http://www.vimeo.com/1130828"><img class="thumb" src="eclipse-300px.png" /></a></td>
+            <td>
+              <p class="title"><a class="video" href="http://www.vimeo.com/1130828">Eclipse (in HD)</a></p>
+              <p class="desc">The open source integrated development environment.<br />
+							The enormous amount of file commits and developers required HD rendering.</p>
+						</td>
+					</tr>
+
+					<tr>
+						<td><a class="video" href="http://www.vimeo.com/1093745"><img class="thumb" src="python-300px.png" /></a></td>
+						<td>
+							<p class="title"><a class="video" href="http://www.vimeo.com/1093745">Python</a></p>
+							<p class="desc">The open source scripting language. <u>This is the best starting point.</u><br />
+							Guido controls the project from the start, with a few developers joining in. A popularity boom happens in 2000.
+						</td>
+					</tr>
+
+					<tr>
+						<td><a class="video" href="http://www.vimeo.com/1081680"><img class="thumb" src="postgres-300px.png" /></a></td>
+						<td>
+							<p class="title"><a class="video" href="http://www.vimeo.com/1081680">PostgreSQL</a></p>
+							<p class="desc">The open source database management system.<br />
+							Having only a handful of consistent developers makes this project highly specialized.</p>
+						</td>
+					</tr>
+
+					<tr>
+						<td><a class="video" href="http://www.vimeo.com/1076588"><img class="thumb" src="apache-300px.png" /></a></td>
+						<td class="desc">
+							<p class="title"><a class="video" href="http://www.vimeo.com/1076588">Apache</a></p>
+							<p class="desc">The open source webserver.<br />
+							Lots of planning in documentation leads up to the alpha release of 2.0, with constant activity afterwards.</p>
+						</td>
+					</tr>
+
+				</table>
+
+			</div>
+
+			<p class="content">
+			The code is open source and available at <a href="http://code.google.com/p/codeswarm">http://code.google.com/p/codeswarm</a>.
+			</p>
+
+			<p class="credits">
+			Created by <a href="http://vis.cs.ucdavis.edu/~ogawa/">Michael Ogawa</a> with <a href="http://processing.org">Processing</a>.
+<br />
+				Thanks to <a href="http://www.cs.ucdavis.edu/~devanbu/">Premkumar Devanbu</a>, <a href="http://wwwcsif.cs.ucdavis.edu/~bird/">Christian Bird</a> and <a href="http://www.digitalkarate.net">Alex Gourley</a> for gathering the data.
+			</p>
+
+			<p>
+				<a href="http://vidi.cs.ucdavis.edu">VIDI group, UC Davis</a>
+			</p>
+
+		</div>
+
+		<script type="text/javascript">
+			var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+			document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+		</script>
+		<script type="text/javascript">
+			try {
+				var pageTracker = _gat._getTracker("UA-8760027-2");
+				pageTracker._trackPageview();
+			} catch(err) {}
+		</script>
+	</body>
+</html>

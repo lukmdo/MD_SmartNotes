@@ -1,0 +1,31 @@
+User-agent: *
+Disallow: /accounts/*/near
+Disallow: /images/
+Disallow: /images
+Disallow: /edits/
+Disallow: /edits
+Disallow: /*/edits
+Disallow: /*/edits/*
+Disallow: /*/commits/*
+Disallow: /*/contributors/*.png
+Disallow: /*/positions/*.png
+Disallow: /p/*/external_download
+Disallow: /p/*/permissions
+Disallow: /p/*/stacks/near
+Disallow: /p/3760/*/commits
+Disallow: /p/3141/*/commits
+Disallow: /p/gnome/*/commits
+Disallow: /p/linux/*/commits
+Disallow: /p/top10
+Disallow: /sessions/new
+Disallow: /p/*/contributors/*
+Disallow: /p/*/contributors/*/commits
+Disallow: /p?
+Disallow: /people?
+Disallow: /people/rankings?
+Crawl-Delay: 30
+
+User-agent: discobot
+Disallow: /
+
+Sitemap: http://www.ohloh.net/sitemap_index.xml

@@ -1,0 +1,1200 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"><html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  <title>Compare Languages - Ohloh</title>
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+
+  <link href="http://www.ohloh.net/stylesheets/main.css?1250019710" media="screen" rel="stylesheet" type="text/css" />
+  <link href="http://www.ohloh.net/stylesheets/thickbox.css?1250019599" media="screen" rel="stylesheet" type="text/css" />
+  <!--[if IE]>
+	<link href="http://www.ohloh.net/stylesheets/ie_hacks.css?1250019599" media="screen" rel="stylesheet" type="text/css" />
+  <script defer type="text/javascript" src="/javascripts/pngfix.js"></script>
+  <![endif]-->
+
+  <script src="http://www.ohloh.net/javascripts/jquery-1.2.6-with-plugins.min.js?1250019599" type="text/javascript"></script>
+  <script src="http://www.ohloh.net/javascripts/main.js?1250019599" type="text/javascript"></script>
+
+
+
+
+  
+
+  
+  </head>
+<body>
+  <div id="page">
+    <div class='row' id='mast'>
+  <div class='logos'>
+    <ul class='services'>
+      <li>Root</li>
+      <li>
+        <a href='http://labs.ohloh.net'>Labs</a>
+      </li>
+    </ul>
+    <a class='ohloh' href='http://www.ohloh.net/'>    </a>
+    <a class='root' href='http://www.ohloh.net/'>    </a>
+  </div>
+</div>
+    <div class='row'>
+  <ul class='select_ main_menu clear'>
+    <li class='search'>
+      <form action='/search' class='search'>
+        <input class='text' name='q' type='text' />
+      </form>
+    </li>
+    <li class='session'>
+      <a href="http://www.ohloh.net/accounts/new"><span>Register</span></a>
+    </li>
+    <li class='session'>
+      <a href="http://www.ohloh.net/sessions/new"><span>Login</span></a>
+    </li>
+    <li class='home'><a href="/"><span>Home</span></a></li>
+    <li class='people'><a href="/people"><span>People</span></a></li>
+    <li class='projects'><a href="/p"><span>Projects</span></a></li>
+    <li class='forums'><a href="/forums"><span>Forums</span></a></li>
+    <li class='tools'><a href="/tools"><span>Tools</span></a></li>
+  </ul>
+  <ul class='nomargin session' style='display:none'>
+    <li><a href="/sessions/new">Login</a></li>
+    <li><a href="/accounts/new">Register</a></li>
+  </ul>
+</div>
+
+    
+    
+    
+    
+
+    <div class="row">
+      <div class="col span_13 prepend_3 last">
+      </div>
+    </div>
+<div class='row'>
+  <div class='col span_3 layout_anchor'>
+    <div class='inset_middle'></div>
+  </div>
+  <div class='col span_13 last layout_h1 float_right'>
+    <div class='inset_middle'>
+      <h1>Tools</h1>
+    </div>
+  </div>
+</div>
+<div class='row'>
+  <div class='col span_3'>
+        <div class='sidebar mezzo sidebar_tools'>
+      <div class='actions'>
+        <h6>
+          Tools
+        </h6>
+        <ul>
+          <li class=' first'>
+            <a class='' href='/p/compare'>
+              Compare Projects
+            </a>
+          </li>
+          <li class=' selected'>
+            <a class='' href='/languages/compare'>
+              Compare Languages
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class='actions'>
+        <h6>
+          Languages
+        </h6>
+        <ul>
+          <li class=' first'>
+            <a class='' href='/languages'>
+              All Languages
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/53'>
+              ActionScript
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/21'>
+              Ada
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/19'>
+              Assembly
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/51'>
+              Autoconf
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/50'>
+              Automake
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/18'>
+              AWK
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/68'>
+              BlitzMax
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/26'>
+              Boo
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/42'>
+              C
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/17'>
+              C#
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/44'>
+              C++
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/7'>
+              C/C++
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/59'>
+              Classic Basic
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/31'>
+              ClearSilver
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/74'>
+              cmake
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/4'>
+              CSS
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/32'>
+              D
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/45'>
+              DCL
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/13'>
+              DOS batch script
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/33'>
+              Dylan
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/49'>
+              Ebuild
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/60'>
+              Eiffel
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/10'>
+              Emacs Lisp
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/28'>
+              Erlang
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/56'>
+              Exheres
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/62'>
+              Factor
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/40'>
+              Fortran (Fixed-format)
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/41'>
+              Fortran (Free-format)
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/29'>
+              Groovy
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/64'>
+              Haml
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/38'>
+              Haskell
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/66'>
+              HaXe
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/1'>
+              HTML
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/76'>
+              IDL/PV-WAVE/GDL
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/5'>
+              Java
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/6'>
+              JavaScript
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/75'>
+              limbo
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/22'>
+              Lisp
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/27'>
+              Lua
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/52'>
+              Make
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/23'>
+              Matlab
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/46'>
+              MetaFont
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/47'>
+              MetaPost
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/54'>
+              MXML
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/71'>
+              Nix
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/16'>
+              Objective C
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/61'>
+              Objective Caml
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/70'>
+              Objective-J
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/72'>
+              octave
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/69'>
+              OpenGL Shading
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/14'>
+              Pascal
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/8'>
+              Perl
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/2'>
+              PHP
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/43'>
+              Pike
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/9'>
+              Python
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/65'>
+              R
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/24'>
+              Rexx
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/12'>
+              Ruby
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/55'>
+              Scala
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/20'>
+              Scheme
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/73'>
+              Scilab
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/11'>
+              shell script
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/39'>
+              Smalltalk
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/30'>
+              SQL
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/63'>
+              Stratego
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/58'>
+              Structured Basic
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/25'>
+              Tcl
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/37'>
+              TeX/LaTeX
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/34'>
+              Vala
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/57'>
+              VHDL
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/48'>
+              Vim Script
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/15'>
+              Visual Basic
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/67'>
+              XAML
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/3'>
+              XML
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/35'>
+              XML Schema
+            </a>
+          </li>
+          <li class=' '>
+            <a class='' href='/languages/36'>
+              XSL Transformation
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class='one' />
+  </div>
+  <div class='col span_13 last mezzo'>
+    
+    <div class='compare_languages clear mezzo'>
+      <div class='inset'>
+        <h3>Compare Languages</h3>
+        <p><a href="/languages/compare?commit=Update&amp;l0=cpp&amp;l1=csharp&amp;l2=java&amp;l3=python&amp;l4=ruby&amp;l5=-1&amp;measure=commits">Monthly Commits</a> | Monthly Contributors | <a href="/languages/compare?commit=Update&amp;l0=cpp&amp;l1=csharp&amp;l2=java&amp;l3=python&amp;l4=ruby&amp;l5=-1&amp;measure=loc_changed">Monthly Lines of Code Changed</a> | <a href="/languages/compare?commit=Update&amp;l0=cpp&amp;l1=csharp&amp;l2=java&amp;l3=python&amp;l4=ruby&amp;l5=-1&amp;measure=projects">Monthly Projects</a></p>
+        <h6>
+          Monthly Contributors
+          
+        </h6>
+        <p>
+          The lines show the number of developers who have contributed at least one line of code in each month.
+          <a href="/wiki/compare_languages">More</a>
+        </p>
+      </div>
+      <div class='clear'>
+        <div class='chart'>
+          <p class='float_right'>
+            Values
+            |
+            <a href="/languages/compare?commit=Update&amp;l0=cpp&amp;l1=csharp&amp;l2=java&amp;l3=python&amp;l4=ruby&amp;l5=-1&amp;measure=contributors&amp;percent=true">Percentage</a>
+          </p>
+          <img src='/languages/chart?measure=contributors&commit=Update&l0=cpp&action=compare&l1=csharp&l2=java&controller=languages&l3=python&l4=ruby&l5=-1' width='480' height='270'alt='Chart' />
+        </div>
+        <form action='/languages/compare?commit=Update&amp;l0=cpp&amp;l1=csharp&amp;l2=java&amp;l3=python&amp;l4=ruby&amp;l5=-1&amp;measure=contributors' method='get'>
+          <input id="measure" name="measure" type="hidden" value="contributors" />
+          <input id="percent" name="percent" type="hidden" value="" />
+          <div class='legend'>
+            <div class='select'>
+              <div class='swatch' style='background-color:#4096EE'>&nbsp;</div>
+              <select name='l0'>
+                <option value="-1">[None]</option>
+                <option value="actionscript">ActionScript</option>
+                <option value="ada">Ada</option>
+                <option value="assembler">Assembly</option>
+                <option value="autoconf">Autoconf</option>
+                <option value="automake">Automake</option>
+                <option value="awk">AWK</option>
+                <option value="blitzmax">BlitzMax</option>
+                <option value="boo">Boo</option>
+                <option value="c">C</option>
+                <option value="csharp" selected="selected">C#</option>
+                <option value="cpp">C++</option>
+                <option value="cncpp">C/C++</option>
+                <option value="classic_basic">Classic Basic</option>
+                <option value="clearsilver">ClearSilver</option>
+                <option value="cmake">cmake</option>
+                <option value="css">CSS</option>
+                <option value="dmd">D</option>
+                <option value="dcl">DCL</option>
+                <option value="bat">DOS batch script</option>
+                <option value="dylan">Dylan</option>
+                <option value="ebuild">Ebuild</option>
+                <option value="eiffel">Eiffel</option>
+                <option value="emacslisp">Emacs Lisp</option>
+                <option value="erlang">Erlang</option>
+                <option value="exheres">Exheres</option>
+                <option value="factor">Factor</option>
+                <option value="fortranfixed">Fortran (Fixed-format)</option>
+                <option value="fortranfree">Fortran (Free-format)</option>
+                <option value="groovy">Groovy</option>
+                <option value="haml">Haml</option>
+                <option value="haskell">Haskell</option>
+                <option value="haxe">HaXe</option>
+                <option value="html">HTML</option>
+                <option value="idl_pvwave">IDL/PV-WAVE/GDL</option>
+                <option value="java">Java</option>
+                <option value="javascript">JavaScript</option>
+                <option value="limbo">limbo</option>
+                <option value="lisp">Lisp</option>
+                <option value="lua">Lua</option>
+                <option value="make">Make</option>
+                <option value="matlab">Matlab</option>
+                <option value="metafont">MetaFont</option>
+                <option value="metapost">MetaPost</option>
+                <option value="mxml">MXML</option>
+                <option value="nix">Nix</option>
+                <option value="objective_c">Objective C</option>
+                <option value="ocaml">Objective Caml</option>
+                <option value="objective_j">Objective-J</option>
+                <option value="octave">octave</option>
+                <option value="glsl">OpenGL Shading</option>
+                <option value="pascal">Pascal</option>
+                <option value="perl">Perl</option>
+                <option value="php">PHP</option>
+                <option value="pike">Pike</option>
+                <option value="python">Python</option>
+                <option value="r">R</option>
+                <option value="rexx">Rexx</option>
+                <option value="ruby">Ruby</option>
+                <option value="scala">Scala</option>
+                <option value="scheme">Scheme</option>
+                <option value="scilab">Scilab</option>
+                <option value="shell">shell script</option>
+                <option value="smalltalk">Smalltalk</option>
+                <option value="sql">SQL</option>
+                <option value="stratego">Stratego</option>
+                <option value="structured_basic">Structured Basic</option>
+                <option value="tcl">Tcl</option>
+                <option value="tex">TeX/LaTeX</option>
+                <option value="vala">Vala</option>
+                <option value="vhdl">VHDL</option>
+                <option value="vim">Vim Script</option>
+                <option value="visualbasic">Visual Basic</option>
+                <option value="xaml">XAML</option>
+                <option value="xml">XML</option>
+                <option value="xmlschema">XML Schema</option>
+                <option value="xslt">XSL Transformation</option>
+              </select>
+            </div>
+            <div class='select'>
+              <div class='swatch' style='background-color:#F35F1F'>&nbsp;</div>
+              <select name='l1'>
+                <option value="-1">[None]</option>
+                <option value="actionscript">ActionScript</option>
+                <option value="ada">Ada</option>
+                <option value="assembler">Assembly</option>
+                <option value="autoconf">Autoconf</option>
+                <option value="automake">Automake</option>
+                <option value="awk">AWK</option>
+                <option value="blitzmax">BlitzMax</option>
+                <option value="boo">Boo</option>
+                <option value="c">C</option>
+                <option value="csharp">C#</option>
+                <option value="cpp" selected="selected">C++</option>
+                <option value="cncpp">C/C++</option>
+                <option value="classic_basic">Classic Basic</option>
+                <option value="clearsilver">ClearSilver</option>
+                <option value="cmake">cmake</option>
+                <option value="css">CSS</option>
+                <option value="dmd">D</option>
+                <option value="dcl">DCL</option>
+                <option value="bat">DOS batch script</option>
+                <option value="dylan">Dylan</option>
+                <option value="ebuild">Ebuild</option>
+                <option value="eiffel">Eiffel</option>
+                <option value="emacslisp">Emacs Lisp</option>
+                <option value="erlang">Erlang</option>
+                <option value="exheres">Exheres</option>
+                <option value="factor">Factor</option>
+                <option value="fortranfixed">Fortran (Fixed-format)</option>
+                <option value="fortranfree">Fortran (Free-format)</option>
+                <option value="groovy">Groovy</option>
+                <option value="haml">Haml</option>
+                <option value="haskell">Haskell</option>
+                <option value="haxe">HaXe</option>
+                <option value="html">HTML</option>
+                <option value="idl_pvwave">IDL/PV-WAVE/GDL</option>
+                <option value="java">Java</option>
+                <option value="javascript">JavaScript</option>
+                <option value="limbo">limbo</option>
+                <option value="lisp">Lisp</option>
+                <option value="lua">Lua</option>
+                <option value="make">Make</option>
+                <option value="matlab">Matlab</option>
+                <option value="metafont">MetaFont</option>
+                <option value="metapost">MetaPost</option>
+                <option value="mxml">MXML</option>
+                <option value="nix">Nix</option>
+                <option value="objective_c">Objective C</option>
+                <option value="ocaml">Objective Caml</option>
+                <option value="objective_j">Objective-J</option>
+                <option value="octave">octave</option>
+                <option value="glsl">OpenGL Shading</option>
+                <option value="pascal">Pascal</option>
+                <option value="perl">Perl</option>
+                <option value="php">PHP</option>
+                <option value="pike">Pike</option>
+                <option value="python">Python</option>
+                <option value="r">R</option>
+                <option value="rexx">Rexx</option>
+                <option value="ruby">Ruby</option>
+                <option value="scala">Scala</option>
+                <option value="scheme">Scheme</option>
+                <option value="scilab">Scilab</option>
+                <option value="shell">shell script</option>
+                <option value="smalltalk">Smalltalk</option>
+                <option value="sql">SQL</option>
+                <option value="stratego">Stratego</option>
+                <option value="structured_basic">Structured Basic</option>
+                <option value="tcl">Tcl</option>
+                <option value="tex">TeX/LaTeX</option>
+                <option value="vala">Vala</option>
+                <option value="vhdl">VHDL</option>
+                <option value="vim">Vim Script</option>
+                <option value="visualbasic">Visual Basic</option>
+                <option value="xaml">XAML</option>
+                <option value="xml">XML</option>
+                <option value="xmlschema">XML Schema</option>
+                <option value="xslt">XSL Transformation</option>
+              </select>
+            </div>
+            <div class='select'>
+              <div class='swatch' style='background-color:#9A63AD'>&nbsp;</div>
+              <select name='l2'>
+                <option value="-1">[None]</option>
+                <option value="actionscript">ActionScript</option>
+                <option value="ada">Ada</option>
+                <option value="assembler">Assembly</option>
+                <option value="autoconf">Autoconf</option>
+                <option value="automake">Automake</option>
+                <option value="awk">AWK</option>
+                <option value="blitzmax">BlitzMax</option>
+                <option value="boo">Boo</option>
+                <option value="c">C</option>
+                <option value="csharp">C#</option>
+                <option value="cpp">C++</option>
+                <option value="cncpp">C/C++</option>
+                <option value="classic_basic">Classic Basic</option>
+                <option value="clearsilver">ClearSilver</option>
+                <option value="cmake">cmake</option>
+                <option value="css">CSS</option>
+                <option value="dmd">D</option>
+                <option value="dcl">DCL</option>
+                <option value="bat">DOS batch script</option>
+                <option value="dylan">Dylan</option>
+                <option value="ebuild">Ebuild</option>
+                <option value="eiffel">Eiffel</option>
+                <option value="emacslisp">Emacs Lisp</option>
+                <option value="erlang">Erlang</option>
+                <option value="exheres">Exheres</option>
+                <option value="factor">Factor</option>
+                <option value="fortranfixed">Fortran (Fixed-format)</option>
+                <option value="fortranfree">Fortran (Free-format)</option>
+                <option value="groovy">Groovy</option>
+                <option value="haml">Haml</option>
+                <option value="haskell">Haskell</option>
+                <option value="haxe">HaXe</option>
+                <option value="html">HTML</option>
+                <option value="idl_pvwave">IDL/PV-WAVE/GDL</option>
+                <option value="java" selected="selected">Java</option>
+                <option value="javascript">JavaScript</option>
+                <option value="limbo">limbo</option>
+                <option value="lisp">Lisp</option>
+                <option value="lua">Lua</option>
+                <option value="make">Make</option>
+                <option value="matlab">Matlab</option>
+                <option value="metafont">MetaFont</option>
+                <option value="metapost">MetaPost</option>
+                <option value="mxml">MXML</option>
+                <option value="nix">Nix</option>
+                <option value="objective_c">Objective C</option>
+                <option value="ocaml">Objective Caml</option>
+                <option value="objective_j">Objective-J</option>
+                <option value="octave">octave</option>
+                <option value="glsl">OpenGL Shading</option>
+                <option value="pascal">Pascal</option>
+                <option value="perl">Perl</option>
+                <option value="php">PHP</option>
+                <option value="pike">Pike</option>
+                <option value="python">Python</option>
+                <option value="r">R</option>
+                <option value="rexx">Rexx</option>
+                <option value="ruby">Ruby</option>
+                <option value="scala">Scala</option>
+                <option value="scheme">Scheme</option>
+                <option value="scilab">Scilab</option>
+                <option value="shell">shell script</option>
+                <option value="smalltalk">Smalltalk</option>
+                <option value="sql">SQL</option>
+                <option value="stratego">Stratego</option>
+                <option value="structured_basic">Structured Basic</option>
+                <option value="tcl">Tcl</option>
+                <option value="tex">TeX/LaTeX</option>
+                <option value="vala">Vala</option>
+                <option value="vhdl">VHDL</option>
+                <option value="vim">Vim Script</option>
+                <option value="visualbasic">Visual Basic</option>
+                <option value="xaml">XAML</option>
+                <option value="xml">XML</option>
+                <option value="xmlschema">XML Schema</option>
+                <option value="xslt">XSL Transformation</option>
+              </select>
+            </div>
+            <div class='select'>
+              <div class='swatch' style='background-color:#4A246B'>&nbsp;</div>
+              <select name='l3'>
+                <option value="-1">[None]</option>
+                <option value="actionscript">ActionScript</option>
+                <option value="ada">Ada</option>
+                <option value="assembler">Assembly</option>
+                <option value="autoconf">Autoconf</option>
+                <option value="automake">Automake</option>
+                <option value="awk">AWK</option>
+                <option value="blitzmax">BlitzMax</option>
+                <option value="boo">Boo</option>
+                <option value="c">C</option>
+                <option value="csharp">C#</option>
+                <option value="cpp">C++</option>
+                <option value="cncpp">C/C++</option>
+                <option value="classic_basic">Classic Basic</option>
+                <option value="clearsilver">ClearSilver</option>
+                <option value="cmake">cmake</option>
+                <option value="css">CSS</option>
+                <option value="dmd">D</option>
+                <option value="dcl">DCL</option>
+                <option value="bat">DOS batch script</option>
+                <option value="dylan">Dylan</option>
+                <option value="ebuild">Ebuild</option>
+                <option value="eiffel">Eiffel</option>
+                <option value="emacslisp">Emacs Lisp</option>
+                <option value="erlang">Erlang</option>
+                <option value="exheres">Exheres</option>
+                <option value="factor">Factor</option>
+                <option value="fortranfixed">Fortran (Fixed-format)</option>
+                <option value="fortranfree">Fortran (Free-format)</option>
+                <option value="groovy">Groovy</option>
+                <option value="haml">Haml</option>
+                <option value="haskell">Haskell</option>
+                <option value="haxe">HaXe</option>
+                <option value="html">HTML</option>
+                <option value="idl_pvwave">IDL/PV-WAVE/GDL</option>
+                <option value="java">Java</option>
+                <option value="javascript">JavaScript</option>
+                <option value="limbo">limbo</option>
+                <option value="lisp">Lisp</option>
+                <option value="lua">Lua</option>
+                <option value="make">Make</option>
+                <option value="matlab">Matlab</option>
+                <option value="metafont">MetaFont</option>
+                <option value="metapost">MetaPost</option>
+                <option value="mxml">MXML</option>
+                <option value="nix">Nix</option>
+                <option value="objective_c">Objective C</option>
+                <option value="ocaml">Objective Caml</option>
+                <option value="objective_j">Objective-J</option>
+                <option value="octave">octave</option>
+                <option value="glsl">OpenGL Shading</option>
+                <option value="pascal">Pascal</option>
+                <option value="perl">Perl</option>
+                <option value="php">PHP</option>
+                <option value="pike">Pike</option>
+                <option value="python" selected="selected">Python</option>
+                <option value="r">R</option>
+                <option value="rexx">Rexx</option>
+                <option value="ruby">Ruby</option>
+                <option value="scala">Scala</option>
+                <option value="scheme">Scheme</option>
+                <option value="scilab">Scilab</option>
+                <option value="shell">shell script</option>
+                <option value="smalltalk">Smalltalk</option>
+                <option value="sql">SQL</option>
+                <option value="stratego">Stratego</option>
+                <option value="structured_basic">Structured Basic</option>
+                <option value="tcl">Tcl</option>
+                <option value="tex">TeX/LaTeX</option>
+                <option value="vala">Vala</option>
+                <option value="vhdl">VHDL</option>
+                <option value="vim">Vim Script</option>
+                <option value="visualbasic">Visual Basic</option>
+                <option value="xaml">XAML</option>
+                <option value="xml">XML</option>
+                <option value="xmlschema">XML Schema</option>
+                <option value="xslt">XSL Transformation</option>
+              </select>
+            </div>
+            <div class='select'>
+              <div class='swatch' style='background-color:#A40011'>&nbsp;</div>
+              <select name='l4'>
+                <option value="-1">[None]</option>
+                <option value="actionscript">ActionScript</option>
+                <option value="ada">Ada</option>
+                <option value="assembler">Assembly</option>
+                <option value="autoconf">Autoconf</option>
+                <option value="automake">Automake</option>
+                <option value="awk">AWK</option>
+                <option value="blitzmax">BlitzMax</option>
+                <option value="boo">Boo</option>
+                <option value="c">C</option>
+                <option value="csharp">C#</option>
+                <option value="cpp">C++</option>
+                <option value="cncpp">C/C++</option>
+                <option value="classic_basic">Classic Basic</option>
+                <option value="clearsilver">ClearSilver</option>
+                <option value="cmake">cmake</option>
+                <option value="css">CSS</option>
+                <option value="dmd">D</option>
+                <option value="dcl">DCL</option>
+                <option value="bat">DOS batch script</option>
+                <option value="dylan">Dylan</option>
+                <option value="ebuild">Ebuild</option>
+                <option value="eiffel">Eiffel</option>
+                <option value="emacslisp">Emacs Lisp</option>
+                <option value="erlang">Erlang</option>
+                <option value="exheres">Exheres</option>
+                <option value="factor">Factor</option>
+                <option value="fortranfixed">Fortran (Fixed-format)</option>
+                <option value="fortranfree">Fortran (Free-format)</option>
+                <option value="groovy">Groovy</option>
+                <option value="haml">Haml</option>
+                <option value="haskell">Haskell</option>
+                <option value="haxe">HaXe</option>
+                <option value="html">HTML</option>
+                <option value="idl_pvwave">IDL/PV-WAVE/GDL</option>
+                <option value="java">Java</option>
+                <option value="javascript">JavaScript</option>
+                <option value="limbo">limbo</option>
+                <option value="lisp">Lisp</option>
+                <option value="lua">Lua</option>
+                <option value="make">Make</option>
+                <option value="matlab">Matlab</option>
+                <option value="metafont">MetaFont</option>
+                <option value="metapost">MetaPost</option>
+                <option value="mxml">MXML</option>
+                <option value="nix">Nix</option>
+                <option value="objective_c">Objective C</option>
+                <option value="ocaml">Objective Caml</option>
+                <option value="objective_j">Objective-J</option>
+                <option value="octave">octave</option>
+                <option value="glsl">OpenGL Shading</option>
+                <option value="pascal">Pascal</option>
+                <option value="perl">Perl</option>
+                <option value="php">PHP</option>
+                <option value="pike">Pike</option>
+                <option value="python">Python</option>
+                <option value="r">R</option>
+                <option value="rexx">Rexx</option>
+                <option value="ruby" selected="selected">Ruby</option>
+                <option value="scala">Scala</option>
+                <option value="scheme">Scheme</option>
+                <option value="scilab">Scilab</option>
+                <option value="shell">shell script</option>
+                <option value="smalltalk">Smalltalk</option>
+                <option value="sql">SQL</option>
+                <option value="stratego">Stratego</option>
+                <option value="structured_basic">Structured Basic</option>
+                <option value="tcl">Tcl</option>
+                <option value="tex">TeX/LaTeX</option>
+                <option value="vala">Vala</option>
+                <option value="vhdl">VHDL</option>
+                <option value="vim">Vim Script</option>
+                <option value="visualbasic">Visual Basic</option>
+                <option value="xaml">XAML</option>
+                <option value="xml">XML</option>
+                <option value="xmlschema">XML Schema</option>
+                <option value="xslt">XSL Transformation</option>
+              </select>
+            </div>
+            <div class='select add_language'>
+              <div class='swatch'>&nbsp;</div>
+              <select name='l5'>
+                <option value="-1" selected="selected">[None]</option>
+                <option value="actionscript">ActionScript</option>
+                <option value="ada">Ada</option>
+                <option value="assembler">Assembly</option>
+                <option value="autoconf">Autoconf</option>
+                <option value="automake">Automake</option>
+                <option value="awk">AWK</option>
+                <option value="blitzmax">BlitzMax</option>
+                <option value="boo">Boo</option>
+                <option value="c">C</option>
+                <option value="csharp">C#</option>
+                <option value="cpp">C++</option>
+                <option value="cncpp">C/C++</option>
+                <option value="classic_basic">Classic Basic</option>
+                <option value="clearsilver">ClearSilver</option>
+                <option value="cmake">cmake</option>
+                <option value="css">CSS</option>
+                <option value="dmd">D</option>
+                <option value="dcl">DCL</option>
+                <option value="bat">DOS batch script</option>
+                <option value="dylan">Dylan</option>
+                <option value="ebuild">Ebuild</option>
+                <option value="eiffel">Eiffel</option>
+                <option value="emacslisp">Emacs Lisp</option>
+                <option value="erlang">Erlang</option>
+                <option value="exheres">Exheres</option>
+                <option value="factor">Factor</option>
+                <option value="fortranfixed">Fortran (Fixed-format)</option>
+                <option value="fortranfree">Fortran (Free-format)</option>
+                <option value="groovy">Groovy</option>
+                <option value="haml">Haml</option>
+                <option value="haskell">Haskell</option>
+                <option value="haxe">HaXe</option>
+                <option value="html">HTML</option>
+                <option value="idl_pvwave">IDL/PV-WAVE/GDL</option>
+                <option value="java">Java</option>
+                <option value="javascript">JavaScript</option>
+                <option value="limbo">limbo</option>
+                <option value="lisp">Lisp</option>
+                <option value="lua">Lua</option>
+                <option value="make">Make</option>
+                <option value="matlab">Matlab</option>
+                <option value="metafont">MetaFont</option>
+                <option value="metapost">MetaPost</option>
+                <option value="mxml">MXML</option>
+                <option value="nix">Nix</option>
+                <option value="objective_c">Objective C</option>
+                <option value="ocaml">Objective Caml</option>
+                <option value="objective_j">Objective-J</option>
+                <option value="octave">octave</option>
+                <option value="glsl">OpenGL Shading</option>
+                <option value="pascal">Pascal</option>
+                <option value="perl">Perl</option>
+                <option value="php">PHP</option>
+                <option value="pike">Pike</option>
+                <option value="python">Python</option>
+                <option value="r">R</option>
+                <option value="rexx">Rexx</option>
+                <option value="ruby">Ruby</option>
+                <option value="scala">Scala</option>
+                <option value="scheme">Scheme</option>
+                <option value="scilab">Scilab</option>
+                <option value="shell">shell script</option>
+                <option value="smalltalk">Smalltalk</option>
+                <option value="sql">SQL</option>
+                <option value="stratego">Stratego</option>
+                <option value="structured_basic">Structured Basic</option>
+                <option value="tcl">Tcl</option>
+                <option value="tex">TeX/LaTeX</option>
+                <option value="vala">Vala</option>
+                <option value="vhdl">VHDL</option>
+                <option value="vim">Vim Script</option>
+                <option value="visualbasic">Visual Basic</option>
+                <option value="xaml">XAML</option>
+                <option value="xml">XML</option>
+                <option value="xmlschema">XML Schema</option>
+                <option value="xslt">XSL Transformation</option>
+              </select>
+            </div>
+            <div class='submit'>
+              <input id="charted_languages_submit" name="commit" type="submit" value="Update" />
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+    <div class="clear" style="padding:1px;"></div>
+    <div id='footer'>
+  <div class='row'>
+    <div class='col span_3 mezzo'>
+      <div class='inset'>
+        <h4>Ohloh</h4>
+        <ul>
+          <li>
+            <a href='http://www.ohloh.net/about/us'>About</a>
+          </li>
+          <li>
+            <a href='http://www.ohloh.net/help/faq'>FAQ</a>
+          </li>
+          <li>
+            <a href='http://www.ohloh.net/blog'>Blog</a>
+          </li>
+          <li>
+            <a href='http://www.ohloh.net/about/news'>News</a>
+          </li>
+          <li><a href="http://www.ohloh.net/forums">Forums</a></li>
+          <li>
+            <a href='http://www.ohloh.net/api/getting_started'>API</a>
+          </li>
+          <li>
+            <a href='http://www.ohloh.net/about/terms'>Terms</a>
+          </li>
+          <li>
+            <a href='http://www.ohloh.net/about/privacy'>Privacy</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class='col span_3 mezzo'>
+      <div class='inset'>
+        <h4>New Projects</h4>
+        <ul>
+          <li><a href="http://www.ohloh.net/p/pyfsevents">pyfsevents</a></li>
+          <li><a href="http://www.ohloh.net/p/morm">Morm</a></li>
+          <li><a href="http://www.ohloh.net/p/geoalchemy">GeoAlchemy</a></li>
+          <li><a href="http://www.ohloh.net/p/jtentative">JTentative</a></li>
+          <li><a href="http://www.ohloh.net/p/ilenia">ilenia</a></li>
+          <li><a href="http://www.ohloh.net/p/gradssharp">GradsSharp</a></li>
+          <li><a href="http://www.ohloh.net/p/cruxppc">CRUX PPC</a></li>
+          <li><a href="http://www.ohloh.net/p/GEOS-COM">GEOS COM Wrapper</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class='col span_5 mezzo'>
+      <div class='inset'>
+        <h4><a href="/posts">Recent Posts</a></h4>
+        <ul>
+          <li>
+            <a class='listing_block' href='/forums/3493/topics/3778#posts-11379'>
+              Fails to identify comments in Fortran free format
+              <span class='author'>
+                by
+                Glenn Randers-Pehrson
+              </span>
+              <br />
+              <div class='comment'>
+                Code analysis of my Fortran shows 0 comments while in reality there are some, which have a lower-...
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class='listing_block' href='/forums/10/topics/3771#posts-11378'>
+              Kudo calculation??
+              <span class='author'>
+                by
+                Werner Keil
+              </span>
+              <br />
+              <div class='comment'>
+                Especially since you mentioned Eclipse Babel, there's been a couple of posts regarding a differen...
+              </div>
+            </a>
+          </li>
+          <li>
+            <a class='listing_block' href='/forums/10/topics/3771#posts-11377'>
+              Kudo calculation??
+              <span class='author'>
+                by
+                Werner Keil
+              </span>
+              <br />
+              <div class='comment'>
+                Hi Robin,
+                
+                I have around 2000 commits and over half a million lines of code, if that doesn't coun...
+              </div>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <div class='col span_5 mezzo last'>
+      <div class='inset'>
+        <h4><a href="/reviews?sort_by=recently_added">Recent Reviews</a></h4>
+        <ul>
+          <li>
+            <a class='listing_block' href='http://www.ohloh.net/p/evennia/reviews'>
+              Evennia
+              <span class='author'>
+                by
+                Griatch
+              </span>
+              <br />
+              			<span id="footer_star_1321">
+              			<span style="font-size:1px;float:left;display:inline;height:13px;width:57px;background:url(/images/stars/stars_ro_mini.png) left bottom">&nbsp;</span>
+              			</span>
+              <br />
+              <span class='comment'>
+                Looking at MUD barebones codebases is quite a jarring experience. There are plenty of them around...
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class='listing_block' href='http://www.ohloh.net/p/spyrit/reviews'>
+              Spyrit
+              <span class='author'>
+                by
+                Griatch
+              </span>
+              <br />
+              			<span id="footer_star_1320">
+              			<span style="font-size:1px;float:left;display:inline;height:13px;width:57px;background:url(/images/stars/stars_ro_mini.png) left bottom">&nbsp;</span>
+              			</span>
+              <br />
+              <span class='comment'>
+                I have been looking around all over for good Linux MUD clients. Trying various of them, but the c...
+              </span>
+            </a>
+          </li>
+          <li>
+            <a class='listing_block' href='http://www.ohloh.net/p/KumbiaPHP_framework/reviews'>
+              KumbiaPHP Framework
+              <span class='author'>
+                by
+                mauroxan
+              </span>
+              <br />
+              			<span id="footer_star_1319">
+              			<span style="font-size:1px;float:left;display:inline;height:13px;width:57px;background:url(/images/stars/stars_ro_mini.png) left bottom">&nbsp;</span>
+              			</span>
+              <br />
+              <span class='comment'>
+                Es genial saber y contar con el apoyo de un Framework que habla español y te enseña en español, l...
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <p style='clear:left'>&nbsp;</p>
+</div>
+
+  <script type="text/javascript">
+    var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+    document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+  </script>
+  <script type="text/javascript">
+    var pageTracker = _gat._getTracker("UA-449914-1");
+    pageTracker._initData();
+    pageTracker._trackPageview();
+  </script>
+
+  
+
+  </div>
+</body>
+</html>

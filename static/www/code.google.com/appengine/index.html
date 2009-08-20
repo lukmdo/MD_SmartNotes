@@ -1,0 +1,499 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+ 
+  
+ 
+
+
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
+<title>Google App Engine - Google Code</title>
+<script type="text/javascript"><!--
+(function(){function a(){this.t={};this.tick=function(c){this.t[c]=(new Date).getTime()};this.tick("start")}var b=new a;window.jstiming={Timer:a,load:b};if(window.external&&window.external.pageT)window.jstiming.pt=window.external.pageT;})();
+
+var _tocPath_ = '/appengine/docs/_toc.ezt';
+var codesite_token = null;
+var logged_in_user_email = null;
+//--></script>
+<link href="/css/codesite.pack.04102009.css" type="text/css" rel="stylesheet"></link>
+<script src="/js/codesite_head.pack.04102009.js" type="text/javascript"></script>
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('bhs');</script>
+<link rel="search" type="application/opensearchdescription+xml" title="Google Code" href="/osd.xml" />
+
+    <script type="text/javascript" charset="utf-8">
+     
+    
+    window._apiGadgetData_ = {
+      blogFeedName: '',
+      blogFeedUrl: '',
+      groupLink: '',
+      featureFeedUrl: '',
+      groupFeedUrl: '',
+      articleLink: '/appengine/articles/',
+      articleFeedUrl: ''
+    };
+    
+</script>
+
+  </head>
+  <body>
+    <a id="top" name="top">
+ 
+    
+    
+    
+</a>
+
+<div id="gb">
+ <span>
+  
+   
+   
+    <a href="#" id="projects-dropdown" onclick="return false;">My favorites</a><img width="14" height="14" class="menuIcon off" id="menuIcon-projects-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif"/>
+    |
+   
+  
+    <a id="lang-dropdown" class="dropdown" href="/" onclick="return false;"><img width="13" height="13" class="globeicon" src="/images/globe2_small.png"/><span>English</span></a><img width="14" height="14" class="menuIcon off" id="menuIcon-lang-dropdown" src="http://www.gstatic.com/codesite/ph/images/cleardot.gif"/>
+  
+   
+    | <a href="https://www.google.com/accounts/Login?continue=http%3A%2F%2Fcode.google.com%2Fappengine%2F&amp;followup=http%3A%2F%2Fcode.google.com%2Fappengine%2F" onclick="CODESITE_click('/gb/sc/signin');">Sign in</a>
+   
+  
+ </span>
+</div>
+
+<div class="gbh" style="left: 0pt;"></div>
+<div class="gbh" style="right: 0pt;"></div>
+
+
+<style type="text/css">
+  #gc-topnav h1 {
+    padding: 0 0 0 6px;
+  }
+</style>
+
+
+<div id="gc-container">
+<a name="top"></a>
+<div id="skipto">
+  <a href="#gc-home-anchor">Skip to page content</a>
+  <a href="#gc-topnav-anchor">Skip to main navigation</a>
+</div>
+
+<div id="gc-header">
+  <div id="logo"><a href="/">
+  
+  
+     <img src="/images/code_logo.png" height="40" width="161" alt="Google Code" style="border:0;margin:3px 0 0 0;"/>
+  
+  
+  </a></div>
+  <div id="search">
+    <div id="searchForm" class="searchForm">
+      <form id="cse" action="http://www.google.com/cse" accept-charset="utf-8" class="gsc-search-box" onsubmit="executeGSearch(document.getElementById('gsearchInput').value); return false;">
+      <noscript>
+      <input type="hidden" name="cref" value="http://code.google.com/cse/googlecode-context.xml"/>
+      </noscript>
+        <table class="gsc-search-box" cellpadding="0" cellspacing="0">
+          <tbody>
+            <tr>
+              <td class="gsc-input">
+                <input id="gsearchInput" type="text" name="q" maxlength="2048" class="gsc-input" autocomplete="off" title="Google Code Search" style="width:345px"/>
+              </td>
+              <td class="gsc-search-button">
+                <div id="cs-searchresults" onclick="event.cancelBubble = true;"></div>
+                <input title="Search" id="gsearchButton" class="gsc-search-button" name="sa" value="Search" type="submit"/>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2" class="greytext">e.g. &quot;templates&quot; or &quot;datastore&quot;</td>
+            </tr>
+          </tbody>
+        </table>
+      </form>
+    </div> <!-- end searchForm -->
+  </div> <!-- end search -->
+</div> <!-- end gc-header -->
+
+
+<div id="codesiteContent">
+
+<a name="gc-topnav-anchor"></a>
+<div id="gc-topnav">
+  <h1>Google App Engine</h1>
+  <ul id="home" class="gc-topnav-tabs">
+
+    <li id="home_link">
+      <a href="/appengine/" class="selected" title="Google App Engine home page">Home</a>
+    </li>
+  
+    <li id="docs_link">
+      <a href="/appengine/docs/" title="Official Google App Engine documentation">Docs</a>
+    </li>
+  
+    <li id="faq_link">
+      <a href="/appengine/kb/" title="Answers to frequently asked questions about Google App Engine">FAQ</a>
+    </li>
+  
+    <li id="articles_link">
+      <a href="/appengine/articles/" title="Focused articles and tutorials for Google App Engine developers">Articles</a>
+    </li>
+  
+    <li>
+      <a href="http://googleappengine.blogspot.com/" title="Official Google App Engine blog">Blog</a>
+    </li>
+  
+    <li>
+      <a href="/appengine/community.html" title="Community home for Google App Engine">Community</a>
+    </li>
+  
+    <li>
+      <a href="/appengine/terms.html" title="Google App Engine terms of service">Terms</a>
+    </li>
+  
+    <li>
+      <a href="/appengine/downloads.html" title="Download Google App Engine">Download</a>
+    </li>
+  
+
+  </ul>
+</div> <!-- end gc-topnav -->
+
+  <a name="gc-home-anchor"></a>
+  <div id="gc-home">
+    <div class="g-section g-tpl-330-alt">
+
+      <div class="g-unit g-first">
+        <div class="g-c-gc-home">
+
+
+<!-- Call to Action Box, Upper Right -->
+<div style="margin: 1em 0em 2em 0em; padding: 0em 1em 45px 1em; background-color: rgb(229, 236, 249);">
+
+  <!-- Getting Started Steps -->
+  <h2 style="padding-top: 0.5em;">Getting Started</h2>
+    <ol>
+      <li style="margin-left:.5em;">
+        <a target="_blank" href="https://appengine.google.com/">Sign up</a> for an App Engine account.
+      </li>
+      <li style="margin-left:.5em;">
+        <a href="/appengine/downloads.html">Download</a> the App Engine SDK.
+      </li>
+      <li style="margin-left:.5em;">
+        Read the <a href="/appengine/docs/python/gettingstarted/">Getting Started Guide</a>.
+      </li>
+      <li style="margin-left:.5em;">
+        Check out sample apps in the <a href="http://appgallery.appspot.com/">App Gallery</a>.
+      </li>
+    </ol>
+
+  <!-- Videos -->
+  <div>
+  <h2 style="padding-top: 2.5;">Watch and Learn</h2>
+    <a href="http://www.youtube.com/watch?v=bfgO-LXGpTM" target="_blank">
+      <img width="100" src="images/demo_video.gif" alt="Writing an App on Google App Engine"
+        style="border: 0pt; padding: 0px 10px 0px 0px; float: left; margin-top: 10px;" />
+    </a>
+    <div style="padding: 10px 0px 0px 10px;">
+      Developing and deploying on Google App Engine.<br/>
+      <a href="http://www.youtube.com/watch?v=bfgO-LXGpTM" target="_blank">Watch Now</a>
+    </div>
+  </div>
+
+  <!-- Articles -->
+  <div>
+  <h2 style="padding-top: 2.5em">Recent Articles</h2>
+
+    <div style="padding-top: 1em; font-weight:bold">
+      <a href="/appengine/articles/remote_api.html">
+        Accessing the datastore remotely with remote_api
+      </a>
+    </div>
+    <div style="padding-top: .5em;">
+      Developers can now access the datastore remotely, thanks to the new
+      remote_api module. This article demonstrates how to use it for a number
+      of remote administration tasks.
+    </div>
+
+    <div style="padding-top: 1em; font-weight: bold">
+      <a href="/appengine/articles/hooks.html">
+        Using Hooks in App Engine
+      </a>
+    </div>
+    <div style="padding-top: .5em;">
+      Learn how to implement a crosscutting change in the global behavior of an
+      application at very little risk and with minimal code changes.
+    </div>
+
+    <div style="padding-top: 1em; font-weight: bold">
+      <a href="/appengine/articles/index_building.html">
+        How Index Building Works
+      </a>
+    </div>
+    <div style="padding-top: .5em;">
+      Learn how to add and populate a new index for your application, as well as
+      important tips for cleaning up after you delete an index.
+    </div>
+
+  <div style="padding-top: 1em;" >
+    <a href="/appengine/articles">All Articles &raquo;</a>
+  </div>
+
+  </div>
+</div>
+
+
+<div style="margin:10px auto;width:300px;clear:both;" id="google-io-badge">
+  <a href="/events/io/" onclick="siteTracker._trackEvent('Promos','IO_badge',this.href);"><img src="/events/io/images/io2009-sm.png" alt="Google I/O" style="border:0;"></a>
+  <div style="margin:.5em 0 0 0;"><a href="/events/io/sessions.html#appengine" onclick="siteTracker._trackEvent('Promos','IO_badge',this.href);">Watch the videos from Google I/O 2009 &raquo;</a></div>
+</div>
+
+
+
+      
+        </div>
+      </div>
+      <div class="g-unit">
+        <div class="g-c-gc-home">
+   
+
+<!-- Logo and Header -->
+<div style="margin-top: 0px; display:table">
+  <img src="images/appengine_lowres.gif" style="float: left; padding-right: 25px" />
+  <div style="display: table-cell; vertical-align: middle;">
+    <span style="font-size: 170%; font-weight: bold; padding-top: 20px;">
+      Run your web apps on Google's infrastructure.<br/>
+    </span>
+    <span style="font-size: 120%; padding-top: 10px;">
+      Easy to build, easy to maintain, easy to scale.
+    </span>
+  </div>
+</div>
+
+<!-- Main Content Left Flow -->
+<div style="float: left;">
+<table class="columns">
+  <tbody>
+
+    <tr><td>
+     <div style="margin-left: 30px; margin-bottom: 20px;">
+        <div style="margin-top: 15px; margin-bottom: 10px; font-size: 150%; font-weight: bold;">
+          Java&#8482; Language Support
+        </div>
+        <div style="padding-top: 5px; line-height: 125%;">
+          App Engine recently unveiled its second language: Java. This release
+          includes our Java runtime, integration with Google Web Toolkit, and a
+          Google Plugin for Eclipse, giving you an end-to-end Java solution for
+          AJAX web applications. The Java runtime is now available for anyone to
+          use, so please give it a try and send us your feedback.
+          <ul>
+            <li>Get the full scoop in our
+              <a href="http://googleappengine.blogspot.com/2009/04/seriously-this-time-new-language-on-app.html">
+                blog post</a>.</li>
+            <li>Click over to YouTube to watch our
+              <a href="http://www.youtube.com/view_play_list?p=DFDBB63922B90A70">
+                Campfire One announcements</a>.</li>
+            <li>See our docs for other new features like
+                <a href="/appengine/docs/python/config/cron.html">cron support</a>,
+                <a href="/appengine/docs/python/tools/uploadingdata.html">database import</a>,
+                and <a href="/securedataconnector/">access to firewalled data</a>.
+            </li>
+          </ul>
+          <div style="padding: 0px 0px 0px 15px;">
+            <a href="http://www.youtube.com/watch?v=P3GT4-m_6RQ" target="_blank">
+              <img src="http://img.youtube.com/vi/P3GT4-m_6RQ/1.jpg"
+                style="border: 0pt; padding: 0px 10px; float: left;" />
+            </a>
+            <div style="color: gray; padding: 10px;">
+              Get an overview of App Engine's new Java
+              runtime and see a demo of a sample app from creation to
+              deployment.<br/>
+              <a href="http://www.youtube.com/watch?v=P3GT4-m_6RQ" target="_blank">Watch Now</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </td></tr>
+
+    <tr><td>
+     <div style="margin-left: 30px; margin-bottom: 20px;">
+        <div style="margin-top: 25px; margin-bottom: 10px; font-size: 150%; font-weight: bold;">
+          Grow Beyond The Free Quotas
+        </div>
+        <div style="padding-top: 5px; line-height: 125%;">
+          App Engine developers can now purchase additional computing resources
+          beyond the free quota limits. Scale your application to millions of
+          users and pay only for what you use. App Engine will always be free
+          to get started so you can try it out with no risk.
+          <ul>
+            <li>Learn more from our
+              <a href="http://googleappengine.blogspot.com/2009/02/new-grow-your-app-beyond-free-quotas.html">
+                blog post</a> on the new paid quota features.</li>
+            <li>For details on quotas, pricing, and the upcoming free quota
+            reduction, see our <a href="/appengine/docs/billing.html">docs</a>.</li>
+          </ul>
+        </div>
+      </div>
+    </td></tr>
+
+    <!--
+    <tr> <td>
+      <div style="margin-left: 30px; margin-bottom: 20px;">
+        <div style="margin-top: 15px; margin-bottom: 10px; font-size: 150%; font-weight: bold;">
+          Developer Spotlight
+        </div>
+        <div style="padding-top: 5px; padding-bottom: 10px; line-height: 125%;">
+          Best Buy's Giftag lets users save and share their online wishlists,
+          powered by App Engine. The developers talk about their
+          experience:
+          <a href="http://www.youtube.com/watch?v=uwFvCz4pkMQ" target="_blank">
+            <img src="http://img.youtube.com/vi/uwFvCz4pkMQ/2.jpg"
+              style="border: 0pt; padding: 0px 10px 0px 10px; float: left;" />
+          </a>
+          <div style="padding: 10px 0px 5px 10px; color: gray;">
+            &quot;A lot of the work that none of us really want to do is done
+            for us, so we basically get to be creative and decide how we're
+            going to make our app really succeed.&quot;<br/>
+            &nbsp; &nbsp; &mdash; Jerry St. Sauver, Giftag developer<br/>
+          </div>
+          <a href="http://www.youtube.com/watch?v=uwFvCz4pkMQ" target="_blank">Watch the Video</a>
+        </div>
+      </div>
+    </td></tr>
+    -->
+
+    <tr><td>
+      <div style="margin-left: 30px; margin-bottom: 20px;">
+        <div style="margin-top: 15px; margin-bottom: 10px; font-size: 150%; font-weight: bold;">
+          Learn More
+        </div>
+        <div style="padding-top: 5px; line-height: 125%;">
+          App Engine offers a complete development stack that uses familiar
+          technologies to build and host web applications. Starting out will
+          always be free and if you need additional computing resources,
+          they're available at competitive market pricing.
+          <ul>
+            <li><a href="whyappengine.html">Discover why</a> developers are choosing App Engine.</li>
+            <li>Check out who's using App Engine in <a href="casestudies.html">developer profiles</a>.</li>
+            <li>Explore sample apps in the <a href="http://appgallery.appspot.com">App Gallery</a>.</li>
+          </ul>
+        </div>
+      </div>
+    </td></tr>
+
+  </tbody>
+</table>
+</div>
+
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+
+        
+      </div><!-- end g-c-gc-home -->
+
+
+  <div id="gc-gadgets" class="g-section g-tpl-50-50">
+    <div class="g-unit g-first">
+      <div class="g-c">
+        <div id="gc-blog-gadget"></div>
+      </div>
+    </div>
+    <div class="g-unit">
+      <div class="g-c">
+        <div id="gc-community-gadget"></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- end gc-home -->
+    </div><!-- end g-unit -->
+  </div><!-- end g-section -->
+
+    </div> <!-- end codesite content -->
+
+<div id="gc-footer" dir="ltr">
+  <div class="text">
+    
+      <div class="notice"><div id="notice" style="text-align: center; border: 1em 0em 1em 0em">
+  Except as otherwise <a
+  href="http://code.google.com/policies.html#restrictions">noted</a>,
+  the content of this page is licensed under the <a rel="license"
+  href="http://creativecommons.org/licenses/by/3.0/">Creative Commons
+  Attribution 3.0 License</a>, and code samples are licensed under the
+  <a rel="license" href="http://www.apache.org/licenses/LICENSE-2.0">Apache
+  2.0 License</a>.
+<!-- <rdf:RDF xmlns="http://web.resource.org/cc/" 
+              xmlns:dc="http://purl.org/dc/elements/1.1/"
+              xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+  <Work rdf:about="">
+    <license rdf:resource="http://creativecommons.org/licenses/by/3.0/" />
+  </Work>
+  <License rdf:about="http://creativecommons.org/licenses/by/3.0/">
+    <permits rdf:resource="http://web.resource.org/cc/Reproduction"/>
+    <permits rdf:resource="http://web.resource.org/cc/Distribution"/>
+    <requires rdf:resource="http://web.resource.org/cc/Notice"/>
+    <requires rdf:resource="http://web.resource.org/cc/Attribution"/>
+    <permits rdf:resource="http://web.resource.org/cc/DerivativeWorks"/>
+  </License>
+</rdf:RDF> -->
+</div>
+Java is a registered trademark of Sun Microsystems, Inc.</div>
+    
+    &copy;2009 Google -
+    <a href="/">Code Home</a> -
+    <a href="http://www.google.com/accounts/TOS">Terms of Service</a> -
+    <a href="http://www.google.com/privacy.html">Privacy Policy</a> -
+    <a href="/more/">Site Directory</a>
+    <br /> <br />
+    Google Code offered in:
+    <a href="/intl/en/">English</a> -
+    <a href="/intl/es/">Español</a> -
+    <a href="/intl/ja/">日本語</a> -
+    <a href="/intl/ko/">한국어</a> -
+    <a href="/intl/pt-BR/">Português</a> -
+    <a href="/intl/ru/">Pусский</a> -
+    <a href="/intl/zh-CN/">中文(简体)</a> -
+    <a href="/intl/zh-TW/">中文(繁體)</a>
+  </div>
+</div><!-- end gc-footer -->
+
+</div><!-- end gc-containter -->
+
+<script type="text/javascript">CODESITE_CSITimer['load'].tick('ats');</script>
+<script src="/js/codesite_tail.pack.04102009.js" type="text/javascript"></script>
+
+
+
+
+
+
+
+
+  </body>
+</html>
+

@@ -1,0 +1,137 @@
+dl.apireference {
+  padding-bottom: .5em;
+}
+
+dl.apireference dt {
+  font-weight: normal;
+  font-style: none;
+}
+
+dl.apireference .type {
+  font-weight: bold;
+}
+
+dl.apireference .itemname {
+  font-weight: bold;
+  font-family: monospace;
+  font-size: larger;
+}
+
+dl.apireference .argname {
+  font-style: italic;
+}
+
+dl.apireference .argdefault {
+  font-family: monospace;
+}
+
+/*
+ * Styles for inline code samples
+ */
+
+/* Container for entire sample section */
+div.tabpane {
+  clear: right;
+  margin: 1em 4em 0pt 15px;
+  width: 87%;
+  padding-left: 1px;
+  position: relative;
+}
+
+/* For 'pre' elements in samples section */
+div.tabpane pre {
+  color: #000000;
+  background-color: #FAFAFA;
+  border: 0px;
+  margin: 0px;
+  padding: 2px;
+  overflow: visible;
+}
+
+/* Container for tab content section */
+.content-container {
+  border: 1px solid #CCCCCC;
+  border-top: 0;
+  margin: 0px 0px 0px -2px;
+  overflow:auto;
+  padding:15px;
+  background-color: #FAFAFA;
+}
+
+/* Container for tab header section */
+.ui-tabs-nav {
+  background: #FFFFFF none repeat scroll 0%;
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+
+/* Sample tab headers */
+.ui-tabs-nav li, .ui-tabs-selected {
+  border: 1px solid #cccccc;
+  background-color: #E5ECF9;
+  display: inline;
+  margin: 0px -2px;
+  padding: 0px;
+}
+
+/* Selected tab header */
+.ui-tabs-nav li.ui-tabs-selected {
+  font-weight: bold;
+  padding-bottom: 0px;
+  position: relative;
+  top: 0px;
+  background-color: #FAFAFA;
+  border-bottom: 0px;
+}
+
+/* Links of tab headers */
+.ui-tabs-nav a {
+  line-height: 1.2;
+  margin: 1px 0pt 0pt;
+  outline-color: invert;
+  outline-style: none;
+  outline-width: 0pt;
+  padding-left: 0pt;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Spans of tab headers */
+.ui-tabs-nav a, .ui-tabs-nav a span {
+  display: inline;
+  padding: 0pt 10px;
+  color: black;
+}
+
+/* To hide content */
+.ui-tabs-hide {
+  display: none;
+}
+
+/* Link to full sample code */
+div.tabpane .samplelink {
+  text-align: right;
+  font-size: 83%;
+  font-family: Helvetica, Arial, sans-serif;
+  margin-right: 0px;
+}
+
+/* table containing sample's <pre> tag */
+.codesnippet {
+  border: none;
+  margin: 0px;
+  width: 100%;
+}
+
+.codesnippet td {
+  border: 0px;
+  background: none;
+  padding: 0px;
+}
+
+/* pre element with line numbers */
+.line-no {
+  text-align: center;
+}
