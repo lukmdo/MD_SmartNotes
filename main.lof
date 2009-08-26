@@ -3,10 +3,12 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Programming languages activity graphs.\relax }}{9}{figure.caption.5}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\textbf {Monthly Projects}.\nobreakspace {}\cite {ohloh_projects} \newline The lines show the count of projects with at least \newline one line of code changed in a month.}}}{9}{figure.caption.5}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\textbf {Monthly Contributors}.\nobreakspace {}\cite {ohloh_contributors} \newline The lines show the number of developers who have contributed at least one line of code in each month}}}{9}{figure.caption.5}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Goole App Engine launcher application.\relax }}{12}{figure.caption.6}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces Programming languages activity graphs.\relax }}{10}{figure.caption.5}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\textbf {Monthly Projects}.\nobreakspace {}\cite {ohloh_projects} \newline The lines show the count of projects with at least \newline one line of code changed in a month.}}}{10}{figure.caption.5}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\textbf {Monthly Contributors}.\nobreakspace {}\cite {ohloh_contributors} \newline The lines show the number of developers who have contributed at least one line of code in each month}}}{10}{figure.caption.5}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Goole App Engine launcher application.\relax }}{13}{figure.caption.6}
+\contentsline {figure}{\numberline {1.3}{\ignorespaces The HTTP request life-cycle with Goole App Engine\nobreakspace {}\cite {gae_request_cycle}.\relax }}{15}{figure.caption.7}
+\contentsline {figure}{\numberline {1.4}{\ignorespaces Sample application done with the webapp framework.\relax }}{18}{figure.caption.8}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
