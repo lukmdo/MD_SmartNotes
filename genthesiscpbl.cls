@@ -159,8 +159,8 @@
   \global\setlength{\textheight}{\UBCT@oldtextheight}
   \global\setlength{\oddsidemargin}{\UBCT@oldoddsidemargin}
   \global\setlength{\evensidemargin}{\UBCT@oldevensidemargin}
-  \global\setlength{\topmargin}{\UBCT@oldtopmargin}
-  \global\setlength{\topmargin}{\UBCT@oldtopskip}
+  \global\setlength{\topmargin}{-0.3in}
+%  \global\setlength{\topmargin}{\UBCT@oldtopskip}
   \global\setlength{\@colht}{\UBCT@old@colht}
   \global\setlength{\@colroom}{\UBCT@old@colroom}
   \global\setlength{\vsize}{\UBCT@oldvsize}
@@ -898,8 +898,9 @@
   \addtolength{\textheight}{-\titlemargintop}
   \addtolength{\textheight}{-\titlemarginbottom}
 
+  \setlength{\topmargin}{2.5cm}
+
   \setlength{\topmargin}{\titlemargintop}
-  \addtolength{\topmargin}{-1.0in}
   \addtolength{\topmargin}{-\headheight}
   \addtolength{\topmargin}{-\headsep}
   \setlength{\@colht}{\textheight}%
