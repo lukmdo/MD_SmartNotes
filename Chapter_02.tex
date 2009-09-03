@@ -45,10 +45,58 @@ From the architectural point of view SmartNotes are though as a simple client-se
 The next two sections state some interesting problems synchronization scenarios using VCS and the application activation. They will be analyzed focussing on evaluating some of possible solutions. Finally the best possible to implement idea will be chosen.  
  
 \subsection{Synchronization scenarios using version control systems}\label{subsec:sync_scenarios}
-It is one of the roles of version control systems to keep the repositories updated. Nevertheless they never make it without the user request\footnote{This means that the user has to run appropriate command or click on the right button when using a graphical interface. It could be naturally automated by writing some script that would perform that task for user or by setting a cron job with desired time interval but it still needs user to trigger the update process.}. That may be from several reasons among which dealing with conflict situation like shown on figure~\ref{fig:google_notebook} seams to be the most important. To put in simple words it is a situation when the VCS needs the user decision to resolve the conflict situation. The way the merging is done also differs with different version control systems but from the user perspective operations such like update and merge are easy to imagine when basing on the their final result. It is also some mix of terminology including this basic operations. Fetch implemented by git system consists of three steps:
+It is one of the main responsibilities of version control systems to keep the repositories updated. Nevertheless they never make it without the user request\footnote{This means that the user has to run appropriate command or click on the right button when using a graphical interface. It could be naturally automated by writing some script that would perform that task for user or by setting a cron job with desired time interval but it still needs user to trigger the update process.}. That may be due several reasons among which dealing with conflict situation like shown on figure~\ref{fig:google_notebook} seams to be the most important. To put it in simple words conflict situation it is a situation when the VCS needs the user decision to resolve the conflict situation as it cant decide which from the concurring versions should be chosen. The way the merging is done differs with different version control systems but from the user perspective operations such like update and merge are quite easy to imagine. 
+
+Due to lack of clarity in terminology including this basic operations of version control some additional explanations needs to be done. Mercurial implements \texttt{fetch} command  which includes three steps in the listed in  the order of execution:
 \begin{enumerate}
-\item{lookup}
-\item{getting changes}
-\item{updating or merging}
+\item{Lookup.}
+\item{Getting changesets\footnote{Thist is a term used mainly in Mercurial related documentation to refer the data structures used for storing the differences between revisions. This seam to be more accurate then saying 'changes' or 'differences' and will be used in this document when concerning data structures.}.}
+\item{Updating or merging.}
 \end{enumerate}
+The first two Mercurial implements as \texttt{pull} command and the last one has two commands called respectively \texttt{update} and \texttt{merge}. On the other side in the git system \texttt{fetch} does the same that Mercurial \texttt{pull} command and the git \texttt{pull} is a substitute for the \texttt{fetch} from Mercurial. To avoid confusion in the following document the terminology from the git system will be used.
+
+The iSmartNotes needs to make three functional operations possible: 
+\begin{itemize}
+\item{Update -- getting newer versions from the main server what will be called down-side synchronization.}
+\item{Apply changes -- this includes operations of creating, updating and removing content.}
+\item{Synchronize -- more specifically up-side synchronization to the main server.}
+\end{itemize}
+All of this are essential to realize the full set of iSmartNotes use cases which were generalized under the term \textit{Work on iSmartNotes} on figure~\ref{fig:workon_ismartnotes}. The sequence diagrams~\ref{fig:seq_update},~\ref{fig:seq_commit} and~\ref{fig:seq_commit2}  demonstrate how this operations could be decomposed into some lower level calls. The operation of applying changes and synchronizing was presented in one sequence as all of the sequences make an assumption of network connectivity which allows to join them easily. Without it the operations are much more simple as they become limited to the interaction between the client repository and the client application. Terms client and server are used intentionally instead of the application specific names to stress the client-server architecture and make the examples more general.
+
+First of the diagrams illustrates internal relation of operations needed to perform the pull operation. Additionally the order in which this operations are being executed can be observed by reading the sequence diagrams from the top to bottom.
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.6]{charts/seq_update.png}
+\caption{The pull operation sequence diagram.}
+\label{fig:seq_update}
+\end{center}
+\end{figure}
+The operation is started by the client by requesting changesets from the server and finishes after update or merge operation is performed on the client repository. As noted on figure~\ref{fig:seq_update} the condition deciding which of them should be chosen depends on existence of changes in the edited content. If merging is not needed then the update operation is done. When no chengsets are found then none of this is needed. That is a general rule when choosing between merge and update and for this reason that note wont be repeated on the following figures. It is also in common that on the sequence diagrams the client and server repository were separated from their version control repositories. By this concept front-end and back-end functions could be presented simultaneously. 
+
+Figures~\ref{fig:seq_commit} and~\ref{fig:seq_commit2} are the product of  dissertation on what sequence of operations should be called to get a updated version after applying changes. The first one illustrates an idea of performing a \texttt{pull} first after the changes are saved in the clients repository and the \texttt{push} a the end of sequence. The opposite order is presented on figure~\ref{fig:seq_commit2} where \texttt{pull} is followed by \texttt{push}. 
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.6]{charts/seq_commit.png}
+\caption{The commit operation together with pull preceding the push operation.}
+\label{fig:seq_commit}
+\end{center}
+\end{figure}
+\begin{figure}[ht]
+\begin{center}
+\includegraphics[scale=0.6]{charts/seq_commit2.png}
+\caption{The commit operation that makes push follow the pull operation.}
+\label{fig:seq_commit2}
+\end{center}
+\end{figure}
+\newline Both of those attempts have its advantages and disadvantages. On balance the first concept appears to outperform the second one by characteristics:
+\begin{itemize}
+\item{The basic client action gets faster finished as it only saves the changes in the client repository.}
+\item{Lower probability that the server will need to perform the merge operation. That allows to save the CPU resources and makes the application more scalable as the merges are done on the client application side. That also to solve eventual conflicts before the changesets will reach the server.}
+\item{Better user experience as an effect that the changes are available in the interface offered by the client application sooner.}
+\end{itemize}
+From the other side the second concept ay seem more reliable as it gives grater priority to saving changesets both in the client and server repositories and preforms commit and \texttt{push} as the fist ones. That makes not that a big difference in practice and gets outweigh by the arguments mentioned above.
+
+
+
+
 \subsection{iSmartNotes activation process}\label{subsec:ismartnotes_activation}

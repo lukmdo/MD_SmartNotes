@@ -14,6 +14,9 @@
 \contentsline {figure}{\numberline {2.1}{\ignorespaces The iSmartNotes application activation with the Google Account.\relax }}{20}{figure.caption.10}
 \contentsline {figure}{\numberline {2.2}{\ignorespaces The iSmartNotes application use cases.\relax }}{20}{figure.caption.11}
 \contentsline {figure}{\numberline {2.3}{\ignorespaces The cooperation of iSmartNotes and web based SmartNotes.\relax }}{21}{figure.caption.12}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces The pull operation sequence diagram.\relax }}{23}{figure.caption.13}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces The commit operation together with pull preceding the push operation.\relax }}{24}{figure.caption.14}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces The commit operation that makes push follow the pull operation.\relax }}{24}{figure.caption.15}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
