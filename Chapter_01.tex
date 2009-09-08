@@ -14,7 +14,7 @@ For various reasons, users might like to export their notebooks. With Google Not
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[scale=0.38]{img/google_notebook_conflict.png}
-\caption{Google Notebook application with conflict situation.}
+\caption{Google Notebook application dealing with conflict situation.}
 \label{fig:google_notebook}
 \end{center}
 \end{figure}
@@ -122,12 +122,12 @@ To conclude the above argumentation, it becomes obvious that scalable applicatio
 When developing a web based application, the role of developer is not only limited to writing the code, especially if more users are interested to try their application. Depending of the application, specific features will be needed, including a third-party software that needs to be installed and configured to let the application serve its purpose, which cannot be negligible as it consumes considerable amount of time and has impact on the application when the level of usage increases rapidly. A product called Google App Engine, introduced in the next section, has challenged that process.  
  
 \section{Google App Engine platform}\label{sec:gae_general}
-Google App Engine (henceforth GAE) is one of the Google products that provides web applications with hosting, data storage and remarkable performance networking by using rock-solid Google infrastructure~\cite[page 1]{gae_develop}. It was primary supporting only Python runtime, but starting from April 2009 it has also been made available for Java runtime. This product is continuously developed by the Google team and newer versions of Software Development Kit SDK become regularly released. GAE is an interesting initiative enabling developers to use Google's own infrastructure like GFS\footnote{GFS is an acronym for Google File System. It is an internal technology of Google that allowed to build distributed, vault tolerant jet hight availability system for various of Google services.} or BigTable\footnote{BigTable is Google concept for Data Store. It is a kind of hash table database with many advanced features like entity groups or transactions. As claimed in the official BigTable paper~\cite{bigtable_about} many of Google projects including Google Earth and Google Finance use BigTable entities to store their data.}. The main idea behind GAE was to let developers concentrate on developing their application and make the Google team care for the infrastructure, which according to the GAE homepage~\cite{gae_homepage} may be accomplished easily. Google points~\cite{gae_why} a few reasons why App Engine might be the right choice: 
+Google App Engine (henceforth GAE) is one of the Google products that provides web applications with hosting, data storage and remarkable performance networking by using rock-solid Google infrastructure~\cite[page 1]{gae_develop}. It was primary supporting only Python runtime, but starting from April 2009 it has also been made available for Java runtime. This product is continuously developed by the Google team and newer versions of Software Development Kit SDK become regularly released. GAE is an interesting initiative enabling developers to use Google's own infrastructure like GFS\footnote{GFS is an acronym for Google File System. It is an internal technology of Google that allowed to build distributed, vault tolerant jet hight availability system for various of Google services.} or BigTable\footnote{BigTable is Google concept for data storage. It is a kind of hash table database with many advanced features like entity groups or transactions. As claimed in the official BigTable paper~\cite{bigtable_about} many of Google projects including Google Earth and Google Finance use BigTable entities to store their data.}. The main idea behind GAE was to let developers concentrate on developing their application and make the Google team care for the infrastructure, which according to the GAE homepage~\cite{gae_homepage} may be accomplished easily. Google points~\cite{gae_why} a few reasons why App Engine might be the right choice: 
 \begin{itemize}
 \item{Easy to get Started. Users of GAE do not worry about system administration, tweaking the configuration, buying extra machines of search for another static content server.}
 \item{Automatic scalability. By organizing the code to fit the GAE design, the application becomes well structured and easier to scale when running on Google infrastructure.} 
 \item{The reliability, performance and security of Google's infrastructure. Taking advantage of the 10 years of experience in building performance driven and secure systems, Google applies the same rules for applications hosted on GAE just like their own applications.}
-\item{Cost efficient hosting. When running on GAE, machine resources are not an issue anymore -- in case an application requires more power, Google offers a competitive pricing policy. First of all, the billing application built into GAE enables the user to monitor their resources and make changes to the plan in real time. Secondly, protection against running out of resources by one high peak of traffic make the conditions set by Google not only interesting from the technical point of view, but also highly business competitive. Additional calculations can be found in section~\ref{}}
+\item{Cost efficient hosting. When running on GAE, machine resources are not an issue anymore -- in case an application requires more power, Google offers a competitive pricing policy. First of all, the billing application built into GAE enables the user to monitor their resources and make changes to the plan in real time. Secondly, protection against running out of resources by one high peak of traffic make the conditions set by Google not only interesting from the technical point of view, but also highly business competitive. Additional calculations can be found in section~\ref{subsec:gae_calculations}.}
 \item{Risk free trial period. After creating an account and publishing an application people can straight away start to use it with a generous limit of about 5 million page views a month, which is free and without any commercial obligations.}
 \end{itemize}
 
@@ -135,7 +135,7 @@ Apart from the Google massive infrastructure, GAE can not be compared to any of 
 \begin{figure}[h]
 \begin{center}
 \includegraphics[scale=0.4]{img/gae_launcher.png}
-\caption{Goole App Engine launcher application.}
+\caption{Google App Engine launcher application.}
 \label{gae_launcher}
 \end{center}
 \end{figure}
@@ -159,7 +159,7 @@ The way that some of those components fit in the Google App Engine is presented 
 \begin{figure}[ht]
 \begin{center}
 \includegraphics[scale=0.4]{img/gae_request.png}
-\caption{The HTTP request life-cycle with Goole App Engine~\cite{gae_request_cycle}.}
+\caption{The HTTP request life-cycle with Google App Engine~\cite{gae_request_cycle}.}
 \label{fig:gae_request_cycle}
 \end{center}
 \end{figure}
