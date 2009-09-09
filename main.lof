@@ -3,21 +3,23 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Google Notebook application dealing with conflict situation.\relax }}{3}{figure.caption.5}
-\contentsline {figure}{\numberline {1.2}{\ignorespaces Programming languages activity graphs.\relax }}{9}{figure.caption.6}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\textbf {Monthly Projects}.\nobreakspace {}\cite {ohloh_projects} \newline The lines show the count of projects with at least \newline one line of code changed in a month.}}}{9}{figure.caption.6}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\textbf {Monthly Contributors}.\nobreakspace {}\cite {ohloh_contributors} \newline The lines show the number of developers who have contributed at least one line of code in each month}}}{9}{figure.caption.6}
-\contentsline {figure}{\numberline {1.3}{\ignorespaces Google App Engine launcher application.\relax }}{12}{figure.caption.7}
-\contentsline {figure}{\numberline {1.4}{\ignorespaces The HTTP request life-cycle with Google App Engine\nobreakspace {}\cite {gae_request_cycle}.\relax }}{14}{figure.caption.8}
-\contentsline {figure}{\numberline {1.5}{\ignorespaces Demo application done with the webapp framework.\relax }}{17}{figure.caption.9}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces The iSmartNotes application activation with the Google Account.\relax }}{20}{figure.caption.10}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces The iSmartNotes application use cases.\relax }}{20}{figure.caption.11}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces The cooperation of iSmartNotes and web based SmartNotes.\relax }}{21}{figure.caption.12}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces The pull operation sequence diagram.\relax }}{23}{figure.caption.13}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces The commit operation together with pull preceding the push operation.\relax }}{24}{figure.caption.14}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces The commit operation that makes push follow the pull operation.\relax }}{24}{figure.caption.15}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces The construction of iSmartNotes activation key.\relax }}{26}{figure.caption.16}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Google Notebook application dealing with conflict situation.\relax }}{4}{figure.caption.5}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Programming languages activity graphs.\relax }}{11}{figure.caption.6}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\textbf {Monthly Projects}.\nobreakspace {}\cite {ohloh_projects} \newline The lines show the count of projects with at least \newline one line of code changed in a month.}}}{11}{figure.caption.6}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\textbf {Monthly Contributors}.\nobreakspace {}\cite {ohloh_contributors} \newline The lines show the number of developers who have contributed at least one line of code in each month}}}{11}{figure.caption.6}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Google App Engine launcher application.\relax }}{14}{figure.caption.7}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces The HTTP request life-cycle with Google App Engine\nobreakspace {}\cite {gae_request_cycle}.\relax }}{16}{figure.caption.8}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Demo application done with the webapp framework.\relax }}{19}{figure.caption.9}
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {3.1}{\ignorespaces The iSmartNotes application activation with the Google Account.\relax }}{22}{figure.caption.10}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces The iSmartNotes application use cases.\relax }}{22}{figure.caption.11}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces The cooperation of iSmartNotes and web based SmartNotes.\relax }}{23}{figure.caption.12}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces The pull operation sequence diagram.\relax }}{25}{figure.caption.13}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces The commit operation together with pull preceding the push operation.\relax }}{26}{figure.caption.14}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces The commit operation that makes push follow the pull operation.\relax }}{26}{figure.caption.15}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces The construction of iSmartNotes activation key.\relax }}{28}{figure.caption.16}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The components diagram of the SmartNotes application with marked interfaces between the functional blocks.\relax }}{30}{figure.caption.17}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
