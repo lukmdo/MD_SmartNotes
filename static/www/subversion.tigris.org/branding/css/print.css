@@ -1,0 +1,10 @@
+/* $Id: print.css 41393 2004-11-19 18:25:05Z beril $ */
+
+#banner, #collabnet, #toptabs, #footer, #navcol, #breadcrumbs, .docs #toc, .docs .courtesylinks, #topmodule {	
+	display: none;
+}
+
+body.docs div.docs {
+	margin: 0 !important;
+	border: none !important
+}

@@ -1,0 +1,12 @@
+User-Agent: Sosospider
+Disallow: /
+
+User-agent: *
+Disallow: /source/
+Disallow: /search/
+Disallow: /issues/
+Disallow: /servlets/
+Disallow: /nonav/source/
+Disallow: /nonav/search/
+Disallow: /nonav/issues/
+Disallow: /nonav/servlets/
