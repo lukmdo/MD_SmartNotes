@@ -21,5 +21,57 @@ Furthermore, SmartNotes uses three additional interfaces which are used to inter
 The second independent system is the iSmartNotes component, which remains independent until the user decides to activate it to use the synchronization feature. For this purpose, it requires a Mercurial server to interact with. The iSmartNotes, as presented in Figure~\ref{fig:smartnotes_components}, is build with three components. Firstly, the file system of the client's operating system which is the classical space where VCSs allocate their repositories. Secondly, Mercurial VCS which on the client site does not require any modifications. Finally, the Cocoa user interface whose presentation is provided in Section~\ref{sec:cocoa}.
 
 \subsection{Financial calculations}\label{subsec:gae_calculations}
+The role of this section is to introduce some general calculations that should give the reader a general experience of what resources will be used by the applications in connection with the billing rates set by Google. This values will be used to predict the size order of monthly cost for serving one million of SmartNotes users. This should should help to indicate the system elements that generate highest price resources usage what in effect lets to concentrate on the specific area optimization. 
+
+Calculations below aim to predict theoretical monthly cost of running SmartNotes applications for one million active users with unit price list detailed in Table~\ref{tab:gae_cost}.Each of used resources will become briefly introduced with explanation of used assumptions to let the reader observe the proportion between outlined elements. The outcome of this considerations is illustrated in Figure~\ref{tab:gae_cost}.
+\begin{table}[h]
+\centering
+\caption{Google App Engine billing rates on September 2009.}
+\label{tab:gae_cost}
+\begin{tabular}{|l|l|l|} \hline \hline
+\textbf{Resource} & \textbf{Unit} & \textbf{Unit cost} \\ \hline \hline
+Outgoing Bandwidth & Gigabytes & \$0.12 \\ \hline
+Incoming Bandwidth & Gigabytes & \$0.10 \\ \hline
+CPU Time & CPU hours & \$0.10 \\ \hline
+Stored Data & Gigabytes per Day & \$0.005 \\ \hline
+Recipients Emailed & Recipients & \$0.0001\\ \hline \hline
+\end{tabular}
+\end{table}
+
+
+Resource usage to price calculations:
+\begin{itemize}
+\item{Outgoing Bandwidth. This value represents summarized amount of data send from the server to the users. This normally includes html, css, java script and graphic files as the standard web pages elements. In standard ca  }
+\item{Incoming Bandwidth. }
+\item{CPU Time. }
+\item{Stored Data. }
+\item{Mail. }
+\end{itemize} 
+This all together encloses in about \$314 without mailing and about \$410 for with mailing. Beside this the appilcation may use the free quota limits which are shown in Table~\ref{tab:gae_free} what should allow for reaching a rate of 5 million page views per month. This values could be compared to some popular hosting services like ... or ... that can offer same resources for respectively ... and ... for a service without mailing. Disregarding this difference it should be stressed that Google App Engine is not only a hosting service but also exposes for wide use Google infrastructure components that were mentioned in Section~\ref{sec:gae_general}.   
+\begin{table}[h]
+\centering
+\caption{Google App Engine free quota limitations on September 2009.}
+\label{tab:gae_cost}
+\begin{tabular}{|l|l|} \hline \hline
+\textbf{Resource} & \textbf{Daily Limit} \\ \hline \hline
+Outgoing Bandwidth & 1 Gigabyte \\ \hline
+Incoming Bandwidth & 1 Gigabyte \\ \hline
+CPU Time & 6.5 CPU hours \\ \hline
+Stored Data & 1 Gigabyte \\ \hline
+Recipients Emailed & 2000 \\ \hline \hline
+\end{tabular}
+\end{table}
+
+
+\begin{figure}[ht]
+  \begin{center}
+    \subfigure[\textbf{Without mailing service}.]{\label{fig:gae_cost_without_mail}\includegraphics[scale=0.36]{img/Monthly_projects.png}}
+    \subfigure[\textbf{With mailing service}.]{\label{fig:gae_cost_with_mail}\includegraphics[scale=0.36]{img/Monthly_contributors.png}}
+  \end{center}
+  \caption{Simulated monthly cost division of resources expected to be used by one million of SmartNotes users.}
+  \label{fig:gae_cost}
+\end{figure}
+
+
 \section{Mercurial on Google App Engine}\label{sec:hg_on_gae}
 \section{Cocoa user interface}\label{sec:cocoa}

@@ -4,24 +4,28 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Google Notebook application dealing with conflict situation.\relax }}{4}{figure.caption.5}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Evernote application interface layout.\relax }}{5}{figure.caption.6}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Things application interface layout.\relax }}{6}{figure.caption.7}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Programming languages activity graphs.\relax }}{14}{figure.caption.8}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\textbf {Monthly Projects}.\nobreakspace {}\cite {ohloh_projects} \newline The lines show the count of projects with at least \newline one line of code changed in a month.}}}{14}{figure.caption.8}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\textbf {Monthly Contributors}.\nobreakspace {}\cite {ohloh_contributors} \newline The lines show the number of developers who have contributed at least one line of code in each month}}}{14}{figure.caption.8}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Google App Engine launcher application.\relax }}{16}{figure.caption.9}
-\contentsline {figure}{\numberline {2.6}{\ignorespaces The HTTP request life-cycle with Google App Engine\nobreakspace {}\cite {gae_request_cycle}.\relax }}{18}{figure.caption.10}
-\contentsline {figure}{\numberline {2.7}{\ignorespaces Demo application done with the webapp framework.\relax }}{22}{figure.caption.11}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces The iSmartNotes application activation with the Google Account.\relax }}{25}{figure.caption.12}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces The iSmartNotes application use cases.\relax }}{25}{figure.caption.13}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces The cooperation of iSmartNotes and web-based SmartNotes.\relax }}{26}{figure.caption.14}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces The pull operation sequence diagram.\relax }}{28}{figure.caption.15}
-\contentsline {figure}{\numberline {3.5}{\ignorespaces The commit operation together with pull preceding the push operation.\relax }}{29}{figure.caption.16}
-\contentsline {figure}{\numberline {3.6}{\ignorespaces The commit operation that makes push follow the pull operation.\relax }}{29}{figure.caption.17}
-\contentsline {figure}{\numberline {3.7}{\ignorespaces The construction of iSmartNotes activation key.\relax }}{31}{figure.caption.18}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Google Notebook application dealing with conflict situation.\relax }}{4}{figure.caption.6}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Evernote application interface layout.\relax }}{5}{figure.caption.7}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Things application interface layout.\relax }}{6}{figure.caption.8}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Programming languages activity graphs.\relax }}{14}{figure.caption.9}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\textbf {Monthly Projects}.\nobreakspace {}\cite {ohloh_projects} \newline The lines show the count of projects with at least \newline one line of code changed in a month.}}}{14}{figure.caption.9}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\textbf {Monthly Contributors}.\nobreakspace {}\cite {ohloh_contributors} \newline The lines show the number of developers who have contributed at least one line of code in each month}}}{14}{figure.caption.9}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Google App Engine launcher application.\relax }}{17}{figure.caption.10}
+\contentsline {figure}{\numberline {2.6}{\ignorespaces The HTTP request life-cycle with Google App Engine\nobreakspace {}\cite {gae_request_cycle}.\relax }}{18}{figure.caption.11}
+\contentsline {figure}{\numberline {2.7}{\ignorespaces Demo application done with the webapp framework.\relax }}{22}{figure.caption.12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces The components diagram of the SmartNotes application with marked interfaces between the functional blocks.\relax }}{33}{figure.caption.19}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces The iSmartNotes application activation with the Google Account.\relax }}{25}{figure.caption.13}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces The iSmartNotes application use cases.\relax }}{25}{figure.caption.14}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces The cooperation of iSmartNotes and web-based SmartNotes.\relax }}{26}{figure.caption.15}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces The pull operation sequence diagram.\relax }}{28}{figure.caption.16}
+\contentsline {figure}{\numberline {3.5}{\ignorespaces The commit operation together with pull preceding the push operation.\relax }}{29}{figure.caption.17}
+\contentsline {figure}{\numberline {3.6}{\ignorespaces The commit operation that makes push follow the pull operation.\relax }}{29}{figure.caption.18}
+\contentsline {figure}{\numberline {3.7}{\ignorespaces The construction of iSmartNotes activation key.\relax }}{31}{figure.caption.19}
+\addvspace {10\p@ }
+\contentsline {figure}{\numberline {4.1}{\ignorespaces The components diagram of the SmartNotes application with marked interfaces between the functional blocks.\relax }}{33}{figure.caption.20}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Simulated monthly cost division of resources expected to be used by one million of SmartNotes users.\relax }}{35}{figure.caption.23}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\textbf {Without mailing service}.}}}{35}{figure.caption.23}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\textbf {With mailing service}.}}}{35}{figure.caption.23}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
