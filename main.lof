@@ -24,8 +24,8 @@
 \contentsline {figure}{\numberline {3.7}{\ignorespaces The construction of iSmartNotes activation key.\relax }}{31}{figure.caption.19}
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {4.1}{\ignorespaces The components diagram of the SmartNotes application with marked interfaces between the functional blocks.\relax }}{33}{figure.caption.20}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Simulated monthly cost division of resources expected to be used by one million of SmartNotes users.\relax }}{35}{figure.caption.23}
-\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\textbf {Without mailing service}.}}}{35}{figure.caption.23}
-\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\textbf {With mailing service}.}}}{35}{figure.caption.23}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Simulated monthly cost division of resources expected to be used by one million of SmartNotes users on Google App Engine.\relax }}{37}{figure.caption.24}
+\contentsline {subfigure}{\numberline {(a)}{\ignorespaces {\textbf {Without mailing service}.}}}{37}{figure.caption.24}
+\contentsline {subfigure}{\numberline {(b)}{\ignorespaces {\textbf {With mailing service}.}}}{37}{figure.caption.24}
 \addvspace {10\p@ }
 \addvspace {10\p@ }
