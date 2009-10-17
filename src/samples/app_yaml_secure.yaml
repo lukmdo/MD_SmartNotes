@@ -1,0 +1,4 @@
+- url: .*?/dashboard/.*
+  script: main.py
+  login: required
+  secure: always
