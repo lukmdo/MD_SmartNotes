@@ -121,7 +121,7 @@ Presented bellow charts in Figure~\ref{fig:gae_cost} can be used to indicate the
   \label{fig:gae_cost}
 \end{figure}
 
-\subsection{Scalability}
+\subsection{Scalability}\label{subsec:scalability_on_gae}
 Scalability was one of the main design concerns by concerns of the presented project. SmartNotes application as mentioned in Chapter~\ref{sec:Introduction} was mend to meet scalability requirements same as care for the best user experience. Additionally the architecture should allow for future development flexibility. In classical case the applications can scale up to some relatively low level. Successfully implementing scalability patterns allows to shift this point further in the by keeping the cost growth linear depend on served traffic.  
 
 Identifying SmartNotes  scalability barriers was the first essential step in the planning phase. Next some possible solutions were considered that  finally allowed to take architectural decisions and start the work on implementing them.   
@@ -198,6 +198,7 @@ Google App Engine with Python runtime which has been introduced in Section~\ref{
 \item{Building RESTful\footnote{REST is an acronym for \textit{Representational State Transfer} and forms a scheme for writing web services. RESTful web services are more dynamic and powerful from classical case of CGI web services as they make extensive use  methods provided by the HTTP protocol. For those reason and couple of other assets REST become popular and is used by such a solutions like Yahoo! Web Services.} applications. Those kind of applications have become type of standard for writing web applications and are are particularly wide used in web services. Their biggest attitude is the clarity of its fundaments and as a matter of fact it has become a standard it is easier to write functionality on top of it. When using Google App Engine this kind of REST may be may be implemented by using some more complex frameworks like Django or Pylons. This is considered as a limitation basing on the simple routing mechanism that does not differentiate requests on type of HTTP request what is the fundament for RESTful applications.}
 \end{itemize}
 All in all the mentioned limitations are some problematic but none of them is considered as a real barrier for SmartNotes development. The top thee are the one of main concern as their have had the greatest impact on the SmartNotes application. 
+
 \section{Mercurial on Google App Engine}\label{sec:hg_on_gae}
 Mercurial the Version Control System which was generally introduced in Section~\ref{subsec:hg} realizes a fundamental role in the SmartNotes application. It is used as shown in Figure~\ref{fig:smartnotes_components} to ensure cooperation between the client iSmartNotes application with the SmartNotes server running on Google App Engine. Moreover it also significantly eases the implementing of notes synchronization what is one of the most important SmartNotes functionality's. The reader will become familiarized with some of the main development difficulties just as will get heave the chance to get deeper view in some of the Mercurial internal mechanisms. Staring with the Mercurial base data structure this section will cover it realization to finish with the relevant Mercurial code modifications needed to let it run on GAE.
 
