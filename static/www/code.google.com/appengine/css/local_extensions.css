@@ -31,16 +31,13 @@ dl.apireference .argdefault {
 
 /* Container for entire sample section */
 div.tabpane {
-  clear: right;
-  margin: 1em 4em 0pt 15px;
-  width: 87%;
-  padding-left: 1px;
-  position: relative;
+  border-collapse: collapse;
+  margin: 1em 0 0 0;
+  width: 100%;
 }
 
 /* For 'pre' elements in samples section */
 div.tabpane pre {
-  color: #000000;
   background-color: #FAFAFA;
   border: 0px;
   margin: 0px;
@@ -51,10 +48,9 @@ div.tabpane pre {
 /* Container for tab content section */
 .content-container {
   border: 1px solid #CCCCCC;
-  border-top: 0;
   margin: 0px 0px 0px -2px;
   overflow:auto;
-  padding:15px;
+  padding:15px 15px 0px 15px;
   background-color: #FAFAFA;
 }
 
@@ -82,7 +78,7 @@ div.tabpane pre {
   position: relative;
   top: 0px;
   background-color: #FAFAFA;
-  border-bottom: 0px;
+  border-bottom: solid 1px #fafafa;
 }
 
 /* Links of tab headers */
