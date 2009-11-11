@@ -18,7 +18,7 @@ Furthermore, SmartNotes uses three additional interfaces which are used to inter
 \end{center}
 \end{figure}
  
-The second independent system is the iSmartNotes component, which remains independent until the user decides to activate it to use the synchronization feature. For this purpose, it requires a Mercurial server to interact with. The iSmartNotes, as presented in Figure~\ref{fig:smartnotes_components}, is build with three components. Firstly, the file system of the client's operating system which is the classical space where VCS's allocate their repositories. Secondly, it is the Mercurial VCS, which on the client site does not require any modifications. Finally, the Cocoa user interface, discussed in Section~\ref{sec:cocoa}.
+The second independent system is the iSmartNotes component, which remains independent until the user decides to activate it to use the synchronization feature. For this purpose, it requires a Mercurial server to interact with. The iSmartNotes, as presented in Figure~\ref{fig:smartnotes_components}, is build with three components. Firstly, the file system of the client's operating system which is the classical space where VCS's allocate their repositories. Secondly, it is the Mercurial VCS, which on the client site does not require any modifications. %Finally, the Cocoa user interface, discussed in Section~\ref{sec:cocoa}.
  
 \subsection{Financial calculations}\label{subsec:gae_calculations}
 The role of this section is to introduce basic calculations that should give the reader a general experience of what resources will be used by the application with the connection to the billing rates set by Google. In the next step, these values will be used to predict the size order for the monthly cost of running the application per one million of SmartNotes users. This should help to indicate system elements that generate the highest price of resource usage, which in the end allows for concentrating on optimization within the specific area.
@@ -246,7 +246,7 @@ By separating the informations stored by those structures two significant advant
  
 However, changing the data representation was not the only relevant change to make the Mercurial version control run on Google App Engine. It might be kind of obvious that all the parts responsible for reading or writing the data to Mercurial structures are required to be adapted to use the datastore API for those operations. Moreover, file representation was often changed to Python \texttt{StringIO} objects that provide file-like operations that can be performed on a string buffer. Altogether, porting Mercurial onto Google App Engine had the biggest significance for the SmartNotes application and was one of the most complex problems.      
  
-\section{Cocoa user interface}\label{sec:cocoa}
-\subsection{PyObj-C}
-\subsection{Interface project}
+%\section{Cocoa user interface}\label{sec:cocoa}
+%\subsection{PyObj-C}
+%\subsection{Interface project}
  

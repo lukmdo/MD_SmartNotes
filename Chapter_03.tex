@@ -50,7 +50,7 @@ It is one of the main responsibilities of Version Control Systems to keep the re
 Due to the lack of clarity in terminology regarding basic operations of Version Control, additional explanations seem to be required. Mercurial implements the \texttt{fetch} command  which includes three steps listed in the order of execution:
 \begin{enumerate}
 \item{Lookup.}
-\item{Getting changesets\footnote{The term used mainly in Mercurial-related documentation to refer to data structures used for storing the differences between revisions. These seem to be more accurate then the basic notions of 'changes' or 'differences' and will be used in this document when concerning data structures.}.}
+\item{Getting changesets\footnote{The term \textit{changeset} is used mainly in Mercurial-related documentation to refer to data structures used for storing the differences between revisions. These seem to be more accurate then the basic notions of 'changes' or 'differences' and will be used in this document when concerning data structures.}.}
 \item{Updating or merging.}
 \end{enumerate}
 The first two steps are implemented by Mercurial as \texttt{pull} command,whereas the third one has two commands called \texttt{update} and \texttt{merge} respectively. On the other side in the git system, \texttt{fetch} does the same as Mercurial \texttt{pull} command and the git \texttt{pull} is a substitute for the \texttt{fetch} from Mercurial. To avoid confusion, terminology used in the git system only will be used in the present thesis.
