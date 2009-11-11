@@ -9,7 +9,7 @@ Detailed description of how a system may be used should by of utmost importance 
 Users willing to work on their notes disregarding network connectivity will need to install iSmartNotes, which is a graphical interface of SmartNotes. Specifically, the SmartNotes application is divided into the web-based system and the graphical desktop interface, a separation with which UI experiments can be done without the need of having the web browser open in order to work on the notes. The web-based part of SmartNotes makes the synchronization feature possible and allows to monitor the entire system of SmartNotes. However, in order to use the synchronization feature, the iSmartNotes needs to be activated by the user. Additionally, since users of SmartNotes are expected to have a Google account\footnote{Creating a Google account by visiting \url{https://www.google.com/accounts/} gives a access to various services offered by the Google company where Gmail, Google News or Google Finance are one of the most popular ones. These are regarded secure and solid services users can relay on.} the activation code will be available after logging in to the SmartNotes system with that account. This process is illustrated in Figure~\ref{fig:ismartnotes_activation}. The idea behind it is to make the use of the popular Google Account and not multiply the accounts to services that the user has to know the login and password. Basing on the activation key, the user is granted access to his personalized SmartNotes account and to the synchronization feature. Without the activation, iSmartNotes can be used as a regular notes editor.  
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[scale=0.65]{charts/activate_iSmartNotes.png}
+\includegraphics[scale=0.65]{charts/activate_iSmartNotes.pdf}
 \caption{The iSmartNotes application activation with the Google Account.}
 \label{fig:ismartnotes_activation}
 \end{center}
@@ -17,7 +17,7 @@ Users willing to work on their notes disregarding network connectivity will need
 The skim of functionality offered by iSmartNotes is demonstrated in Figure~\ref{fig:workon_ismartnotes}.
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[scale=0.55]{charts/work_on_iSmartNotes.png}
+\includegraphics[scale=0.55]{charts/work_on_iSmartNotes.pdf}
 \caption{The iSmartNotes application use cases.}
 \label{fig:workon_ismartnotes}
 \end{center}
@@ -25,7 +25,7 @@ The skim of functionality offered by iSmartNotes is demonstrated in Figure~\ref{
 This includes the CRUD operations and three extra features. Firstly, the notes can be easily grouped together in named tabs, which should make organizing and finding notes much easier. Secondly, it is possible to publish the notes marked as shared. The final feature is the synchronization process that requires iSmartNotes activation and network connection to contact with the web-based part of SmartNotes. What remains to be discussed is the cooperation between iSmartNotes and the web-based part of SmartNotes, therefore, the relation between them and the functionality offered to the user and administrator are shown in Figure~\ref{fig:ismartnotes_smartnotes}. 
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[scale=0.55]{charts/iSmartNotes_SmartNotes.png}
+\includegraphics[scale=0.55]{charts/iSmartNotes_SmartNotes.pdf}
 \caption{The cooperation of iSmartNotes and web-based SmartNotes.}
 \label{fig:ismartnotes_smartnotes}
 \end{center}
@@ -66,7 +66,7 @@ All of the above are essential to realize the full set of iSmartNotes use cases,
 The first of the diagrams illustrates internal relation of operations needed to perform the pull operation. Additionally, the order in which these operations are being executed can be observed by reading the sequence diagrams from top to bottom.
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[scale=0.6]{charts/seq_update.png}
+\includegraphics[scale=0.6]{charts/seq_update.pdf}
 \caption{The pull operation sequence diagram.}
 \label{fig:seq_update}
 \end{center}
@@ -76,14 +76,14 @@ The operation is started by the client by requesting changesets from the server 
 Figures~\ref{fig:seq_commit} and~\ref{fig:seq_commit2} are the product of dissertation on what sequence the operations should be called to receive a updated version after applying changes. The first one illustrates the idea of performing a \texttt{pull} first after the changes are saved in the clients repository and the \texttt{push} at the end of the sequence. The opposite order is presented in Figure~\ref{fig:seq_commit2} where \texttt{pull} is followed by \texttt{push}. 
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[scale=0.6]{charts/seq_commit.png}
+\includegraphics[scale=0.6]{charts/seq_commit.pdf}
 \caption{The commit operation together with pull preceding the push operation.}
 \label{fig:seq_commit}
 \end{center}
 \end{figure}
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[scale=0.6]{charts/seq_commit2.png}
+\includegraphics[scale=0.6]{charts/seq_commit2.pdf}
 \caption{The commit operation that makes push follow the pull operation.}
 \label{fig:seq_commit2}
 \end{center}
@@ -106,7 +106,7 @@ Most of network applications that require account credentials for each of their 
 All these elements should be serialized into a single string which could be used as the activation key by iSmartNotes. 
 \begin{figure}[ht]
 \begin{center}
-\includegraphics[scale=0.6]{charts/activation_key.png}
+\includegraphics[scale=0.6]{charts/activation_key.pdf}
 \caption{The construction of iSmartNotes activation key.}
 \label{fig:activation_key}
 \end{center}
