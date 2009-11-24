@@ -1,0 +1,256 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { // Input 0
+var a=window;
+// Input 1
+var c="start";function d(e){this.t={};this.tick=function(f,g,b){b=b?b:(new Date).getTime();this.t[f]=[b,g]};this.tick(c,null,e)}var h=new d;a.jstiming={Timer:d,load:h};try{a.jstiming.pt=a.gtbExternal&&a.gtbExternal.pageT()||a.external&&a.external.pageT}catch(i){};
+// Input 2
+})()
+</script>
+<link rel="shortcut icon" href="http://www.gstatic.com/sites/p/b5f303/system/app/images/favicon.ico" type="image/x-icon" />
+<link rel="apple-touch-icon" href="http://www.gstatic.com/sites/p/b5f303/system/app/images/apple-touch-icon.png" type="image/png" />
+<script type="text/javascript">/* Copyright 2008 Google. */ (function() { var e=parseInt,h=window,i="length";function j(a){return document.getElementById(a)}h.byId=j;var k="";function l(a){return a.replace(/^\s+|\s+$/g,k)}h.trim=l;
+var m="MSIE",n="6.0",o="string",p='id="',q='" ',r='class="',s='title="',t="display:inline-block;",u="left",v="float:left;",w="right",x="float:right;",y="cursor:hand;",z="<span ",A=' style="width:',B="px; height:",C="px;",D=";padding: 0;filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='",E="', sizingMethod='scale');\"></span><span style=\"padding: ",F=" ",G=";",H="float:",I='"></span>';
+h.ie6ImgFix=function(a){var b=h.navigator?navigator.userAgent:k;if(b.indexOf(m)!=-1&&typeof opera=="undefined"){var d=/MSIE\s+([^\);]+)(\)|;)/;d.test(b);b=RegExp.$1;if(b==n){var c=typeof a==o?j(a):a;a=c.id?p+c.id+q:k;b=c.className?r+c.className+q:k;d=c.title?s+c.title+q:s+c.alt+q;var f=t+c.style.cssText;if(c.align==u)f=v+f;if(c.align==w)f=x+f;if(c.parentElement.href)f=y+f;var g=c.currentStyle,L=c.width-e(g.paddingLeft,10)-e(g.paddingRight,10),M=c.height-e(g.paddingTop,10)-e(g.paddingBottom,10),N=
+z+a+b+d+A+L+B+M+C+f+D+c.src+E+g.paddingTop+F+g.paddingRight+F+g.paddingBottom+F+g.paddingLeft+G+(g.styleFloat?H+g.styleFloat+G:k)+I;h.setTimeout(function(){c.outerHTML=N},1)}}};var J=[],K=0;h.JOT_addListener=function(a,b,d){var c=new String(K++);a={eventName:a,handler:b,compId:d,key:c};J.push(a);return c};h.JOT_removeListenerByKey=function(a){for(var b=0;b<J[i];b++)if(J[b].key==a){J.splice(b,1);break}};
+h.JOT_removeAllListenersForName=function(a){for(var b=0;b<J[i];b++)J[b].eventName==a&&J.splice(b,1)};var O="function";h.JOT_postEvent=function(a,b,d){var c={eventName:a,eventSrc:b||{},payload:d||{}};if(h.JOT_fullyLoaded){b=J[i];for(d=0;d<b&&d<J[i];d++){var f=J[d];if(f&&f.eventName==a){c.listenerCompId=f.compId||k;(f=typeof f.handler==O?f.handler:h[f.handler])&&f(c)}}}else h.JOT_delayedEvents.push({eventName:a,eventSrc:b,payload:d})};h.JOT_delayedEvents=[];h.JOT_fullyLoaded=false;var P="{0}";
+h.JOT_formatRelativeToNow=function(a,b){a=((new Date).getTime()-a)/60000;if(a>=1440)return null;var d=0;if(a>=60){a/=60;d=2}a>=2&&d++;return b?h.JOT_siteRelTimeStrs[d].replace(P,Math.floor(a)):h.JOT_userRelTimeStrs[d].replace(P,Math.floor(a))}; })()
+</script>
+<script>
+webspace = {};
+webspace.name = 'io';
+webspace.domain = 'defaultdomain';
+webspace.isConsumer = true;
+webspace.sharingPolicy = 'OPENED';
+webspace.baseUri = '/site/io';
+webspace.siteTitle = '2008 Google I/O Session Videos and Slides';
+webspace.homePath = '/';
+webspace.analyticsAccountId = 'UA-4691736-1';
+webspace.enableAnalytics = true;
+webspace.domainAnalyticsAccountId = '';
+webspace.termsUrl = 'http://www.google.com/sites/help/intl/en/terms.html';
+webspace.isStartPageEnabled = false;
+webspace.isGaiaBarRendered = false;
+webspace.features = {};
+webspace.features.pageTemplates = true;
+webspace.features.uploadHTMLFiles = true;
+webspace.features.subpageNav = false;
+webspace.features.structuredDataSchemas = false;
+
+
+webspace.isAdsenseEnabled = true;
+webspace.adsensePublisherId = '';
+  
+
+webspace.isCodeSnippetEnabled = true;
+  
+
+webspace.isInsertPicasaPhotosEnabled = true;
+  
+
+webspace.isMyMapsEmbedEnabled = true;
+  
+
+webspace.isCalendarOnePickEnabled = true;
+  
+
+webspace.isEnhancedRecentAnnouncementsEnabled = true;
+  
+webspace.gadgets = {};
+webspace.gadgets.baseUri = '/site/io/system/app/pages/gadgets';
+webspace.gadgets.isGadgetDirectoryEnabled = true;
+webspace.gadgets.isGgsRenderingEnabled = true;
+
+webspace.isSubpageEmbeddingEnabled = true;
+  
+
+webspace.user = {"uid":"","hasAdminAccess":false,"guest_":true,"domain":"","hasWriteAccess":false,"userName":"guest","dasherUser":false,"primaryEmail":"guest","displayNameOrEmail":"guest"};
+
+webspace.page = {"locale":"en","state":"","wuid":"wuid:gx:759b15edeae37a0a","properties":{},"type":"text","canChangePath":true,"parentWuid":null,"revision":6,"title":"Best Practices - Building a Production Quality Application on Google App Engine","isRtlLocale":false,"bidiEnabled":false,"siteLocale":"en","name":"best-practices---building-a-production-quality-application-on-google-app-engine","path":"/best-practices---building-a-production-quality-application-on-google-app-engine","isSiteRtlLocale":false,"parentPath":null};
+
+
+var editorResources = [
+  'http://www.gstatic.com/sites/p/b5f303/system/js/trog_edit__en.js',
+  'http://www.gstatic.com/sites/p/b5f303/system/app/css/trogedit.css',
+  '/site/io/_/rsrc/1258508804580/system/app/css/editor.css'
+];
+
+var JOT_clearDotPath = "http://www.gstatic.com/sites/p/b5f303/system/app/images/cleardot.gif";
+
+var JOT_userRelTimeStrs = ["a minute ago", "{0} minutes ago", "an hour ago", "{0} hours ago"];
+
+
+    
+    webspace.page.currentTemplate = {"title":"Web Page","path":"/system/app/pagetemplates/text"};
+    
+  
+
+
+var JOT_siteRelTimeStrs = ["a minute ago", "{0} minutes ago", "an hour ago", "{0} hours ago"];
+
+
+</script>
+<script type="text/javascript">
+                window.jstiming.load.tick('scl');
+              </script>
+<meta name="Description" content="Session videos and presentation slides from Google I/O 2008" />
+<link rel="stylesheet" type="text/css" href="http://www.gstatic.com/sites/p/b5f303/system/app/themes/default/standard-css-default-ltr-ltr.css" />
+<link rel="stylesheet" type="text/css" href="/site/io/_/rsrc/1258508804628/system/app/css/overlay.css?cb=default3150goog-ws-left" />
+<title>Best Practices - Building a Production Quality Application on Google App Engine (2008 Google I/O Session Videos and Slides)</title>
+<script type="text/javascript">
+                window.jstiming.load.tick('cl');
+              </script>
+</head>
+
+<body xmlns="http://www.google.com/ns/jotspot" id="body" class=" en">
+<div id="sites-page-toolbar">
+<div id="sites-status" class="sites-status" style="display:none;">
+<div id="sites-notice" class="sites-notice"> </div>
+</div>
+</div>
+<div id="sites-chrome-everything" style="direction: ltr">
+<div id="sites-chrome-page-wrapper">
+<div id="sites-chrome-page-wrapper-inside">
+<div xmlns="http://www.w3.org/1999/xhtml" id="sites-chrome-header-wrapper">
+<table id="sites-chrome-header" class="sites-layout-hbox" cellspacing="0">
+<tr class="sites-header-primary-row">
+<td id="sites-header-title">
+<a href="http://sites.google.com/site/io/">
+<img src="/site/io/_/rsrc/1211566667311/config/app/images/customLogo/customLogo.gif?revision=1" id="logo-img-id" onload="ie6ImgFix('logo-img-id');" alt="Logo" class="sites-logo" />
+</a>
+<h2><a href="http://sites.google.com/site/io/" dir="ltr">2008 Google I/O Session Videos and Slides</a></h2>
+</td>
+<td class="sites-layout-searchbox">
+<div>
+<form id="sites-searchbox-form" action="/site/io/system/app/pages/search">
+<input type="text" onpropertychange="JOT_setTextDir(this)" oninput="JOT_setTextDir(this)" dir="" id="jot-ui-searchInput" name="q" size="20" />
+<input type="hidden" id="sites-searchbox-scope" name="scope" value="search-site" />
+<div class="goog-inline-block goog-button goog-button-base   "><div class="goog-inline-block goog-button-base-outer-box"><div class="goog-inline-block goog-button-base-inner-box"><div class="goog-button-base-pos"><div class="goog-button-base-top-shadow"> </div><div id="sites-searchbox-search-button" class="goog-button-base-content " style="" onclick=""><span id="sites-searchbox-search-button-label">Search this site</span></div></div></div></div></div>
+</form>
+</div>
+</td>
+</tr>
+</table> 
+</div> 
+<div id="sites-chrome-main-wrapper">
+<div id="sites-chrome-main-wrapper-inside">
+<table id="sites-chrome-main" class="sites-layout-hbox" cellspacing="0">
+<tr>
+<td id="sites-chrome-sidebar-left" class="sites-layout-sidebar-left">
+<div xmlns="http://www.w3.org/1999/xhtml" id="COMP_7621535439944428" class="sites-embed" style="width:">
+<h4 class="sites-embed-title"></h4>
+<div class="sites-embed-content" style="padding:5px;">
+<a href="http://sites.google.com/site/io/google-io-sessions">All Sessions</a><br /><br /><a href="http://code.google.com/events/io">Google I/O Website</a><br /><br /><br />
+</div>
+</div>
+</td>
+<td id="sites-canvas-wrapper">
+<div id="sites-canvas">
+<div id="goog-ws-editor-toolbar-container"> </div>
+<div xmlns="http://www.w3.org/1999/xhtml" id="title-crumbs" style="">
+</div>
+<h3 xmlns="http://www.w3.org/1999/xhtml" id="sites-page-title-header" style="" align="left">
+<span id="sites-page-title" dir="ltr">Best Practices - Building a Production Quality Application on Google App Engine</span>
+</h3>
+
+<div id="sites-canvas-main" class="sites-canvas-main">
+<div id="sites-canvas-main-content">
+<table xmlns="http://www.w3.org/1999/xhtml" cellspacing="0" class="sites-layout-name-one-column sites-layout-hbox"><tbody><tr><td class="sites-layout-tile sites-tile-name-content-1">Ken Ashcraft (Google)<br /><br />Once an app is out of development and has thousands or millions of users, a developer needs to worry about pushing buggy code in front of<br />users.  This talk will walk through some of the facilities that Google App Engine provides for testing code in the production environment<br />before seamlessly pushing it live to your users.  Additionally, we'll discuss some tips for optimizing the performance of your app so you<br />can give your users an even better experience.<br /><br /><a href="http://sites.google.com/site/io/best-practices---building-a-production-quality-application-on-google-app-engine/production_quality_apps.pdf?attredirects=0">Presentation Slides</a><br /><br />
+<div class="sites-embed-align-left-wrapping-off"><div class="sites-embed-border-off sites-embed" style="width:425px;"><div class="sites-embed-content sites-embed-type-youtube"><object width="425" height="355"><param name="movie" value="http://www.youtube.com/v/dP99fLhGwAU?rel=1" /><param name="wmode" value="transparent" /><embed src="http://www.youtube.com/v/dP99fLhGwAU?rel=1" type="application/x-shockwave-flash" wmode="transparent" width="425" height="355"></embed></object></div></div></div>
+<br /><br /><br /></td></tr></tbody></table>
+</div> 
+</div> 
+<div id="sites-canvas-bottom-panel">
+</div>
+</div> 
+</td> 
+</tr>
+</table> 
+</div> 
+</div> 
+<div id="sites-chrome-footer-wrapper">
+<div id="sites-chrome-footer-wrapper-inside">
+<div id="sites-chrome-footer">
+<div xmlns="http://www.w3.org/1999/xhtml" class="sites-subfooter">
+<p>
+            
+                 
+                <a class="sites-system-link" href="https://www.google.com/a/UniversalLogin?continue=http%3A%2F%2Fsites.google.com%2Fsite%2Fio%2Fbest-practices---building-a-production-quality-application-on-google-app-engine&amp;service=jotspot">Sign in</a>
+              
+             
+            <a class="sites-system-link" href="javascript:void(window.open('http://www.google.com/sites/help/intl/en/terms.html'))">Terms</a>
+             
+            <a class="sites-system-link" href="/site/io/system/app/pages/reportAbuse" target="_blank">Report Abuse</a>
+            
+                 
+                <a class="sites-system-link" href="javascript:;" onclick="window.open(webspace.printUrl)">Print page</a>
+              
+            
+             | 
+            <b class="powered-by">Powered by <a class="sites-system-link" href="http://sites.google.com">Google Sites</a></b>
+</p>
+</div>
+</div>
+</div>
+</div>
+</div> 
+</div> 
+</div> 
+
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('sjl');
+  </script>
+
+<script xmlns="http://www.w3.org/1999/xhtml" src="http://www.gstatic.com/sites/p/b5f303/system/js/jot_min_view__en.js"></script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+    window.jstiming.load.tick('jl');
+  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+          var searchBox = new gsites.Searchbox('sites-searchbox-search-button');
+          searchBox.initListeners();
+          searchBox.setScopesMenu(webspace.page.isSiteRtlLocale);
+        </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+  setTimeout(function() {
+    var fingerprint = gsites.date.TimeZone.getFingerprint([1109635200000,1128902400000,1130657000000,1143333000000,1143806400000,1145000000000,1146380000000,1152489600000,1159800000000,1159500000000,1162095000000,1162075000000,1162105500000]);
+    gsites.Xhr.send('http://sites.google.com/site/io/_/tz', null, null, 'GET', null, null, { afjstz: fingerprint });
+  }, 500);
+</script>
+<script xmlns="http://www.w3.org/1999/xhtml">
+                    window.onload = function() {                    
+                      var loadTimer = window.jstiming.load;
+                      loadTimer.tick("ol");
+                      loadTimer["name"] = "load," + webspace.page.type;
+                      window.jstiming.report(loadTimer);
+                    }
+                  </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript">
+        JOT_insertAnalyticsCode(false);
+      </script>
+<script xmlns="http://www.w3.org/1999/xhtml" type="text/javascript" defer="true">
+  //<![CDATA[
+    // Fires delayed events.
+    (function() {
+      JOT_fullyLoaded = true;
+      var delayedEvents = JOT_delayedEvents;
+      for (var x = 0; x < delayedEvents.length; x++) {
+        var event = delayedEvents[x];
+        JOT_postEvent(event.eventName, event.eventSrc, event.payload);
+      }
+      JOT_delayedEvents = null;
+      JOT_postEvent('pageLoaded');
+    })();
+
+    // Decorate any fastUI buttons on the page with a class of 'goog-button'.
+    if (webspace.user.hasWriteAccess) {
+      JOT_decorateButtons();
+    }
+ //]]>
+</script>
+<div id="server-timer-div" style="display:none"> </div>
+<script>
+          window.jstiming.load.tick('render');
+        </script>
+</body>
+</html>
