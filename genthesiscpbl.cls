@@ -213,12 +213,12 @@
 \newcommand*{\copyrightnotice}[1]{\gdef\@copyrightnotice{#1}}
 \providecommand*{\@copyrightnotice}{%
   \ClassWarning{genthesis}{No \noexpand\copyrightnotice given}}
-\institution{AGH-University of Science and Technology}
-\institutionaddress{Cracow, Poland}
+\institution{AGH University of Science and Technology}
+\institutionaddress{Kraków, Poland}
 \department{Department of E}
 \program{in Telecommunications}
 \faculty{The Faculty of Electrical Engineering, Automatics, Computer Science and Electronics}
-\copyrighttext{\copyright\ \@author\ \@copyrightyear}
+%\copyrighttext{\copyright\ \@author\ \@copyrightyear}
 \copyrightnotice{All rights reserved.  This work may not be\\
   reproduced in whole or in part, by photocopy\\
   or other means, without permission of the author.}

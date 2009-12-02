@@ -35,6 +35,7 @@
  University of British Columbia Thesis Class]
 \LoadClassWithOptions{genthesiscpbl}
 \setcounter{secnumdepth}{4}
+\usepackage[utf8]{inputenc}
 \ProcessOptions
 \copyrightnotice{}
 \newlength{\@logocopywidth}
@@ -48,7 +49,7 @@
     \hbox to\@logocopywidth{%
       \hfil\@condupper{@upperinstitution}{\@institution}\hfil}
     \vspace{1.5ex}
-      \hbox to\@logocopywidth{\hfil (Cracow, Poland)\hfil}
+      \hbox to\@logocopywidth{\hfil Kraków, Poland\hfil}
     \vspace{1.5ex}
     \vspace{2.5ex}
     \hbox to\@logocopywidth{\hfil\@submitdate\hfil}
@@ -70,7 +71,7 @@
     {\authorfont%
       \@condupper{@upperauthor}{\@author}\par%
       \vspace{1em}%
-      Advisor: Ph.D. Andrzej G\l{}owacz\par%
+      Advisor: Andrzej Głowacz, Ph.D.\par%
     }%
     \if@empty\@previousdegrees\else\vfil\fi%
     \if@empty\@previousdegrees\else\@previousdegrees\fi%
@@ -85,11 +86,11 @@
     \vspace{1em}
     {\facultyfont \@condupper{@upperfaculty}{\@faculty}\par}%
     \vspace{1em}
-    (\@program)\par%
+    \@program\par%
     \vspace{1em plus 1fil minus 0.5em}%
     \setbox0=\vbox{%
       \hbox{\@condupper{@upperinstitution}{\@institution}}
-      \hbox{Cracow, Poland}
+      \hbox{Kraków, Poland}
       \hbox{\@submitdate}
       \hbox{\@copyrighttext}}
     \setlength{\@logocopywidth}{\wd0}
