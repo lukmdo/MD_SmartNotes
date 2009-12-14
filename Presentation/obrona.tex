@@ -1,0 +1,141 @@
+% This file may be distributed and/or modified
+% only under the GNU Free Documentation License version 1.3 or later
+
+\documentclass[slitetop]{beamer}
+\mode<presentation>
+{
+  \setbeamertemplate{background canvas}[vertical shading][bottom=white!10,top=white!10]
+  \usetheme{Warsaw}
+}
+% \usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\setbeamercovered{dynamic}
+\usefonttheme[onlylarge]{structurebold}
+\setbeamerfont*{frametitle}{size=\normalsize,series=\bfseries}
+% \setbeamertemplate{navigation symbols}{}
+
+% Standard packages
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{times}
+\usepackage{amssymb}
+\usepackage{textcomp}
+\usepackage{color}
+% Author, Title, etc.
+\title{Writing Scalable Network Applications in Python}
+\subtitle{Prezentacja Pracy Dyplomowej}
+
+\author{Łukasz Dobrzański\\ Promotor: dr inż. Andrzej Głowacz}
+\institute{Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\newline Katedra Telekomunikacji}
+
+\date{16 Grudnia, 2009}
+
+\begin{document}
+\begin{frame}
+  \titlepage
+\end{frame}
+
+\begin{frame}{Plan prezentacji}
+  \tableofcontents
+\end{frame}
+
+\section{Wprowadzenie}
+\subsection{Temat pracy}
+
+\begin{frame}{Poruszane zagadnienia}
+\begin{itemize}
+\item{Skalowalność} 	%optymalizacja kodu pod wzgledem sklowalnosci
+\item{Bezpieczeństwo} %podtawowe problemy aplikacji sieciowych
+\item{Elastyczność rozwoju} % mozliwość elastycznych zmian na wielu plaszczyznach aplikacji
+\end{itemize}
+\end{frame}
+
+\begin{frame}{Poruszane zagadnienia c.d.}
+\begin{alertblock}{Wydajność}<+->
+defines how quickly  it is possible to realize a specific function
+\end{alertblock}
+\begin{alertblock}{Przepustowość}<+->
+defines how quickly it is possible to put something through a system
+\end{alertblock}
+\begin{exampleblock}{Skalowalność}<+->
+
+\end{exampleblock}
+\end{frame}
+
+\subsection{Motywacja}
+
+\begin{frame}{Dlaczego ten projekt ?}
+\begin{itemize}
+\item{Skalowalność}
+\item{Podobne applikacje}
+\item{Osobiste zainteresowanie}
+\item{Perspektywy rozwoju projektu}
+\end{itemize}
+\end{frame}
+
+\subsection{Użyte techonologie}
+
+\begin{frame}{Główne komponenty}
+\begin{itemize}
+\item{Platforma Google App Engine}
+\item{Framework  Django}
+\item{System kontroli wersji Mercurial}
+\item{Środowisko Cocoa}
+\end{itemize}
+\end{frame}
+
+\section{Omówienie pracy}
+\subsection{Opis projektu}
+
+\begin{frame}{Architektura aplikacji}
+\begin{figure}
+	\begin{center}
+		\includegraphics[scale=0.42]{../charts/smartnotes_componets.pdf}
+  		\label{fig:smartnotes_components}
+	\end{center}
+\end{figure}
+\end{frame}
+
+\subsection{Ograniczenia i zalety}
+
+\begin{frame}{Zestawienie}
+\begin{columns}
+  \column{.5\textwidth}
+    \begin{alertblock}{Ograniczenia}<1,3>
+    \begin{itemize}
+        \item Restrykcje ze strony GAE
+        \item Przywiązanie do framowk
+        \item Poziom zależności od firmy Google
+        \item Współpraca środowisk GAE
+        \item Wsparcie dla REST
+  \end{itemize}
+  \end{alertblock}
+  \column{.5\textwidth}
+    \begin{exampleblock}{Zalety}<2,3>
+    \begin{itemize}
+        \item Skalowalność
+        \item Niski koszt utrzymania 
+        \item Wysoka elastyczność w sferze wybranego środowiska 
+        \item Dostęp do najczęściej wykorzystywanych komponentów
+        \item Wygodny i wysoce użyteczny panel administracyjny
+    \end{itemize}
+    \end{exampleblock}
+\end{columns}
+\end{frame}
+
+
+
+\section{Podsumowanie}
+\subsection{Opracowane i sprawdzone rozwiązania}
+
+\begin{frame}{}
+\begin{itemize}
+\item{Keszowanie}
+\item{Dzielenie danych}
+\item{Minimalizowanie zbytecznego kodu}
+\item{Wizja całości}
+\end{itemize}
+\end{frame}
+
+\end{document}
