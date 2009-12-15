@@ -1,6 +1,3 @@
-% This file may be distributed and/or modified
-% only under the GNU Free Documentation License version 1.3 or later
-
 \documentclass[slitetop]{beamer}
 \mode<presentation>
 {
@@ -22,12 +19,13 @@
 \usepackage{amssymb}
 \usepackage{textcomp}
 \usepackage{color}
-% Author, Title, etc.
+
 \title{Writing Scalable Network Applications in Python}
 \subtitle{Prezentacja Pracy Dyplomowej}
 
 \author{Łukasz Dobrzański\\ Promotor: dr inż. Andrzej Głowacz}
-\institute{Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie\newline Katedra Telekomunikacji}
+\institute{Katedra Telekomunikacji \\
+Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie}
 
 \date{16 Grudnia, 2009}
 
@@ -53,13 +51,13 @@
 
 \begin{frame}{Poruszane zagadnienia c.d.}
 \begin{alertblock}{Wydajność}<+->
-defines how quickly  it is possible to realize a specific function
+Definiuje  ilość czasu potrzebna do realizacji danej funkcji. Przykład: \textit{0.1 sek/rządanie}.
 \end{alertblock}
 \begin{alertblock}{Przepustowość}<+->
-defines how quickly it is possible to put something through a system
+Definiuje maksymalną ilość informacji (zmian stanu)  jaka może być przetworzona przez system.\\ Przykład: \textit{120 kb/sek}.
 \end{alertblock}
 \begin{exampleblock}{Skalowalność}<+->
-
+Określa zdolność systemu do pracy przy wzrastającym trendzie użytkowania lub ze zwieszającym się rozmiarem danych wejściowych.   
 \end{exampleblock}
 \end{frame}
 
@@ -69,7 +67,7 @@ defines how quickly it is possible to put something through a system
 \begin{itemize}
 \item{Skalowalność}
 \item{Podobne applikacje}
-\item{Osobiste zainteresowanie}
+\item{Osobiste zainteresowania}
 \item{Perspektywy rozwoju projektu}
 \end{itemize}
 \end{frame}
@@ -78,10 +76,10 @@ defines how quickly it is possible to put something through a system
 
 \begin{frame}{Główne komponenty}
 \begin{itemize}
-\item{Platforma Google App Engine}
-\item{Framework  Django}
-\item{System kontroli wersji Mercurial}
-\item{Środowisko Cocoa}
+\item{Platforma Google App Engine}\uncover<2>{ \alert<2>{$40\%$} }
+\item{Framework  Django}\uncover<2>{ \alert<2>{$30\%$} }
+\item{System kontroli wersji Mercurial}\uncover<2>{ \alert<2>{$20\%$} }
+\item{Środowisko Cocoa}\uncover<2>{ \alert<2>{$10\%$} }
 \end{itemize}
 \end{frame}
 
@@ -102,23 +100,23 @@ defines how quickly it is possible to put something through a system
 \begin{frame}{Zestawienie}
 \begin{columns}
   \column{.5\textwidth}
-    \begin{alertblock}{Ograniczenia}<1,3>
+    \begin{alertblock}{Ograniczenia}<1-5,11>
     \begin{itemize}
-        \item Restrykcje ze strony GAE
-        \item Przywiązanie do framowk
-        \item Poziom zależności od firmy Google
-        \item Współpraca środowisk GAE
-        \item Wsparcie dla REST
+        \item<1- | alert@+> Restrykcje ze strony GAE
+        \item<2- | alert@+> Spojenie z  framewokiem
+        \item<3- | alert@+> Poziom zależności od firmy Google
+        \item<4- | alert@+> Współpraca środowisk GAE
+        \item<5- | alert@+> Wsparcie dla REST
   \end{itemize}
   \end{alertblock}
   \column{.5\textwidth}
-    \begin{exampleblock}{Zalety}<2,3>
+    \begin{exampleblock}{Zalety}<6-10,11>
     \begin{itemize}
-        \item Skalowalność
-        \item Niski koszt utrzymania 
-        \item Wysoka elastyczność w sferze wybranego środowiska 
-        \item Dostęp do najczęściej wykorzystywanych komponentów
-        \item Wygodny i wysoce użyteczny panel administracyjny
+        \item<6- | alert@+> Skalowalność
+        \item<7- | alert@+> Niski koszt utrzymania 
+        \item<8- | alert@+> Wysoka elastyczność w sferze wybranego środowiska 
+        \item<9- | alert@+> Dostęp do najczęściej wykorzystywanych komponentów
+        \item<10- | alert@+> Wygodny i wysoce użyteczny panel administracyjny
     \end{itemize}
     \end{exampleblock}
 \end{columns}
@@ -132,10 +130,16 @@ defines how quickly it is possible to put something through a system
 \begin{frame}{}
 \begin{itemize}
 \item{Keszowanie}
-\item{Dzielenie danych}
+\item{Dzielenie danych i skalowanie poziome}
 \item{Minimalizowanie zbytecznego kodu}
 \item{Wizja całości}
 \end{itemize}
+\end{frame}
+
+\begin{frame}{}
+\begin{center}
+\huge{Dziękuję za uwagę}
+\end{center}
 \end{frame}
 
 \end{document}
