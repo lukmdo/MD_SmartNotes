@@ -23,7 +23,7 @@
 \title{Writing Scalable Network Applications in Python}
 \subtitle{Prezentacja Pracy Dyplomowej}
 
-\author{Łukasz Dobrzański\\ Promotor: dr inż. Andrzej Głowacz}
+\author{Łukasz Dobrzański\\ ~~~~~~~~~~Promotor: dr inż. Andrzej Głowacz}
 \institute{Katedra Telekomunikacji \\
 Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie}
 
@@ -44,6 +44,7 @@ Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie}
 \begin{frame}{Poruszane zagadnienia}
 \begin{itemize}
 \item{Skalowalność} 	%optymalizacja kodu pod wzgledem sklowalnosci
+\item{Projekt praktyczny}
 \item{Bezpieczeństwo} %podtawowe problemy aplikacji sieciowych
 \item{Elastyczność rozwoju} % mozliwość elastycznych zmian na wielu plaszczyznach aplikacji
 \end{itemize}
@@ -51,7 +52,7 @@ Akademia Górniczo-Hutnicza im. Stanisława Staszica w Krakowie}
 
 \begin{frame}{Poruszane zagadnienia c.d.}
 \begin{alertblock}{Wydajność}<+->
-Definiuje  ilość czasu potrzebna do realizacji danej funkcji. Przykład: \textit{0.1 sek/rządanie}.
+Definiuje  ilość czasu potrzebną do realizacji danej funkcji. Przykład: \textit{0.1 sek/żądanie}.
 \end{alertblock}
 \begin{alertblock}{Przepustowość}<+->
 Definiuje maksymalną ilość informacji (zmian stanu)  jaka może być przetworzona przez system.\\ Przykład: \textit{120 kb/sek}.
@@ -66,13 +67,13 @@ Określa zdolność systemu do pracy przy wzrastającym trendzie użytkowania lu
 \begin{frame}{Dlaczego ten projekt ?}
 \begin{itemize}
 \item{Skalowalność}
-\item{Podobne applikacje}
+\item{Podobne aplikacje}
 \item{Osobiste zainteresowania}
 \item{Perspektywy rozwoju projektu}
 \end{itemize}
 \end{frame}
 
-\subsection{Użyte techonologie}
+\subsection{Użyte technologie}
 
 \begin{frame}{Główne komponenty}
 \begin{itemize}
@@ -100,23 +101,23 @@ Określa zdolność systemu do pracy przy wzrastającym trendzie użytkowania lu
 \begin{frame}{Zestawienie}
 \begin{columns}
   \column{.5\textwidth}
-    \begin{alertblock}{Ograniczenia}<1-5,11>
+    \begin{alertblock}{Ograniczenia}<1,2>
     \begin{itemize}
-        \item<1- | alert@+> Restrykcje ze strony GAE
-        \item<2- | alert@+> Spojenie z  framewokiem
-        \item<3- | alert@+> Poziom zależności od firmy Google
-        \item<4- | alert@+> Współpraca środowisk GAE
-        \item<5- | alert@+> Wsparcie dla REST
+        \item{Restrykcje ze strony GAE}
+        \item{Wybór frameworka}
+        \item{Poziom zależności od firmy Google}
+        \item{Współpraca środowisk GAE}
+        \item{Wsparcie dla REST}
   \end{itemize}
   \end{alertblock}
   \column{.5\textwidth}
-    \begin{exampleblock}{Zalety}<6-10,11>
+    \begin{exampleblock}{Zalety}<2>
     \begin{itemize}
-        \item<6- | alert@+> Skalowalność
-        \item<7- | alert@+> Niski koszt utrzymania 
-        \item<8- | alert@+> Wysoka elastyczność w sferze wybranego środowiska 
-        \item<9- | alert@+> Dostęp do najczęściej wykorzystywanych komponentów
-        \item<10- | alert@+> Wygodny i wysoce użyteczny panel administracyjny
+        \item{Skalowalność}
+        \item{Niski koszt utrzymania} 
+        \item{Wysoka elastyczność w sferze wybranego środowiska} 
+        \item{Dostęp do najczęściej używanych komponentów}
+        \item{Wygodny i wysoce użyteczny panel administracyjny}
     \end{itemize}
     \end{exampleblock}
 \end{columns}
@@ -125,11 +126,12 @@ Określa zdolność systemu do pracy przy wzrastającym trendzie użytkowania lu
 
 
 \section{Podsumowanie}
-\subsection{Opracowane i sprawdzone rozwiązania}
+\subsection{Opracowane i sprawdzone metodologie}
 
-\begin{frame}{}
+\begin{frame}{Podsumowanie}
 \begin{itemize}
-\item{Keszowanie}
+\item{Bezstanowe operacje}
+\item{Użycie pamięci cache}
 \item{Dzielenie danych i skalowanie poziome}
 \item{Minimalizowanie zbytecznego kodu}
 \item{Wizja całości}
